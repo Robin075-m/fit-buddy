@@ -1,2 +1,2 @@
-# fit-buddy
+# Fit-Buddy
 A website that matches people with a personal trainer to their liking.
