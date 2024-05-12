@@ -1,0 +1,12 @@
+
+/* Alle algemene styling */
+
+* {
+    padding: 0;
+    margin: 0;
+    
+}
+
+nav {
+    background-color: red;
+}
