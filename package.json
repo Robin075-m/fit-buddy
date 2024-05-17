@@ -4,7 +4,8 @@
   "description": "App that connects sporty people with their potential personal trainer.",
   "main": "index.js",
   "scripts": {
-    "startDev": "nodemon server.js"
+    "startDev": "nodemon server.js",
+    "start": "node server.js"
   },
   "author": "Raha, Aidan & Robin",
   "license": "ISC",

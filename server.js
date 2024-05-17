@@ -1,7 +1,8 @@
 const express = require("express")
 const app = express()
+const bcrypt = require("bcrypt")
 
-const users = []
+let users = []
 
 app.set('view-engine', 'ejs')
 app.use(express.urlencoded({ extended: false }))
@@ -24,6 +25,7 @@ app.get("/register", (req, res) =>  {
 
 app.post('/register', async (req, res) => {
     try {
+      console.log(req.body)
       const hashedPassword = await bcrypt.hash(req.body.password, 10)
       users.push({
         id: Date.now().toString(),
@@ -31,8 +33,10 @@ app.post('/register', async (req, res) => {
         email: req.body.email,
         password: hashedPassword
       })
+      
       res.redirect('/login')
-    } catch {
+    } catch(e) {
+      console.log(e)
       res.redirect('/register')
     }
     console.log(users)
