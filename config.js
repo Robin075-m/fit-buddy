@@ -1,33 +1,27 @@
-const mongoose = require("mongoose")
-const dbUrl = process.env.DATABASE_URL;
-const connect = mongoose.connect(dbUrl)
+const mongoose = require('mongoose');
+const connect = mongoose.connect("mongodb+srv://fitbuddy:Team1fitbuddy@fitbuddy.iluarad.mongodb.net/fitbuddy");
 
+// Check database connected or not
 connect.then(() => {
-    console.log("Database connected! :)")
+    console.log("Database Connected Successfully");
 })
 .catch(() => {
-    console.log("Database not connected! :(")
+    console.log("Database cannot be Connected");
 })
 
-const LoginSchema = new mongoose.Schema({
+// Create Schema
+const Loginschema = new mongoose.Schema({
     name: {
-        type: String,
-        required: true
-    },
-    email: {
-        type: String,
+        type:String,
         required: true
     },
     password: {
         type: String,
         required: true
-    },
-    birthdate: {
-        type: String,
-        required: true
     }
-})
+});
 
-const collection = new mongoose.model("users", LoginSchema)
+// collection part
+const collection = new mongoose.model("users", Loginschema);
 
 module.exports = collection;
