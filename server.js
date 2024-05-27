@@ -3,9 +3,13 @@ const path = require("path");
 const collection = require("./config");
 const bcrypt = require('bcrypt');
 
+
 const app = express();
 // convert data into json format
 app.use(express.json());
+
+
+
 // Static file
 app.use(express.static("public"));
 
@@ -13,7 +17,14 @@ app.use(express.urlencoded({ extended: false }));
 //use EJS as the view engine
 app.set("view engine", "ejs");
 
+
+// start index file
 app.get("/", (req, res) => {
+    res.render("index");
+});
+
+
+app.get("/login", (req, res) => {
     res.render("login");
 });
 
