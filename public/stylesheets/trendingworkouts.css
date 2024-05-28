@@ -1,0 +1,367 @@
+
+ /*Hier starts the banner foto */
+
+ .container {
+    position: relative;
+    width: 100%;
+    max-width: auto; /* Adjust the maximum width as needed */
+  }
+  
+ .container video{
+  width: 100%;
+  height: 50%;
+ }
+  .fade-effect {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(165, 165, 165, 0) 0%, rgba(0, 0, 0, 1) 100%);
+  }
+  
+ 
+  
+  h2.bottom-left {
+    position: absolute;
+    bottom: 55.5%; 
+  right: 61.7%; 
+  text-align: left;
+    font-size: 6vw;
+ font-style: oblique;
+ font-family: monospace;
+ color: rgb(0, 0, 0); 
+ text-decoration: line-through 5px ;
+
+  }
+  
+.container p{
+  position: absolute;
+  bottom:45%;
+  text-align: left;
+right: 60%;
+max-height:fit-content;
+width: 38%;
+font-size: 1.3vw;
+  color: rgb(255, 255, 255);
+
+ 
+  
+}
+  
+  h1.centered {
+    position: absolute;
+    bottom: 65.63%;
+    right: 70%;
+    font-size: 6vw; 
+    text-decoration: line-through 5px ;
+    text-align: left;
+    font-style: oblique;
+    font-family: monospace;
+   
+    color: rgb(0, 0, 0) ; 
+ 
+  }
+  
+  
+  
+
+  @media (max-width: 768px) {
+    .fade-effect {
+      height: 80%; 
+    }
+  
+   h2.bottom-left {
+      font-size: 7vw; 
+   }
+    h1.centered {
+      font-size: 7vw; 
+    }
+
+   p.centered {
+      font-size: 1vw; 
+    }
+
+
+  }
+
+
+/* trending card sliders*/
+
+h3 {
+  margin-top: 6em;
+    text-align: left;
+    color: rgb(194, 191, 4);
+  }
+  
+  .accordion {
+
+    width: 100%;
+    height: 80%;
+    overflow: hidden;
+    margin: 5px 0 0 0 ;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.75);
+  }
+  
+  @media (min-width: 768px) {
+    .accordion {
+      height: 500px;
+    }
+  }
+  
+  ul {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  @media (min-width: 768px) {
+    ul {
+      display: table;
+      table-layout: fixed;
+    }
+  }
+  
+  /* Background images */
+  li:nth-child(6) .background-image {
+    background-image: url('./images/backgroundworkout1.jpg');
+  }
+  
+  li:nth-child(5) .background-image {
+    background-image: url('http://michael-ferry.com/assets/accordion6.jpg');
+  }
+  
+  li:nth-child(4) .background-image {
+    background-image: url('/images/shoulder.jpeg');
+  }
+  
+  li:nth-child(3) .background-image {
+    background-image: url('/images/workoutbackground3.jpeg');
+  }
+  
+  li:nth-child(2) .background-image {
+    background-image: url('/images/arsms.jpeg');
+
+  }
+  
+  li:nth-child(1) .background-image {
+    background-image: url('/images/backgroundworkout1.jpg');
+  }
+  
+  li .teaser {
+    opacity: 1;
+    font-size: 24px;
+  }
+  
+  li .label {
+    transition: opacity 200ms ease;
+    transition-delay: 200ms;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    color: white;
+    width: auto;
+    opacity: 0;
+    transform-origin: 0px 0px 0px;
+    transform: matrix(0, 1, -1, 0, 0, 0) translate(0, -50%);
+    font-size: 24px;
+  }
+  
+  li {
+    vertical-align: bottom;
+    position: relative;
+    width: 16.666%; /* 6 into 100 */
+    border-bottom: 2px solid rgba(0, 0, 0, 0.75);
+    transition: all 500ms ease;
+    height: 80px;
+  }
+  
+  @media (min-width: 768px) {
+    li {
+      border-bottom: none;
+      border-right: 2px solid rgba(255, 255, 255, 0.75);
+      height: 500px;
+      display: table-cell;
+    }
+  }
+  
+  .close {
+    position: absolute;
+    z-index: 4;
+    color: white;
+    font-size: 52px;
+    line-height: 32px;
+    padding: 15px;
+    top: -60px;
+    right: 20px;
+    opacity: 0;
+    cursor: pointer;
+    transition: opacity 200ms ease;
+    transition-delay: 100ms;
+  }
+  
+  .background-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.75;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    top: 0;
+    left: 0;
+  }
+  
+  .wrapper {
+    width: 100%;
+    margin-top: 40px;
+  }
+  
+  @media (min-width: 768px) {
+    .wrapper {
+      margin-top: 0;
+      width: calc(100% - 40px);
+    }
+  }
+  
+  .row > div:nth-child(2) > img {
+    margin: auto;
+  }
+  
+  &:hover:not(.opened) .background-image {
+    opacity: 0.65;
+  }
+  
+  div.teaser {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    padding: 0 10px;
+    text-align: center;
+    width: calc(100% - 20px);
+    transform: translateY(-50%);
+    transition: opacity 300ms ease;
+    transition-delay: 100ms;
+    font-family: Montserrat, sans-serif;
+    text-overflow: clip;
+    font-size: 24px;
+    margin-bottom: 2px;
+    color: white;
+  }
+  
+  div.full-content {
+    display: block;
+    overflow: hidden;
+    width: 100%;
+  }
+  
+ .accordion a {
+    display: block;
+    height: 500px;
+    width: 100%;
+    position: relative;
+    z-index: 3;
+    vertical-align: bottom;
+    padding: 30px 30px;
+    box-sizing: border-box;
+    color: #fff;
+    text-decoration: none;
+    font-family: Open Sans, sans-serif;
+    transition: opacity 200ms ease;
+  }
+  
+  @media (min-width: 768px) {
+    a {
+      padding: 60px 60px;
+    }
+  }
+  
+  a * {
+    opacity: 0;
+    position: relative;
+    z-index: 5;
+    overflow: hidden;
+    transform: translateY(-10px);
+    transition: opacity 400ms ease;
+    transition-delay: 300ms;
+  }
+  
+  li.no-delay .full-content * {
+    transition: none;
+    transition-delay: 0ms;
+  }
+  
+  .opened li .teaser {
+    @media (min-width: 768px) {
+      opacity: 0;
+    }
+  }
+  
+  .opened li .label {
+    opacity: 0;
+  
+    @media (min-width: 768px) {
+      opacity: 1;
+    }
+  }
+  
+  .opened li.opened {
+    .label {
+      opacity: 0;
+    }
+    .teaser {
+      opacity: 0;
+    }
+    .full-content {
+      opacity: 1;
+    }
+  }
+  
+  li:not(.opened) {
+    width: 100%;
+  
+    @media (min-width: 768px) {
+      width: 4%;
+    }
+  }
+  
+  li.opened {
+    height: 80%;
+    width: 100%;
+  
+    @media (min-width: 768px) {
+      height: 500px;
+      width: 60%;
+    }
+  
+    .close {
+      top: 10px;
+      opacity: 1;
+    }
+  
+    div.full-content a * {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  .about {
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+    color: #666;
+  }
+  
+  .about a {
+    color: blue;
+    text-decoration: none;
+  }
+  
+  .about a:hover {
+    text-decoration: underline;
+  }
+  

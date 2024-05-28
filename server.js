@@ -27,6 +27,10 @@ app.get("/overzicht", (req, res) => {
     res.render("overzicht");
 });
 
+app.get("/trendingworkouts", (req, res) => {
+    res.render("trendingworkouts");
+});
+
 app.get("/login", (req, res) => {
     res.render("login");
 });

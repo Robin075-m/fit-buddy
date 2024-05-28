@@ -1,0 +1,281 @@
+body{
+    background-color: black;
+  }
+.bars {
+  
+    position: absolute;
+    width: 35px;
+    height: 40px;
+    top: 40px;
+    right: 50px;
+    cursor: pointer;
+    z-index: 101;
+    padding-top:10px;
+  }
+  
+  .bar {
+    width: 100%;
+    height: 4px;
+    background-color: #fff;
+    position: absolute;
+  }
+  
+  span::before,
+  span::after {
+    content: "";
+    display: block;
+    background-color: #fff;
+    width: 100%;
+    height: 4px;
+    position: absolute;
+  }
+
+  .bar::before {
+    transform: translateY(-9px);
+  }
+  
+  .bar::after {
+    transform: translateY(9px);
+  }
+  
+  .bars.active .bar {
+    background-color: transparent;
+  }
+  
+  .bars.active span::before {
+    animation: top-bar 1s;
+    animation-fill-mode: forwards;
+  }
+  
+  .bars.active span::after {
+    animation: bottom-bar 1s;
+    animation-fill-mode: forwards;
+  }
+  
+  
+    /* Navbar Links */
+  
+  #nav {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transition: all 1s;
+    z-index: -1;
+    overflow: hidden;
+    opacity: 0;
+  }
+ 
+  #nav a {
+
+    color: rgb(0, 0, 0);
+    text-decoration:none;
+    line-height: 60vw;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+  
+    left: 0;
+    right: 0;
+    text-indent: 50vw;
+    border-radius: 50%;
+    transition: all .5s;
+  }
+  
+  #nav a:hover {
+    background:rgb(255, 255, 255);
+  }
+  
+  .navlist ul {
+    list-style: none;
+  }
+   /*  toggle in js */ 
+  .visible {
+    z-index: 100 !important;
+    opacity: 1 !important;
+  }
+  
+  .shape-circle {
+    border-radius: 50%;
+    width: 20vw;
+
+    height: 20vw;
+    top: -10vw;
+    right: -10vw;
+    position: absolute;
+    transition: all 1s ease-in-out;
+    background:rgba(195, 148, 0, 1);
+    box-shadow: 0 0px 0px rgb(124, 95, 0);
+  }
+  
+  nav.visible li:first-child {
+    width: 200vw;
+    height: 200vw;
+    top: -100vw;
+    right: -100vw;
+    z-index: 5;
+    transition: all .5s ease-in-out;
+    box-shadow: 0 0px 80px rgb(99, 73, 1);
+  }
+  
+  nav.visible li:nth-child(2) {
+    width: 150vw;
+    height: 150vw;
+    top: -75vw;
+    right: -75vw;
+    z-index: 6;
+    transition: all .6s ease-in-out;
+    box-shadow: 0 0px 80px  rgb(99, 73, 1);
+  }
+  
+  nav.visible li:nth-child(3){
+    width: 100vw;
+    height: 100vw;
+    top: -50vw;
+    right: -50vw;
+    z-index: 7;
+    transition: all .7s ease-in-out;
+    box-shadow: 0 0px 80px  rgb(99, 73, 1);
+  }
+  
+  nav.visible li:last-child{
+    width: 50vw;
+    height: 50vw;
+    top: -25vw;
+    right: -25vw;
+    z-index: 8;
+    transition: all .8s ease-in-out;
+    box-shadow: 0 0px 80px  rgb(99, 73, 1);
+  }
+  
+  nav.visible li:first-child a {
+    line-height: 265vw !important;
+      text-indent: 10vw !important;
+  
+     
+  
+  }
+  
+  nav.visible li:nth-child(2) a {
+    line-height: 200vw !important;
+    text-indent:10vw !important;
+  }
+  
+  nav.visible li:nth-child(3) a {
+    line-height: 137vw !important;
+      text-indent: 17vw !important;
+    
+  }
+  
+  nav.visible li:last-child a {
+    line-height: 70vw !important;
+    text-indent:12vw !important;
+  }
+  
+
+
+  
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+  
+
+ 
+  
+  
+
+  @keyframes top-bar {
+    50% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: rotate(45deg) translateY(0);
+    }
+  }
+  
+  @keyframes bottom-bar {
+    50% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: rotate(-45deg) translateY(0);
+    }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .bars {
+     
+      top: 20px;
+      right: 20px;
+      width: 25px;
+      height: 35px;
+      padding-top: 7px;
+    }
+  
+    #nav a {
+      line-height: 30vw;
+      text-indent: 25vw;
+    
+    }
+  
+    .shape-circle {
+      width: 30vw;
+      height: 30vw;
+      top: -20vw;
+      right: -20vw;
+    }
+  
+    nav.visible li:first-child {
+      width: 100vw;
+      height: 100vw;
+      top: -50vw;
+      right: -50vw;
+    }
+  
+    nav.visible li:nth-child(2) {
+      width: 75vw;
+      height: 75vw;
+      top: -37.5vw;
+      right: -37.5vw;
+    }
+  
+    nav.visible li:nth-child(3) {
+      width: 50vw;
+      height: 50vw;
+      top: -25vw;
+      right: -25vw;
+    }
+  
+    nav.visible li:last-child {
+      width: 25vw;
+      height: 25vw;
+      top: -12.5vw;
+      right: -12.5vw;
+    }
+  
+    nav.visible li:first-child a {
+      line-height: 132.5vw !important;
+      text-indent: 5vw !important;
+    }
+  
+    nav.visible li:nth-child(2) a {
+      line-height: 100vw !important;
+      text-indent: 5vw !important;
+    }
+  
+    nav.visible li:nth-child(3) a {
+      line-height: 68.5vw !important;
+      text-indent: 8.5vw !important;
+    }
+  
+    nav.visible li:last-child a {
+      line-height: 35vw !important;
+      text-indent: 6vw !important;
+    }
+  }
