@@ -1,0 +1,14 @@
+.trainer {
+    margin-top: 3em;
+    padding-top: 10em;
+    background-color: gray;
+    border-radius: 0.5em;
+}
+
+.trainer h2 {
+    color: red;
+}
+
+.trainer h3 {
+    color: red;
+}

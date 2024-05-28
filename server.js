@@ -23,6 +23,9 @@ app.get("/", (req, res) => {
     res.render("index");
 });
 
+app.get("/overzicht", (req, res) => {
+    res.render("overzicht");
+});
 
 app.get("/login", (req, res) => {
     res.render("login");
