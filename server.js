@@ -71,7 +71,7 @@ app.post("/login", async (req, res) => {
             res.send("wrong Password");
         }
         else {
-            res.render("home");
+            res.render("index");
         }
     }
     catch {
