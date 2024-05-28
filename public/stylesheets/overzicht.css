@@ -1,5 +1,5 @@
 .trainer {
-    margin-top: 3em;
+    margin: 5em 3em 0em 4em;
     padding-top: 10em;
     background-color: gray;
     border-radius: 0.5em;
@@ -7,8 +7,10 @@
 
 .trainer h2 {
     color: red;
+    margin-left: 1em;
 }
 
 .trainer h3 {
     color: red;
+    margin-left: 1em;
 }
