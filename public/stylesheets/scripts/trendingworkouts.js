@@ -1,5 +1,6 @@
 
 //hier zijn alle js voor the trendingworkouts pagina
+
 document.addEventListener("DOMContentLoaded", function () {
     var accordion = document.querySelector('.accordion ul');
     var closeButtons = document.querySelectorAll('.close');
