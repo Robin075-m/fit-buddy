@@ -33,9 +33,15 @@ h6 {
 
 li {
     list-style-type: none;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
+/* button styling */
 
+
+button:hover{
+    cursor: pointer;
+}
 
 
 

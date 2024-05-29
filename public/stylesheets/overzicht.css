@@ -1,6 +1,4 @@
 body {
-    background-color: red;
-    
     /* alles in het midden krijgen */
     display: flex;
     align-items: center;
@@ -47,4 +45,27 @@ p {
     justify-content: center;
     margin: 0 auto;
     color: white; 
+}
+
+.meer-info {
+    background-color: red;
+    border: 1px solid black;
+    border-radius: 3px;
+    color: white;
+    padding: 10px 25px;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.skills {
+    background-color: rgb(57, 57, 57);
+    text-align: left;
+    padding: 15px;
+    margin-top: 30px;
+}
+
+.skills ul li {
+    border: 1px solid rgb(105, 103, 103);
+    border-radius: 2px;
+    display: inline-block;
 }
