@@ -8,16 +8,50 @@
     <title>Trainer Overzicht</title>
     <link rel="stylesheet" href="/stylesheets/overzicht.css">
     <link rel="stylesheet" href="/stylesheets/styles.css">
+    <link rel="stylesheet" href="/stylesheets/navbar.css" />
 </head>
 
 <body>
+
+    <header>
+        <!--HamBurger Icon-->
+        <div class="bars" id="nav-action">
+          <span class="bar"> </span>
+        </div>
+  
+        <!--Navbar Links-->
+        <nav id="nav">
+          <ul class="navlist">
+            <li class="shape-circle circle-one"><a href="#">Plan Maken</a></li>
+            <li class="shape-circle circle-two">
+              <a href="#">Trending Workouts</a>
+            </li>
+            <li class="shape-circle circle-three"><a href="#">Over Ons</a></li>
+            <li class="shape-circle circle-five">
+              <a href="#">Home</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
     <main>
 
 
+        <form action="./search/">
+            <label for="gebruiker">Zoek een gebruiker</label>
+            <input type="search" id="gebruiker" name="q" />
+            <button type="submit">Search</button>
+          </form>
+        </search>
+
         <div class="card-container">
             <img class="round" src="#" alt="gebruiker">
-            <h3>Naam gebruiker</h3>
-            <h4>Woonplaats</h4>
+            <h3>
+               username
+            </h3>
+            <h4>
+                woonplaats
+            </h4>
             <p>ingevoerde tekst van de gebruiker...</p>
             <button class="meer-info">Meer info</button>
             <div class="skills">
@@ -34,6 +68,7 @@
         </div>
 
         <script src="/stylesheets/scripts/overzicht.js"></script>
+        <script src="/stylesheets/scripts/index.js"></script>
     </main>
 
 </body>
