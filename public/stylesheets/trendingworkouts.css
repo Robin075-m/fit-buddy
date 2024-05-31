@@ -134,19 +134,19 @@ li:nth-child(6) .background-image {
 }
 
 li:nth-child(5) .background-image {
-  background-image: url('/stylesheets/images/abs.jpeg');
+  background-image: url('/stylesheets/images/absfoto.png');
 }
 
 li:nth-child(4) .background-image {
-  background-image: url('/stylesheets/images/abs.jpeg');
+  background-image: url('/stylesheets/images/absfoto.jpeg');
 }
 
 li:nth-child(3) .background-image {
-  background-image: url('/stylesheets/images/abs.jpeg');
+  background-image: url('/stylesheets/images/legsfoto.png');
 }
 
 li:nth-child(2) .background-image {
-  background-image: url('/stylesheets/images/abs.jpeg');
+  background-image: url('/stylesheets/images/armsfoto.png');
 
 }
 
@@ -366,3 +366,14 @@ li.opened {
 .about a:hover {
   text-decoration: underline;
 }
+
+
+
+
+
+
+
+
+
+
+

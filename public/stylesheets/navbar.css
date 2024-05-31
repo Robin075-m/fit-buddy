@@ -228,7 +228,10 @@ nav.visible li:last-child a {
   #nav a {
     line-height: 30vw;
     text-indent: 25vw;
-  
+        position: relative;
+top: 20px; left: -40px;
+   
+  padding: 30px;
   }
 
   .shape-circle {
