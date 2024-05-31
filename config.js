@@ -1,27 +1,29 @@
-const mongoose = require('mongoose');
-const connect = mongoose.connect("mongodb+srv://fitbuddy:Team1fitbuddy@fitbuddy.iluarad.mongodb.net/fitbuddy");
+// config.js
+const { MongoClient } = require('mongodb');
+require('dotenv').config(); // Importeer en configureer dotenv
 
-// Check database connected or not
-connect.then(() => {
-    console.log("Database Connected Successfully");
-})
-.catch(() => {
-    console.log("Database cannot be Connected");
-})
+const dbUrl = process.env.DATABASE_URL;
+const dbName = 'fitbuddy'; // Vervang 'jouw-database' door de naam van jouw database
 
-// Create Schema
-const Loginschema = new mongoose.Schema({
-    name: {
-        type:String,
-        required: true
-    },
-    password: {
-        type: String,
-        required: true
-    }
-});
+let db;
 
-// collection part
-const collection = new mongoose.model("users", Loginschema);
+// Functie om verbinding te maken met de database
+const connectDB = async () => {
+  try {
+    const client = await MongoClient.connect(dbUrl);
+    db = client.db(dbName);
+    console.log(`Verbonden met de database: ${dbName}`);
+  } catch (err) {
+    console.error('Kon geen verbinding maken met de database', err);
+  }
+};
 
-module.exports = collection;
+// Functie om de databaseverbinding op te halen
+const getDB = () => {
+  if (!db) {
+    throw new Error('Database is niet verbonden!');
+  }
+  return db;
+};
+
+module.exports = { connectDB, getDB };
