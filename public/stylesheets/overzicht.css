@@ -1,5 +1,8 @@
 
-@media screen and (min-width: 0px) {
+:root {
+    --curve: 40;
+}
+
 body {
     /* alles in het midden krijgen */
     display: flex;
@@ -8,10 +11,99 @@ body {
     flex-direction: column;
 
     min-height: 100vh;
-    margin: 0;
 }
 
-h3 {
+
+.kaarten {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 4rem 5vw;
+}
+
+.kaart {
+    position: relative;
+    display: block;
+    height: 100%;
+    border-radius: calc(var(--curve) * 1px);
+    overflow: hidden;
+}
+
+.banner {
+    width: 100%;
+    height: auto;
+}
+
+/* tekst:  */
+.kaart_overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    border-radius: calc(var(--curve) * 1px); 
+    transform: translateY(100%);
+    transition: .2s ease-in-out;
+    
+   background-color: rgb(234, 216, 225);
+}
+
+/* zorgt ervoor dat de kaart weer naar boven komt */
+.kaart:hover .kaart_overlay {
+  transform: translateY(0);
+}
+
+.kaart_header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 2em;
+    padding: 2em;
+    border-radius: calc(var(--curve) * 0.5px); 
+    transform: translateY(-100%);
+    transition: .2s ease-in-out;
+   
+   background-color: rgb(234, 216, 225);
+}
+
+
+.kaart:hover .kaart_header {
+    transform: translateY(0);
+}
+
+
+.profielfoto {
+    flex-shrink: 0;
+    background-color: rgb(224, 224, 224);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+
+.skills-container {
+    padding: 0 2em 2em;
+    text-align: left;
+}
+
+
+.skills {
+    margin-top: 1em;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    text-align: left; 
+}
+
+.skills li {
+    border: 1px solid rgb(105, 103, 103);
+    border-radius: 5px;
+    padding: 0.3em;
+}
+
+
+
+/* h3 {
     margin: 10px 0;
 }
 
@@ -89,10 +181,73 @@ p {
   
     .card-container {
       flex: 1 1 calc(25% - 3em); /* Adjusts the width of the first four cards */
-    }
+
   
-    .card-container:nth-child(n+5) {
+    /* .card-container:nth-child(n+5) {
       flex-basis: 100%; /* Makes the cards after the 4th take the full width */
-    }
-  }
+
   
+  
+/* 
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+h3 {
+    margin: 10px 0;
+}
+
+h5 {
+    margin: 5px 0;
+    text-transform: uppercase;
+}
+
+p {
+    font-size: 14px;
+    line-height: 21px;
+}
+
+.card-container {
+    background-color: gray;
+    border-radius: 10px;
+    box-shadow: 0px 10px 20px -10px rgba(0, 0, 0, 0.75);
+    color: white;
+    padding-top: 30px;
+    max-width: 300px;
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.card-container .round {
+    border: 2px solid black;
+    background-color: rgb(30, 30, 30);
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    color: white;
+}
+
+@media screen and (min-width: 770px) {
+    main {
+        margin-top: 3em;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 3em;
+    }
+
+    .card-container {
+        flex: 1 1 calc(25% - 3em);
+    }
+
+    .card-container:nth-child(n+5) {
+        flex-basis: 100%;
+    }
