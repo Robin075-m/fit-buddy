@@ -3,6 +3,11 @@
     --curve: 40;
 }
 
+
+.naam {
+    color: red;
+}
+
 body {
     /* alles in het midden krijgen */
     display: flex;
@@ -13,7 +18,8 @@ body {
 }
 
 #nameList {
-    margin-top: 8em;
+    margin: 3rem 5vw;
+    margin-bottom: 5em; 
 }
 
 .kaarten list{

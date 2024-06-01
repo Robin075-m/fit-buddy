@@ -27,8 +27,8 @@ body {
   position: absolute;
 }
 
-span::before,
-span::after {
+.bars span::before,
+.bars span::after {
   content: "";
   display: block;
   background-color: #fff;
