@@ -12,6 +12,9 @@ body {
     min-height: 100vh;
 }
 
+#nameList {
+    margin-top: 8em;
+}
 
 .kaarten list{
     display: grid;
