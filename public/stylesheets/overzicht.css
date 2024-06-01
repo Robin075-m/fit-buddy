@@ -1,15 +1,11 @@
 
 :root {
-    --curve: 40;
+    --curve: 20;
 }
 
-
-.naam {
-    color: red;
-}
+  /* alles in het midden krijgen */
 
 body {
-    /* alles in het midden krijgen */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -22,12 +18,19 @@ body {
     margin-bottom: 5em; 
 }
 
+
+#nameList {
+    margin: 3rem 5vw;
+    margin-bottom: 5em; 
+}
+
 .kaarten list{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     margin: 3rem 5vw;
     margin-bottom: 5em; 
+    filter: opacity(50%);
 }
 
 .kaart {
@@ -79,6 +82,9 @@ body {
 }
 
 
+
+
+
 .profielfoto {
     flex-shrink: 0;
     background-color: rgb(224, 224, 224);
@@ -87,10 +93,13 @@ body {
     border-radius: 50%;
 }
 
+
+
+
 /* alles onder profiel foto */
 
 .skills-container {
-    padding: 0 2em 2em;
+    padding: 0em 2em 2em;
     text-align: left;
 }
 
