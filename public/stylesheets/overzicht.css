@@ -9,16 +9,16 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-
     min-height: 100vh;
 }
 
 
-.kaarten {
+.kaarten list{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
-    margin: 4rem 5vw;
+    margin: 3rem 5vw;
+    margin-bottom: 5em; 
 }
 
 .kaart {
@@ -27,6 +27,7 @@ body {
     height: 100%;
     border-radius: calc(var(--curve) * 1px);
     overflow: hidden;
+    margin-top: 2em;
 }
 
 .banner {
@@ -44,11 +45,10 @@ body {
     border-radius: calc(var(--curve) * 1px); 
     transform: translateY(100%);
     transition: .2s ease-in-out;
-    
-   background-color: rgb(234, 216, 225);
+    background-color: hsl(0, 0%, 30%);
 }
 
-/* zorgt ervoor dat de kaart weer naar boven komt */
+/* zorgt ervoor dat de descriptie naar boven komt */
 .kaart:hover .kaart_overlay {
   transform: translateY(0);
 }
@@ -59,11 +59,9 @@ body {
     align-items: center;
     gap: 2em;
     padding: 2em;
-    border-radius: calc(var(--curve) * 0.5px); 
     transform: translateY(-100%);
     transition: .2s ease-in-out;
-   
-   background-color: rgb(234, 216, 225);
+    background-color: hsl(0, 0%, 40%);
 }
 
 
@@ -80,12 +78,19 @@ body {
     border-radius: 50%;
 }
 
+/* alles onder profiel foto */
 
 .skills-container {
     padding: 0 2em 2em;
     text-align: left;
 }
 
+.skills-container h4 {
+  font-size: 1.1em;
+  text-transform: uppercase;
+  margin-top: 1em;
+  
+}
 
 .skills {
     margin-top: 1em;
@@ -96,158 +101,12 @@ body {
 }
 
 .skills li {
-    border: 1px solid rgb(105, 103, 103);
-    border-radius: 5px;
-    padding: 0.3em;
+    border: 1px solid hsl( 100%, 100%, 100%);
+    border-radius: 0.5em;
+    padding: 0.4em;
+    background-color: hsl( 0, 100%, 100%);
+    color: hsl(0, 0%, 0%);
 }
 
 
 
-/* h3 {
-    margin: 10px 0;
-}
-
-h5 {
-    margin: 5px 0;
-    text-transform: uppercase;
-}
-
-p {
-    font-size: 14px;
-    line-height: 21px;
-}
-
-.card-container {
-    background-color: rgb(30, 30, 30);
-    border-radius: 10px;
-    box-shadow: 0px 10px 20px -10px rgba(0, 0, 0, 0.75);
-    color: white;
-    width: 300px; 
-    max-width: 100%;
-    text-align: center;
-    padding-top: 0.2em;
-    margin: 4em 0 4em 0;
-}
-
-.card-container .round {
-    border: 2px solid black; 
-    background-color: rgb(30, 30, 30);
-    border-radius: 50%;
-    width: 100px; 
-    height: 100px; 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-    color: white; 
-    margin-top: 3em;
-}
-
-.meer-info {
-    background-color: #F5CE67;
-    border: 1px solid black;
-    border-radius: 3px;
-    color: white;
-    padding: 10px 25px;
-    margin-top: 1em;
-    margin-bottom: 1em;
-}
-
-.skills {
-    background-color: rgb(48, 48, 48);
-    text-align: left;
-    padding: 15px;
-    margin-top: 30px;
-    border-radius: 10px;
-}
-
-
-.skills ul li {
-    border: 1px solid rgb(105, 103, 103);
-    border-radius: 5px;
-    display: inline-block;
-    margin: 0.3em 0.3em 0 0;
-    padding: 5px;
-}
-}
-
-@media screen and (min-width: 770px) {
-    main {
-      margin: 3em 3em 3em 3em;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 3em;
-    }
-  
-    .card-container {
-      flex: 1 1 calc(25% - 3em); /* Adjusts the width of the first four cards */
-
-  
-    /* .card-container:nth-child(n+5) {
-      flex-basis: 100%; /* Makes the cards after the 4th take the full width */
-
-  
-  
-/* 
-  body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    min-height: 100vh;
-    margin: 0;
-}
-
-h3 {
-    margin: 10px 0;
-}
-
-h5 {
-    margin: 5px 0;
-    text-transform: uppercase;
-}
-
-p {
-    font-size: 14px;
-    line-height: 21px;
-}
-
-.card-container {
-    background-color: gray;
-    border-radius: 10px;
-    box-shadow: 0px 10px 20px -10px rgba(0, 0, 0, 0.75);
-    color: white;
-    padding-top: 30px;
-    max-width: 300px;
-    text-align: center;
-    margin-bottom: 1em;
-}
-
-.card-container .round {
-    border: 2px solid black;
-    background-color: rgb(30, 30, 30);
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-    color: white;
-}
-
-@media screen and (min-width: 770px) {
-    main {
-        margin-top: 3em;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 3em;
-    }
-
-    .card-container {
-        flex: 1 1 calc(25% - 3em);
-    }
-
-    .card-container:nth-child(n+5) {
-        flex-basis: 100%;
-    }

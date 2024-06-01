@@ -6,12 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trainer Overzicht</title>
+
     <link rel="stylesheet" href="/stylesheets/overzicht.css">
     <link rel="stylesheet" href="/stylesheets/styles.css">
     <link rel="stylesheet" href="/stylesheets/navbar.css">
-    <style>
 
-    </style>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/2.3.1/list.min.js"></script>
+
 </head>
 
 <body>
@@ -40,101 +41,93 @@
     <main>
 
 
-        <ul class="kaarten">
 
-            <li>
-                <a href="#" class="kaart">
-                    <img class="banner" src="/stylesheets/images/shoulder.jpeg" alt="">
-                    <div class="kaart_overlay">
-                        <div class="kaart_header">
-                            <!-- <svg class="arc">   </svg> -->
-                            <img class="profielfoto" src="/stylesheets/images/trainer2.png" alt="">
-                            <div class="kaart_header_tekst">
-                                <h3 class="naam">Bert</h3>
-                                <p>beschikbaar op: ma, di , do</p>
+
+
+
+
+
+        <!-- kaarten die opkomen -->
+
+
+        <div id="nameList">
+            <input type="search" class="search" placeholder="Filter op...">
+
+            <ul class="kaarten list">
+                <li>
+                    <a href="#" class="kaart">
+                        <img class="banner" src="/stylesheets/images/shoulder.jpeg" alt="">
+                        <div class="kaart_overlay">
+                            <div class="kaart_header">
+                                <!-- <svg class="arc">   </svg> -->
+                                <img class="profielfoto" src="/stylesheets/images/trainer2.png" alt="">
+                                <div class="kaart_header_tekst">
+                                    <h3><span class="naam">Bert</span></h3>
+                                    <p>Beschikbaar op: ma, di , do</p>
+                                </div>
+                            </div>
+                            <div class="skills-container">
+                                <h4>Skills</h4>
+                                <ul class="skills">
+                                    <li>Calisthenics</li>
+                                    <li>Weights</li>
+                                    <li>Yoga</li>
+                                    <li>Hardlopen</li>
+                                    <li>Calisthenics</li>
+                                    <li>Weights</li>
+                                    <li>Yoga</li>
+                                    <li>Hardlopen</li>
+                                    <li>Calisthenics</li>
+                                    <li>Weights</li>
+                                    <li>Yoga</li>
+                                    <li>Hardlopen</li>
+                                </ul>
                             </div>
                         </div>
-                        <div class="skills-container">
-                            <h4>skills</h4>
-                            <ul class="skills">
-                                <li>Calisthenics</li>
-                                <li>Weights</li>
-                                <li>Yoga</li>
-                                <li>Hardlopen</li>
-                                <li>Calisthenics</li>
-                                <li>Weights</li>
-                                <li>Yoga</li>
-                                <li>Hardlopen</li>
-                                <li>Calisthenics</li>
-                                <li>Weights</li>
-                                <li>Yoga</li>
-                                <li>Hardlopen</li>
-                            </ul>
-                        </div>
-                    </div>
-                </a>
-            </li>
+                    </a>
+                </li>
 
 
-            <li>
-                <a href="#" class="kaart">
-                    <img class="banner" src="/stylesheets/images/shoulder.jpeg" alt="">
-                    <div class="kaart_overlay">
-                        <div class="kaart_header">
-                            <!-- <svg class="arc">   </svg> -->
-                            <img class="profielfoto" src="/stylesheets/images/trainer2.png" alt="">
-                            <div class="kaart_header_tekst">
-                                <h3 class="naam">Bert</h3>
-                                <p>beschikbaar op: ma, di , do</p>
+                <li>
+                    <a href="#" class="kaart">
+                        <img class="banner" src="/stylesheets/images/shoulder.jpeg" alt="">
+                        <div class="kaart_overlay">
+                            <div class="kaart_header">
+                                <!-- <svg class="arc">   </svg> -->
+                                <img class="profielfoto" src="/stylesheets/images/trainer2.png" alt="">
+
+                                <div class="kaart_header_tekst">
+                                    <h3><span class="naam">Angela</span></h3>
+                                    <p>Beschikbaar op: ma, di , do</p>
+                                </div>
+                            </div>
+
+                            <div class="skills-container">
+                                <h4>Skills</h4>
+                                <ul class="skills">
+                                    <li>Calisthenics</li>
+                                    <li>Weights</li>
+                                    <li>Yoga</li>
+                                    <li>Hardlopen</li>
+                                    <li>Calisthenics</li>
+                                    <li>Weights</li>
+                                    <li>Yoga</li>
+                                    <li>Hardlopen</li>
+                                    <li>Calisthenics</li>
+                                    <li>Weights</li>
+                                    <li>Yoga</li>
+                                    <li>Hardlopen</li>
+                                </ul>
                             </div>
                         </div>
-                        <div class="skills-container">
-                            <h4>skills</h4>
-                            <ul class="skills">
-                                <li>Calisthenics</li>
-                                <li>Weights</li>
-                                <li>Yoga</li>
-                                <li>Hardlopen</li>
-                                <li>Calisthenics</li>
-                                <li>Weights</li>
-                                <li>Yoga</li>
-                                <li>Hardlopen</li>
-                                <li>Calisthenics</li>
-                                <li>Weights</li>
-                                <li>Yoga</li>
-                                <li>Hardlopen</li>
-                            </ul>
-                        </div>
-                    </div>
-                </a>
-            </li>
+                    </a>
+                </li>
 
 
-        </ul>
+            </ul>
+        </div>
 
 
-
-
-
-
-        <!-- <div class="card-container">
-            <img class="round" src="#" alt="gebruiker">
-            <h3>username</h3>
-            <h4>woonplaats</h4>
-            <p>ingevoerde tekst van de gebruiker...</p>
-            <button class="meer-info">Meer info</button>
-            <div class="skills">
-                <h5>skills</h5>
-                <ul>
-                    <li>Calisthenics</li>
-                    <li>Kracht en Conditie</li>
-                    <li>Revalidatie</li>
-                    <li>Fitness</li>
-                    <li>Yoga</li>
-                    <li>Free Weights</li>
-                </ul>
-            </div>
-        </div> -->
 
 
         <script src="/stylesheets/scripts/overzicht.js"></script>

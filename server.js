@@ -44,6 +44,13 @@ function ensureAuthenticated(req, res, next) {
   }
 }
 
+
+// apps
+
+app.get('/overzicht', (req, res) => {
+  res.render('overzicht');
+});
+
 // Signup Route
 app.get('/register', (req, res) => {
   res.render('register');
