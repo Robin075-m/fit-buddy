@@ -19,16 +19,13 @@ document.querySelectorAll('.pill').forEach(pill => {
 })
 
 
-
-
-
 // De kaarten geven een animatie wanneer ze worden geresized
 window.addEventListener('resize', function () {
-  const grid = document.querySelector('.kaarten');
-  grid.style.transition = 'transform 0.5s ease-out';
-  grid.style.transform = 'scale(0.95)'; // Scale down when resizing
+  const kaarten = document.querySelector('.kaarten');
+  kaarten.style.transition = 'transform 0.5s ease-out';
+  kaarten.style.transform = 'scale(0.95)'; // Scale down when resizing
 
   setTimeout(() => {
-    grid.style.transform = 'scale(1)'; // Gaat weer terug naar zijn originele vorm
+   kaarten.style.transform = 'scale(1)'; // De kaarten resetten naar hun originele vorm
   }, 500);
 });
