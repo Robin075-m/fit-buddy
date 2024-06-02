@@ -1,26 +1,65 @@
 :root {
-    --curve: 20;
+    --curve: 10;
 }
 
 
 
-/* mobile */
 
-@media only screen and (min-width: 0) {
+/* filtering */
+.search {
+    border-radius: 1em;
+    padding: 0.5em;
+    font-size: 1em;
+    border: none;
+}
+
+
+
+.pill {
+    font-size: 12px;
+    padding: 0.5em 1em;
+    margin: 1em 1em 0 0;
+    border-radius: 1em;
+    border: none;
+    outline: none;
+    background-color: white;
+}
+.pill:not(.pill--selected):hover {
+    background-color: #cccccccc;
+}
+
+.pill--selected {
+    background-color: rgba(195, 148, 0, 1);
+    color: #000000;
+}
+
+/* mobile en default */
 
     /* alles in het midden krijgen */
-    body {
+   main {
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
         min-height: 100vh;
+        padding-top: 2em;
     }
 
-    #nameList {
+    h2 {
+        color: white;
+        font-size: 3em;
+        margin-bottom: 0.5em;
+        text-transform: uppercase;
+    }
+    
+
+    #mainSection {
         margin: 3rem 5vw;
         margin-bottom: 5em;
     }
+
+
+ 
 
     .kaarten list {
         display: grid;
@@ -29,15 +68,17 @@
         margin: 3rem 5vw;
         margin-bottom: 5em;
         filter: opacity(50%);
+        
     }
 
     .kaart {
         position: relative;
         display: block;
-        height: 100%;
+        min-height: 100%;
         border-radius: calc(var(--curve) * 1px);
         overflow: hidden;
         margin-top: 2em;
+        filter: drop-shadow(rgb(25, 25, 25) 0rem 1rem 20px);
     }
 
     .banner {
@@ -72,6 +113,8 @@
         transform: translateY(-100%);
         transition: .2s ease-in-out;
         background-color: hsl(0, 0%, 40%);
+        filter: drop-shadow(rgb(25, 25, 25) 0 0.5px 20px);
+        
     }
 
     .kaart:hover .kaart_header {
@@ -84,9 +127,8 @@
         width: 50px;
         height: 50px;
         border-radius: 50%;
+         filter: drop-shadow(rgb(25, 25, 25) 1px 5px 8px);
     }
-
-
 
 
     /* alles onder profiel foto */
@@ -94,13 +136,14 @@
     .skills-container {
         padding: 0em 2em 2em;
         text-align: left;
+        height: 140px;
+        overflow: auto;
     }
 
     .skills-container h4 {
         font-size: 1.1em;
-        text-transform: uppercase;
+        /* text-transform: uppercase; */
         margin-top: 1em;
-
     }
 
     .skills {
@@ -114,21 +157,51 @@
 
     .skills li {
         border: 1px solid hsl(100%, 100%, 100%);
-        border-radius: 0.5em;
-        padding: 0.4em;
-        background-color: hsl(0, 100%, 100%);
-        color: hsl(0, 0%, 0%);
+        border-radius: 0.3em;
+        padding: 0.5em;
+        background-color: rgb(41, 40, 40);
+        color: hsl(0, 0%, 100%);
+
     }
-}
+
 
 /* Desktop ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 
-@media only screen and (min-width: 768px) {
+
+
+@media only screen and (min-width: 700px) {
 
     .kaarten {
         display: grid;
         gap: 2em;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
+
+  .filter{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .pills {
+    display: flex;
+  }
+
+  .pill{
+    margin: 0 1em 0 0;
+  }
+
+}
+
+
+@media only screen and (min-width: 900px) {
+
+    .kaarten {
+        display: grid;
+        gap: 2em;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    
 
 }
