@@ -1,130 +1,134 @@
-
 :root {
     --curve: 20;
 }
 
-  /* alles in het midden krijgen */
 
-body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    min-height: 100vh;
+
+/* mobile */
+
+@media only screen and (min-width: 0) {
+
+    /* alles in het midden krijgen */
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+
+    #nameList {
+        margin: 3rem 5vw;
+        margin-bottom: 5em;
+    }
+
+    .kaarten list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin: 3rem 5vw;
+        margin-bottom: 5em;
+        filter: opacity(50%);
+    }
+
+    .kaart {
+        position: relative;
+        display: block;
+        height: 100%;
+        border-radius: calc(var(--curve) * 1px);
+        overflow: hidden;
+        margin-top: 2em;
+    }
+
+    .banner {
+        width: 100%;
+        height: auto;
+    }
+
+    /* tekst  */
+    .kaart_overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 1;
+        border-radius: calc(var(--curve) * 1px);
+        transform: translateY(100%);
+        transition: .2s ease-in-out;
+        background-color: hsl(0, 0%, 30%);
+    }
+
+    /* zorgt ervoor dat de descriptie naar boven komt */
+    .kaart:hover .kaart_overlay {
+        transform: translateY(0);
+    }
+
+    .kaart_header {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 2em;
+        padding: 2em;
+        transform: translateY(-100%);
+        transition: .2s ease-in-out;
+        background-color: hsl(0, 0%, 40%);
+    }
+
+    .kaart:hover .kaart_header {
+        transform: translateY(0);
+    }
+
+    .profielfoto {
+        flex-shrink: 0;
+        background-color: rgb(224, 224, 224);
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+    }
+
+
+
+
+    /* alles onder profiel foto */
+
+    .skills-container {
+        padding: 0em 2em 2em;
+        text-align: left;
+    }
+
+    .skills-container h4 {
+        font-size: 1.1em;
+        text-transform: uppercase;
+        margin-top: 1em;
+
+    }
+
+    .skills {
+        margin-top: 1em;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1em;
+        text-align: left;
+    }
+
+
+    .skills li {
+        border: 1px solid hsl(100%, 100%, 100%);
+        border-radius: 0.5em;
+        padding: 0.4em;
+        background-color: hsl(0, 100%, 100%);
+        color: hsl(0, 0%, 0%);
+    }
 }
 
-#nameList {
-    margin: 3rem 5vw;
-    margin-bottom: 5em; 
+/* Desktop ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+@media only screen and (min-width: 768px) {
+
+    .kaarten {
+        display: grid;
+        gap: 2em;
+        grid-template-columns: repeat(4, 1fr);
+    }
+
 }
-
-
-#nameList {
-    margin: 3rem 5vw;
-    margin-bottom: 5em; 
-}
-
-.kaarten list{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin: 3rem 5vw;
-    margin-bottom: 5em; 
-    filter: opacity(50%);
-}
-
-.kaart {
-    position: relative;
-    display: block;
-    height: 100%;
-    border-radius: calc(var(--curve) * 1px);
-    overflow: hidden;
-    margin-top: 2em;
-}
-
-.banner {
-    width: 100%;
-    height: auto;
-}
-
-/* tekst:  */
-.kaart_overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 1;
-    border-radius: calc(var(--curve) * 1px); 
-    transform: translateY(100%);
-    transition: .2s ease-in-out;
-    background-color: hsl(0, 0%, 30%);
-}
-
-/* zorgt ervoor dat de descriptie naar boven komt */
-.kaart:hover .kaart_overlay {
-  transform: translateY(0);
-}
-
-.kaart_header {
-    position: relative;
-    display: flex;
-    align-items: center;
-    gap: 2em;
-    padding: 2em;
-    transform: translateY(-100%);
-    transition: .2s ease-in-out;
-    background-color: hsl(0, 0%, 40%);
-}
-
-
-.kaart:hover .kaart_header {
-    transform: translateY(0);
-}
-
-
-
-
-
-.profielfoto {
-    flex-shrink: 0;
-    background-color: rgb(224, 224, 224);
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-}
-
-
-
-
-/* alles onder profiel foto */
-
-.skills-container {
-    padding: 0em 2em 2em;
-    text-align: left;
-}
-
-.skills-container h4 {
-  font-size: 1.1em;
-  text-transform: uppercase;
-  margin-top: 1em;
-  
-}
-
-.skills {
-    margin-top: 1em;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1em;
-    text-align: left; 
-}
-
-.skills li {
-    border: 1px solid hsl( 100%, 100%, 100%);
-    border-radius: 0.5em;
-    padding: 0.4em;
-    background-color: hsl( 0, 100%, 100%);
-    color: hsl(0, 0%, 0%);
-}
-
-
-
