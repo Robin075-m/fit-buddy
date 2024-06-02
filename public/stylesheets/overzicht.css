@@ -18,7 +18,7 @@
 .pill {
     font-size: 12px;
     padding: 0.5em 1em;
-    margin: 1em 1em 0 0;
+    margin: 2em 1em 0 0;
     border-radius: 1em;
     border: none;
     outline: none;
@@ -33,16 +33,18 @@
     color: #000000;
 }
 
+
+.beschikbareBuddies {
+    color: rgb(135, 135, 135);
+    padding-top: 2.1em;
+}
+
+
 /* mobile en default */
 
     /* alles in het midden krijgen */
    main {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        min-height: 100vh;
-        padding-top: 2em;
+    padding-top: 3em;
     }
 
     h2 {
@@ -77,13 +79,19 @@
         min-height: 100%;
         border-radius: calc(var(--curve) * 1px);
         overflow: hidden;
-        margin-top: 2em;
+        margin-top: 1em;
         filter: drop-shadow(rgb(25, 25, 25) 0rem 1rem 20px);
     }
 
     .banner {
         width: 100%;
         height: auto;
+    }
+
+    .banner:hover {
+        opacity: 50%;
+        transition: .2s ease-in-out;
+
     }
 
     /* tekst  */
@@ -114,7 +122,6 @@
         transition: .2s ease-in-out;
         background-color: hsl(0, 0%, 40%);
         filter: drop-shadow(rgb(25, 25, 25) 0 0.5px 20px);
-        
     }
 
     .kaart:hover .kaart_header {
@@ -181,10 +188,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-grow: 1;
   }
 
   .pills {
     display: flex;
+    padding-left: 3em;
   }
 
   .pill{
