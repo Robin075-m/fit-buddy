@@ -130,6 +130,21 @@ app.get('/trainers', ensureAuthenticated, async (req, res) => {
   }
 });
 
+// Detailpagina
+app.get('/detailpagina', (req, res) => {
+  res.render('detailpagina');
+});
+
+// Trendingworkouts
+app.get('/trendingworkouts', (req, res) => {
+  res.render('trendingworkouts');
+});
+
+// Profiel
+app.get('/mijnprofiel', (req, res) => {
+  res.render('profiel');
+});
+
 app.listen(process.env.PORT, () => {
   console.log('De server draait op poort 3000');
 });
