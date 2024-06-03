@@ -53,15 +53,11 @@
         margin-bottom: 0.5em;
         text-transform: uppercase;
     }
-    
 
     #mainSection {
         margin: 3rem 5vw;
         margin-bottom: 5em;
     }
-
-
- 
 
     .kaarten list {
         display: grid;
@@ -70,7 +66,6 @@
         margin: 3rem 5vw;
         margin-bottom: 5em;
         filter: opacity(50%);
-        
     }
 
     .kaart {

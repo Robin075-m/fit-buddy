@@ -145,6 +145,12 @@ app.get('/mijnprofiel', (req, res) => {
   res.render('profiel');
 });
 
+// Over ons
+app.get('/overons', (req, res) => {
+  res.render('overons');
+});
+
+
 app.listen(process.env.PORT, () => {
   console.log('De server draait op poort 3000');
 });

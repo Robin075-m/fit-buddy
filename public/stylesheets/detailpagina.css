@@ -1,0 +1,29 @@
+*{
+    color: white;
+}
+
+main{
+    margin-top: 3em;
+    padding: 2em;
+}
+
+h2 {
+    text-transform: uppercase;
+}
+
+.profielBox {
+    margin-top: 2em;
+    background: gray;
+    padding: 12em 0 12em 0;
+    border-radius: 0.2em;
+    width: 100%;
+}
+
+
+.skillList{
+    margin-top: 3em;
+}
+
+.overMij{
+    margin-top: 3em;
+}
