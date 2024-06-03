@@ -1,5 +1,9 @@
 /* Fonts */
 
+:root {
+    --main-tekst: white;
+}
+
 @font-face {
     font-family: 'monument extended';
     src: url(public/stylesheets/fonts/MonumentExtended-Regular.otf);
