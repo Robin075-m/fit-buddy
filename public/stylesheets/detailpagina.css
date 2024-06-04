@@ -53,7 +53,6 @@ h3{
 .container {
     position: relative;
     width: 100%;
-    background-color: #fff;
     min-height: 100vh;
     padding: 2rem;
     margin-top: 2em;
@@ -64,6 +63,9 @@ h3{
     justify-content: center;
 }
 
+
+/* styling form */
+
 .form {
     width: 100%;
     max-width: 820px;
@@ -71,4 +73,61 @@ h3{
     background-color: #fafafa;
     border-radius: 10px;
     box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.contact-info{
+    background-color: rgb(255, 255, 255);
+}
+
+
+.contact-form{
+    background-color: rgb(78, 78, 78);
+    position: relative;
+}
+
+.contact-form::before{
+    content: "";
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    background-color:  rgb(78, 78, 78);
+    transform: rotate(45deg);
+    top: 50px;
+    left: -13px;
+}
+
+
+
+/* styling circletjes */
+.circle {
+    border-radius: 50%;
+    background: linear-gradient(135deg, transparent 20%,rgb(78, 78, 78));
+    position: absolute;
+}
+
+.circle.one{
+    width: 130px;
+    height: 130px;
+    top: 130px;
+    right: -40px;
+    background-color: rgb(167, 127, 127);
+}
+
+.circle.two{
+    width: 80px;
+    height: 80px;
+    top: 10px;
+    right: 30px;
+    background-color: rgb(167, 127, 127);
+}
+
+form {
+    padding: 2.3rem 2.2rem;
+    z-index: 10;
+    overflow: hidden;
+    position: relative;
 }
