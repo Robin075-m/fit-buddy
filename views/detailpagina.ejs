@@ -49,7 +49,6 @@
             </div>
         </section>
 
-
         <section>
             <article class="skillList">
                 <h3>Skills</h3>
@@ -72,56 +71,86 @@
         </section>
 
 
-        <div class="container">
-            <div class="form">
-                <div class="contact-info"></div>
-
-                <div class="contact-form">
-                    <span class="circle one"></span>
-                    <span class="circle two"></span>
-                </div>
-
-                <form action="#" method="post">
-                    <h3 class="title">Contact mij</h3>
-
-                    <div class="input-container">
-                        <input type="text" name="name" class="input">
-                        <label for="">Username</label>
-
+        <div class="containerForm">
+            <div class="left">
+                <h3 class="heading">Get in touch</h3>
+                <p class="text">We are here for you! How can we help?</p>
+                <form action="#">
+                    <div class="inputBox">
+                        <input type="text" name="name" class="name" placeholder="Enter your name">
                     </div>
 
-                        <div class="input-container">
-                            <input type="email" name="email" class="input">
-                            <label for="">Email</label>
-
-
-
-                        </div>
-
-                        <div class="input-container">
-                            <input type="tel" name="telefoonnummer" class="input">
-                            <label for="">telefoonnummer</label>
-
-
-                        </div>
-
-
-                        <div class="input-container bericht">
-                           <textarea name="bericht" class="input"></textarea>
-                            <label for="">Stuur een bericht</label>
+                    <div class="inputBox">
+                        <input type="text" name="email" class="email" placeholder="Enter your email adress">
                     </div>
 
-                    <input type="submit" value="Send" class="button">
+                    <div class="inputBox">
+                        <textarea name="message" class="message" placeholder="Enter your message..."></textarea>
+                    </div>
 
+                    <button class="btn">Submit</button>
 
                 </form>
             </div>
-        </div>
+
+            <div class="right">
+                <div class="illustration">
+                    <img src="/stylesheets/images/workoutbackground3.jpeg" alt="#">
+                </div>
+                <div class="contact-info">
+                    <div class="info-box">
+                        <div class="icon">
+                            <ion-icon name="location"></ion-icon>
+                        </div>
+                        <div class="text">
+                            <p>123 Street, New York, USA</p>
+                        </div>
+
+                        <div class="info-box">
+                            <div class="icon">
+                                <ion-icon name="call"></ion-icon>
+                            </div>
+                            <div class="text">
+                                <a href="+123-456-789">+123-456-789</a>
+                            </div>
+
+                            <div class="info-box">
+                                <div class="icon">
+                                    <ion-icon name="mail"></ion-icon>
+                                </div>
+                                <div class="text">
+                                    <a href="mailto:Voorbeeld@mail.com">Voorbeeld@mail.com</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+                <!-- <div class="social-icons">
+                    <a href="#">
+                        <ion-icon name="logo-facebook"></ion-icon>
+                    </a>
+
+                    <a href="#">
+                        <ion-icon name="logo-linkedin"></ion-icon>
+                    </a>
+
+                    <a href="#">
+                        <ion-icon name="instagram"></ion-icon>
+                    </a>
+                </div> -->
+
+
+
 
 
     </main>
 
-    <script src="/stylesheets/scripts/overzicht.js"></script>
+    <script src="/stylesheets/scripts/detailpagina.js"></script>
     <script src="/stylesheets/scripts/index.js"></script>
 </body>
 

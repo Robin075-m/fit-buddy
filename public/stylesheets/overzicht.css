@@ -3,8 +3,6 @@
 }
 
 
-
-
 /* filtering */
 .search {
     border-radius: 1em;
@@ -58,6 +56,14 @@
         margin: 3rem 5vw;
         margin-bottom: 5em;
     }
+    
+    .kaarten {
+        background-color: rgb(31, 31, 31);
+        padding: 1.5em 3em 7em 3em;
+        margin: 1em 0.2em 1em 0.2em;
+        border-radius: 0.4em;
+    }
+
 
     .kaarten list {
         display: grid;
@@ -74,7 +80,7 @@
         min-height: 100%;
         border-radius: calc(var(--curve) * 1px);
         overflow: hidden;
-        margin-top: 1em;
+        margin-top: 2em;
         filter: drop-shadow(rgb(25, 25, 25) 0rem 1rem 20px);
     }
 
