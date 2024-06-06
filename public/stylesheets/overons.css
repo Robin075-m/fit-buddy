@@ -3,7 +3,7 @@
 main {
     margin-top: 8em;
     padding: 2em;
-    animation: fade-inout 4s;
+    animation: fade-inout 3s;
 }
 
 main h2 {
@@ -27,8 +27,4 @@ footer{
     right: 0;
 }
 
-@keyframes fade-inout {
-    0%{opacity: 0;}
-    100%{opacity: 1;}
-}
 

@@ -48,6 +48,7 @@ body {
 
 p {
     font-family: open sans, sans-serif;
+    color: var(--tekst);
 }
 
 h1 {
@@ -60,6 +61,7 @@ h2 {
 
 h3 {
     font-family: open sans bold, sans-serif;
+    color: var(--tekst);
 }
 
 h4 {
@@ -77,10 +79,11 @@ h6 {
 li {
     list-style-type: none;
     font-family: Arial, Helvetica, sans-serif;
+    color: var(--tekst);
 }
 
 a {
-    color: white;
+    color: var(--tekst);
    text-decoration: none;
    cursor: pointer;
 }
@@ -94,3 +97,10 @@ button:hover{
 
 
 
+
+/* Animations */
+
+@keyframes fade-inout {
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}

@@ -18,6 +18,10 @@ footer {
     width: 40;
 }
 
+.socials {
+ margin: 1em 0 1em 0;
+}
+
 .footer-about, .footer-link, .footer-contact{
     flex: 1; 
     margin: 0 10px;
