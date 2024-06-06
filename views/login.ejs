@@ -4,16 +4,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/styles.css">
+    <link rel="stylesheet" href="/stylesheets/navbar.css">
+    <link rel="stylesheet" href="/stylesheets/loginsignup.css">
     <title>Login</title>
 </head>
 <body>
-    <h1>Login</h1>
-    <form action="/login" method="POST">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required><br>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required><br>
-        <button type="submit">Login</button>
-    </form>
-</body>
+    <div class="login-container">
+        
+        <% if (loginError) { %>
+          <div class="alert alert-danger">
+            <%= loginError %>
+          </div>
+        <% } %>
+        <form action="/login" method="post">
+          <div>
+            <h1>Login</h1>
+            <label for="username">Gebruikersnaam</label>
+            <input type="text" id="username" name="username" required>
+          </div>
+          <div>
+            <label for="password">Wachtwoord</label>
+            <input type="password" id="password" name="password" required>
+          </div>
+          <button type="submit">Login</button>
+          <p class="noAccount">No account? Sign up <a href="/register">here</a></p>
+        </form>
+      </div>
+  </body>
 </html>

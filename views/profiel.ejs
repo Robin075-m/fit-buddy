@@ -3,13 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profiel</title>
-
     <link rel="stylesheet" href="/stylesheets/styles.css">
     <link rel="stylesheet" href="/stylesheets/navbar.css">
+    <link rel="stylesheet" href="/stylesheets/loginsignup.css">
 </head>
 <body>
-    
+    <h1>Mijn Profiel</h1>
+    <form action="/mijnprofiel" method="post" enctype="multipart/form-data">
+        <div>
+            <label for="name">Naam</label>
+            <input type="text" id="name" name="name" value="<%= user.name %>" disabled>
+        </div>
+        <div>
+            <label for="username">Gebruikersnaam</label>
+            <input type="text" id="username" name="username" value="<%= user.username %>" disabled>
+        </div>
+        <div>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" value="<%= user.email %>" disabled>
+        </div>
+        <div>
+            <label for="password">Wachtwoord</label>
+            <input type="password" id="password" name="password">
+            <small>Laat leeg om het wachtwoord niet te wijzigen</small>
+        </div>
+        <div>
+            <label for="profileImage">Profielfoto</label>  
+            <% if (user.profileImage) { %>
+                <img src="<%= user.profileImage %>" alt="Profielfoto" width="250">
+            <% } %>
+            <input type="hidden" name="existingProfileImage" value="<%= user.profileImage %>">
+        </div>
+        <button type="submit">Opslaan</button>
+        <a class="logout" href="/logout">Sign out</a>
+    </form>
 </body>
 </html>

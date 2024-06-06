@@ -14,31 +14,40 @@ form {
     margin-top: 50px;
 }
 
+form *{
+    font-family: 'Poppins',sans-serif;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    outline: none;
+    border: none;
+}
+
 form select {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     margin-bottom: 10px;
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
+    appearance: none; /* Remove default dropdown arrow */
+    -webkit-appearance: none; /* Remove default dropdown arrow for Webkit browsers */
+    -moz-appearance: none; /* Remove default dropdown arrow for Mozilla browsers */
     background-color: rgba(255,255,255,0.1);
     background-repeat: no-repeat;
     background-position: right 10px center;
-}
-
+  }
+  
+  /* Hover style for gender selection dropdown */
 form select:hover {
     border-color: #999;
-}
-
+  }
+  
 form select:focus {
     outline: none;
-    border-color: #007bff;
-    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
-}
+    border-color: #007bff; /* Blue border on focus */
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1); /* Blue shadow on focus */
+  }
 
-form h1 {
+form h3 {
     font-size: 32px;
     font-weight: 500;
     line-height: 42px;
@@ -83,5 +92,26 @@ button {
 
 button:hover {
     background-color: rgb(230, 149, 0);
+    transition: 0.5s ease-in-out;
+}
+
+.noAccount {
+    padding-top: 10px;
+    font-weight: 300;
+}
+
+.noAccount a {
+    color: rgb(230, 149, 0);
+}
+
+.logout {
+    background-color: rgb(255, 132, 132);
+    color: red;
+    width: 100%;
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: 3  00;
+    border-radius: 5px;
+    cursor: pointer;
     transition: 0.5s ease-in-out;
 }

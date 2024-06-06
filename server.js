@@ -6,6 +6,7 @@ const multer = require('multer');
 const path = require('path');
 const bcrypt = require('bcrypt');
 const { connectDB, getDB } = require('./config');
+const { ObjectId } = require('mongodb');
 require('dotenv').config();
 
 const app = express();
@@ -15,7 +16,7 @@ connectDB();
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
-app.use('/uploads', express.static('public/uploads')); // Serveer de map 'uploads' statisch voor het opslaan van uploads
+app.use('/uploads', express.static('public/uploads')); // Serve the 'uploads' folder statically
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -28,14 +29,14 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage: storage });
 
-// Sessiebeheer
+// Session management
 app.use(session({
-  secret: 'jouw-geheim', // Vervang 'jouw-geheim' door een willekeurige lange string
+  secret: 'jouw-geheim', // Replace 'jouw-geheim' with a random long string
   resave: false,
   saveUninitialized: true,
 }));
 
-// Middleware om authenticatie te verzekeren
+// Middleware to ensure authentication
 function ensureAuthenticated(req, res, next) {
   if (req.session.userId) {
     return next();
@@ -44,8 +45,7 @@ function ensureAuthenticated(req, res, next) {
   }
 }
 
-
-// apps
+// Routes
 
 app.get('/overzicht', (req, res) => {
   res.render('overzicht');
@@ -69,14 +69,16 @@ app.post('/register', upload.single('profileImage'), async (req, res) => {
     req.session.role = newUser.role;
     res.redirect('/');
   } catch (err) {
-    console.error('Er is een fout opgetreden bij het aanmaken van de gebruiker:', err);
+    console.error('Error occurred while creating the user:', err);
     res.redirect('/register');
   }
 });
 
 // Login Route
 app.get('/login', (req, res) => {
-  res.render('login');
+  const loginError = req.session.loginError;
+  req.session.loginError = null;  // Clear the login error
+  res.render('login', { loginError });
 });
 
 app.post('/login', async (req, res) => {
@@ -88,12 +90,15 @@ app.post('/login', async (req, res) => {
       req.session.userId = user._id;
       req.session.username = user.username;
       req.session.role = user.role;
+      req.session.loginError = null;  // Clear any previous login errors
       res.redirect('/');
     } else {
+      req.session.loginError = 'Login failed, please try again.';
       res.redirect('/login');
     }
   } catch (err) {
-    console.error('Er is een fout opgetreden bij het inloggen:', err);
+    console.error('Error occurred while logging in:', err);
+    req.session.loginError = 'Login failed, please try again.';
     res.redirect('/login');
   }
 });
@@ -102,7 +107,7 @@ app.post('/login', async (req, res) => {
 app.get('/logout', (req, res) => {
   req.session.destroy(err => {
     if (err) {
-      console.error('Er is een fout opgetreden bij het uitloggen:', err);
+      console.error('Error occurred while logging out:', err);
       return res.redirect('/');
     }
     res.clearCookie('connect.sid');
@@ -125,7 +130,7 @@ app.get('/trainers', ensureAuthenticated, async (req, res) => {
     const trainers = await db.collection('users').find({ role: 'trainer' }).toArray();
     res.render('trainers', { trainers });
   } catch (err) {
-    console.error('Er is een fout opgetreden bij het ophalen van de personal trainers:', err);
+    console.error('Error occurred while fetching personal trainers:', err);
     res.redirect('/');
   }
 });
@@ -140,9 +145,41 @@ app.get('/trendingworkouts', (req, res) => {
   res.render('trendingworkouts');
 });
 
-// Profiel
-app.get('/mijnprofiel', (req, res) => {
-  res.render('profiel');
+// Profiel bekijken en bewerken
+app.get('/mijnprofiel', ensureAuthenticated, async (req, res) => {
+  try {
+    const db = getDB();
+    const user = await db.collection('users').findOne({ _id: new ObjectId(req.session.userId) });
+    if (!user) {
+      console.error('User not found');
+      return res.redirect('/');
+    }
+    res.render('profiel', { user });
+  } catch (err) {
+    console.error('Error occurred while fetching the profile:', err);
+    res.redirect('/');
+  }
+});
+
+app.post('/mijnprofiel', ensureAuthenticated, upload.single('profileImage'), async (req, res) => {
+  const { name, username, email, password } = req.body;
+  const profileImage = req.file ? 'uploads/' + req.file.filename : req.body.existingProfileImage;
+  try {
+    const db = getDB();
+    const updateFields = { name, username, email, profileImage };
+
+    // Update password only if a new password is provided
+    if (password) {
+      const hashedPassword = await bcrypt.hash(password, 10);
+      updateFields.password = hashedPassword;
+    }
+
+    await db.collection('users').updateOne({ _id: new ObjectId(req.session.userId) }, { $set: updateFields });
+    res.redirect('/mijnprofiel');
+  } catch (err) {
+    console.error('Error occurred while updating the profile:', err);
+    res.redirect('/mijnprofiel');
+  }
 });
 
 // Over ons
@@ -150,7 +187,6 @@ app.get('/overons', (req, res) => {
   res.render('overons');
 });
 
-
-app.listen(process.env.PORT, () => {
-  console.log('De server draait op poort 3000');
+app.listen(process.env.PORT || 3000, () => {
+  console.log('Server is running on port', process.env.PORT || 3000);
 });
