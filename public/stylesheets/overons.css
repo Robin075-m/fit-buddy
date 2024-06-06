@@ -6,7 +6,7 @@ main {
     animation: fade-inout 4s;
 }
 
-h2 {
+main h2 {
     text-transform: uppercase;
     color:  var(--tekst);
     font-size: 5em;
