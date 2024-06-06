@@ -3,22 +3,21 @@
 }
 
 body {
-    display: flex;
     align-items: center;
     justify-content: center;
-    width: 95vw;
 }
 
 main{
-    padding: 2em;
-    background-color: rgb(34, 33, 33);
-    margin: 4em 1em 2em 2em;
+
+    margin: 6em 1em 2em 2em;
     border-radius: 0.2em;
 }
 
 h2 {
     text-transform: uppercase;
-   color:  var(--main-tekst);
+    font-size: 2.5em;
+    color:  var(--tekst);
+    margin-bottom: 0.2em;
 }
 
 h3{
@@ -26,15 +25,21 @@ h3{
     font-size: 1.3em;
 }
 
+
+.profielContainer{
+    background-color: rgb(34, 33, 33);
+    padding: 2em;
+    border-radius: 0.2em;
+}
+
 .profielBox {
     margin-top: 1em;
-    background: gray;
-    padding: 12em 0 12em 0;
+    background: rgb(35, 34, 34);
     border-radius: 0.2em;
     width: 100%;
-    height: auto;
-    max-width: 600px;
+    height: 25em;
     box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
 }
 
 
@@ -52,29 +57,26 @@ h3{
  background-color: rgb(69, 69, 69);
  padding: 0.5em;
  border-radius: 2em;
- 
 }
 
 .overMij{
     margin-top: 3em;
 }
 
-
-
-
-
 /* Styling form */
 .containerForm {
     position: relative;
+    display: flex;
     width: 100%;
-    max-width: 900px;
     padding: 40px;
     display: flex;
     gap: 80px;
     border-radius: 6px;
-    background-color: gray;
+    background-color: rgb(39, 39, 39);
     margin-top: 3em;
     box-shadow: 0 0 10px  rgba(0, 0, 0, 0.1);
+    justify-content: center;
+    flex-direction: column; /* Om ze */
 }
 
 .left{
@@ -109,10 +111,10 @@ form{
    padding: 10px;
    font-size: 16px;
    border-radius: 5px;
-   color: gray;
+   color: rgb(48, 48, 48);
    border: none;
    outline: none;
-   background-color: darkgray;
+   background-color: rgb(30, 30, 30);
 }
 .inputBox input::placeholder,
 .inputBox textarea::placeholder {

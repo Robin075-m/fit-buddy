@@ -13,62 +13,40 @@
 </head>
 
 <body>
-    <header>
-        <!--HamBurger Icon-->
-        <div class="bars" id="nav-action">
-            <span class="bar"> </span>
-        </div>
-
-        <!--Navbar Links-->
-        <nav id="nav">
-            <ul class="navlist">
-                <li class="shape-circle circle-one"><a href="#">Plan Maken</a></li>
-                <li class="shape-circle circle-two">
-                    <a href="#">Trending Workouts</a>
-                </li>
-                <li class="shape-circle circle-three"><a href="#">Over Ons</a></li>
-                <li class="shape-circle circle-five">
-                    <a href="#">Home</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
+    <%-include ('nav.ejs')%> 
 
     <main>
 
-        <button class="terug"> <img src="" alt="#"> </button>
+        <!-- <button class="terug"> <img src="" alt="#"> </button> -->
 
-        <section>
             <h2>Trainer profiel</h2>
-        </section>
 
-        <section>
+        <div class="profielContainer">
             <div class="profielBox">
-                <img src="#" alt="#">
+                <img src="/stylesheets/images/subhaan-saleem-Jf7hr7ZQzg8-unsplash.jpg" alt="#">
                 <h3>Angela</h3>
             </div>
-        </section>
+    
 
-        <section>
-            <article class="skillList">
+      
+            <div class="skillList">
                 <h3>Skills</h3>
                 <ul class="skills">
                     <li>Calisthenics</li>
                     <li>Weights</li>
                     <li>Rehabilitatie</li>
                 </ul>
-            </article>
-        </section>
+            </div>
+     
 
-        <section>
-            <article class="overMij">
+            <div class="overMij">
                 <h3>Over Mij</h3>
                 <p>Hallo! Mijn naam is Angela, en ik ben een gecertificeerde personal trainer met meer dan 10 jaar
                     ervaring in de fitnessindustrie. Mijn passie is om mensen te helpen hun gezondheids- en
                     fitnessdoelen te bereiken door middel van op maat gemaakte trainingsprogramma's en deskundige
                     begeleiding.</p>
-            </article>
-        </section>
+                </div>
+    
 
 
         <div class="containerForm">
@@ -93,7 +71,7 @@
                 </form>
             </div>
 
-            <div class="right">
+            <!-- <div class="right">
                 <div class="illustration">
                     <img src="/stylesheets/images/workoutbackground3.jpeg" alt="#">
                 </div>
@@ -124,10 +102,8 @@
                             </div>
                         </div>
                     </div>
-                </div>
-
-
-            </div>
+                </div> -->
+            <!-- </div> -->
 
 
                 <!-- <div class="social-icons">
@@ -144,11 +120,13 @@
                     </a>
                 </div> -->
 
-
-
+            </div>
 
 
     </main>
+
+    <%-include ('footer.ejs')%> 
+
 
     <script src="/stylesheets/scripts/detailpagina.js"></script>
     <script src="/stylesheets/scripts/index.js"></script>

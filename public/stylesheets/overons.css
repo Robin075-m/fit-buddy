@@ -3,10 +3,10 @@
 main {
     margin-top: 8em;
     padding: 2em;
-    animation: fade-inout 4s;
+    animation: fade-inout 3s;
 }
 
-h2 {
+main h2 {
     text-transform: uppercase;
     color:  var(--tekst);
     font-size: 5em;
@@ -27,8 +27,4 @@ footer{
     right: 0;
 }
 
-@keyframes fade-inout {
-    0%{opacity: 0;}
-    100%{opacity: 1;}
-}
 

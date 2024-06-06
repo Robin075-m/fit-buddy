@@ -1,5 +1,49 @@
 footer {
     background-color: rgb(17, 16, 16);
-    padding: 5em;
     color: var(--tekst);
+}
+
+
+/* zorgt ervoor dat alle items naast elkaar gaan staan */
+.footer-info {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
+   padding: 2em 0;
+}
+
+.about, .contact {
+    width: 40;
+}
+
+.socials {
+ margin: 1em 0 1em 0;
+}
+
+.footer-about, .footer-link, .footer-contact{
+    flex: 1; 
+    margin: 0 10px;
+    min-width: 200px;
+
+}
+
+.footer-about h4, .footer-link h4, .footer-contact h4 {
+    margin-bottom: 15px;
+    font-size: 1.2em;
+    border-bottom: 2px solid var(--tekst);
+    padding-bottom: 5px;
+    text-transform: uppercase;
+}
+
+/* .footer-about p, .footer-link ul, .footer-contact ul {
+    margin: 0;
+    padding: 0;
+} */
+li
+
+
+.footer-about li, .footer-link li, .footer-contact li {
+  margin-bottom: 10px;
 }
