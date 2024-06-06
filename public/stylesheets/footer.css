@@ -1,0 +1,5 @@
+footer {
+    background-color: rgb(17, 16, 16);
+    padding: 5em;
+    color: var(--tekst);
+}

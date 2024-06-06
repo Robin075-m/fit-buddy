@@ -17,26 +17,10 @@
 
 <body>
 
-    <header>
-        <!--HamBurger Icon-->
-        <div class="bars" id="nav-action">
-            <span class="bar"> </span>
-        </div>
 
-        <!--Navbar Links-->
-        <nav id="nav">
-            <ul class="navlist">
-                <li class="shape-circle circle-one"><a href="#">Plan Maken</a></li>
-                <li class="shape-circle circle-two">
-                    <a href="#">Trending Workouts</a>
-                </li>
-                <li class="shape-circle circle-three"><a href="#">Over Ons</a></li>
-                <li class="shape-circle circle-five">
-                    <a href="#">Home</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
+
+<!-- include maakt het overzichtelijker om alles toe te voegen -->
+<%-include ('nav.ejs')%> 
 
     <main>
 
@@ -313,6 +297,8 @@
         <script src="/stylesheets/scripts/overzicht.js"></script>
         <script src="/stylesheets/scripts/index.js"></script>
     </main>
+   
+        <%-include ('footer.ejs')%> 
 
 </body>
 

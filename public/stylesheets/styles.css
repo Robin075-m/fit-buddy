@@ -1,7 +1,7 @@
 /* Fonts */
 
 :root {
-    --main-tekst: white;
+    --tekst: white;
 }
 
 @font-face {

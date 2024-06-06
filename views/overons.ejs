@@ -11,31 +11,15 @@
     <link rel="stylesheet" href="/stylesheets/overons.css">
 </head>
 <body>
-    <header>
-             <!--HamBurger Icon-->
-             <div class="bars" id="nav-action">
-                <span class="bar"> </span>
-            </div>
-    
-            <!--Navbar Links-->
-            <nav id="nav">
-                <ul class="navlist">
-                    <li class="shape-circle circle-one"><a href="#">Plan Maken</a></li>
-                    <li class="shape-circle circle-two">
-                        <a href="#">Trending Workouts</a>
-                    </li>
-                    <li class="shape-circle circle-three"><a href="#">Over Ons</a></li>
-                    <li class="shape-circle circle-five">
-                        <a href="#">Home</a>
-                    </li>
-                </ul>
-    </header>
+
+    <%-include ('nav.ejs')%> 
 
     <main>
-
         <h2>Over ons</h2>
-        <p>kjnlnjnljnlanfnsdkflnsdkfjnaslkfjnaskjf</p>
+        <p>Bij FitBuddy geloven we dat een gezonde levensstijl voor iedereen toegankelijk moet zijn. Wij zijn er om je te ondersteunen op jouw fitnessreis, ongeacht je startpunt of doelstellingen. Ons team van enthousiaste fitnessprofessionals staat klaar om je te begeleiden naar een fitter, gezonder en gelukkiger leven.</p>
     </main>
+
+    <%-include ('footer.ejs')%> 
 
 
     <script src="/stylesheets/scripts/overzicht.js"></script>
