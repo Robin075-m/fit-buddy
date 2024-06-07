@@ -187,6 +187,11 @@ app.get('/overons', (req, res) => {
   res.render('overons');
 });
 
+// Over ons
+app.get('/index', (req, res) => {
+  res.render('index');
+});
+
 app.listen(process.env.PORT || 3000, () => {
   console.log('Server is running on port', process.env.PORT || 3000);
 });

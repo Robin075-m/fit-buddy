@@ -4,34 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="/fit-buddy/public/stylesheets/navbar.css" />
-    <link rel="stylesheet" href="/stylesheets/navbar.css" />
+    <link rel="stylesheet" href="/stylesheets/styles.css" />
+    <link rel="stylesheet" href="/stylesheets/banner.css" />
   </head>
   <body>
-    <header>
-      <!--HamBurger Icon-->
-      <div class="bars" id="nav-action">
-        <span class="bar"> </span>
-      </div>
 
-      <!--Navbar Links-->
-      <nav id="nav">
-        <ul class="navlist">
-          <li class="shape-circle circle-one"><a href="#">Plan Maken</a></li>
-          <li class="shape-circle circle-two">
-            <a href="#">Trending Workouts</a>
-          </li>
-          <li class="shape-circle circle-three"><a href="#">Over Ons</a></li>
-          <li class="shape-circle circle-five">
-            <a href="#">Home</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
+    <%-include ('nav.ejs')%> 
+
     <Main>
-      <section>
-        <p>Hallo!</p>
-      </section>
+     
+    <%-include ('banner.ejs')%> 
+
     </Main>
   </body>
   <script src="/fit-buddy/public/stylesheets/js/index.js"></script>
