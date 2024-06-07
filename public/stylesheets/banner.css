@@ -15,7 +15,7 @@
     top: 8em;
     transform: translateY(70%);
     left: 70%;
-    border-radius: 20px;
+    border-radius: 5px;
     box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
     background-position: 50% 50%;
     background-size: cover;
@@ -75,7 +75,8 @@
     text-transform: uppercase;
     font-weight: bold;
     line-height: 1;
-    color: red;
+    color: var(--accent-kleur);
+    text-shadow: 3px 4px 7px rgba(0, 0, 0, 0.4);
 
     opacity: 0;
     animation: animate 1s ease-in-out 0.3s 1 forwards;
@@ -142,7 +143,7 @@
    .arrows {
     position: absolute;
     top: 80%;
-    right: 52%;
+    right: -2%;
     z-index: 100;
     width: 300px;
     max-width: 30%;
@@ -155,7 +156,7 @@
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background-color: red;
+    background-color: var(--accent-kleur);
     color: white;
     border: none;
     outline: none;
@@ -175,10 +176,11 @@
     z-index: 1000;
     width: 0%;
     height: 3.5em;
-    background-color: rgb(66, 78, 191);
+    background-color: var(--accent-kleur);
+    opacity: 80%;
     left: 0;
     top: 0;
-    animation: runningTime 7s linear 1 forwards;
+    animation: runningTime 10s linear 1 forwards;
 
    }
 

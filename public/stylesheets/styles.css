@@ -1,7 +1,9 @@
-/* Fonts */
+
 
 :root {
     --tekst: white;
+    --accent-kleur: #f2bf33;
+    color-scheme: dark; /*  Donkere scroll bar*/
 }
 
 @font-face {

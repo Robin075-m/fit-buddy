@@ -8,7 +8,7 @@ const item = document.querySelectorAll('.item')
 const runningTime = document.querySelector('.timeRunning')
 
 let timeRunning = 3000
-let timeAutoNext = 7000
+let timeAutoNext = 10000
 
 nextBtn.onclick = function() {
     showslider('next')
@@ -27,7 +27,7 @@ function resetTimeAnimation() {
     runningTime.style.animation = 'none'
     runningTime.offsetHeight /* zorgt evoor dat de bar bovenaan reset*/
     runningTime.style.animation = null
-    runningTime.style.animation = 'runningTime 7s linear 1 forwards'
+    runningTime.style.animation = 'runningTime 10s linear 1 forwards'
 
 }
 
