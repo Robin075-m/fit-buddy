@@ -6,6 +6,10 @@
     color-scheme: dark; /*  Donkere scroll bar*/
 }
 
+
+body {
+      overflow-x: hidden; /* Hide horizontal scrollbar */
+}
 @font-face {
     font-family: 'monument extended';
     src: url(public/stylesheets/fonts/MonumentExtended-Regular.otf);
