@@ -118,24 +118,38 @@
 
 .content .btn button{
    padding: 10px 20px;
-   border: none;
    font-size: 1em;
    border: 2px solid #fff;
+   box-shadow: 3px 4px 7px rgba(0, 0, 0, 0.2);
  }
 
  .content .btn button:nth-child(1){
    margin-right: 15px;
+   background-color: var(--accent-kleur);
+   border-radius: 2em;
+   border: none;
+
   }
+
+  .content .btn button:nth-child(1):hover{
+    margin-right: 15px;
+    background-color:rgb(170, 196, 21);
+    border-radius: 2em;
+    border: none;
+    transition: 0.3s;
+   }
 
   .content .btn button:nth-child(2){
     background: transparent;
     transition: 0.3s;
-    color: gray;
+    color: var(--tekst);
+    border-radius: 2em;
+    background-color: rgba(0, 0, 0, 0.247);
 
    }
 
    .content .btn button:nth-child(2):hover{
-    background-color: darkgray;
+    background-color: var(--accent-kleur);
    }
 
 
@@ -166,13 +180,12 @@
     transition: .5s;
    }
 
-
    .arrows button:hover {
     background: #fff;
     color: black;
    }
 
-   /* Time running */
+   /* Tijdsbalk */
    .carousel .timeRunning {
     position: absolute;
     z-index: 1000;
@@ -185,6 +198,16 @@
     animation: runningTime 10s linear 1 forwards;
 
    }
+
+   marquee {
+  color: var(--accent-kleur);
+  padding: 1em;
+  border-top: 5px solid var(--accent-kleur);
+  /* margin-top: 1em; */
+  text-transform: uppercase;
+  font-size: 1em;
+  opacity: 80%;
+}
 
 
 @keyframes runningTime {
