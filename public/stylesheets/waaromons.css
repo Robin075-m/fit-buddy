@@ -3,20 +3,46 @@
 .containerCard {
     margin-top: 5em;
     margin: 4em;
-    
+    box-shadow: 3px 4px 7px rgba(0, 0, 0, 0.2);
 }
 
 .cards {
    margin-top: 1em;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 2em;
+    gap: 3em;
+    padding: 0 1em 0 1em;
+    display: flex;
+    justify-content: center;
 
 }
 
 .card {
+    display: flex;
+    display: block;
     background-color: rgb(40, 40, 40);
     height: 20em;
     width: 100%;
     border-radius: 0.3em;
+    padding: 1em 1.5em 0 1.5em;
+    box-shadow: 3px 4px 7px rgba(0, 0, 0, 0.2);
+    
+}
+
+.card h3 {
+    display: block;
+}
+
+.card h4{
+    font-size: 1.3em;
+    text-transform: uppercase;
+    color: var(--accent-kleur);
+    padding-bottom: 0.2em;
+    border-bottom: 3px solid var(--accent-kleur);
+    margin-right: 5em;
+}
+
+.card p{
+    margin-top: 0.5em;
+    font-size: 1em;
 }

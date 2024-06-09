@@ -133,7 +133,8 @@
 
   .content .btn button:nth-child(1):hover{
     margin-right: 15px;
-    background-color:rgb(170, 196, 21);
+     background-color: var(--tekst);
+     color: black;
     border-radius: 2em;
     border: none;
     transition: 0.3s;
@@ -200,7 +201,8 @@
    }
 
    marquee {
-  color: var(--accent-kleur);
+  color: var(--accent-kleur
+  );
   padding: 1em;
   border-top: 5px solid var(--accent-kleur);
   /* margin-top: 1em; */

@@ -1,0 +1,17 @@
+.containerTrainers {
+    background-color: rgb(32, 32, 32);
+    padding: 5em;
+}
+
+.cardTrainers {
+    margin-top: 3em;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 3em;
+    width: 100%;
+    height: 30em;
+}
+
+.cardTrainer {
+    background-color: rgb(44, 44, 44);
+}

@@ -37,11 +37,17 @@ footer {
     text-transform: uppercase;
 }
 
+
+footer a:hover {
+    color: var(--accent-kleur);
+    transition: 0.3s;
+
+}
 /* .footer-about p, .footer-link ul, .footer-contact ul {
     margin: 0;
     padding: 0;
 } */
-li
+
 
 
 .footer-about li, .footer-link li, .footer-contact li {

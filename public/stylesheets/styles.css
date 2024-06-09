@@ -53,7 +53,7 @@ body {
 }
 
 p {
-    font-family: open sans, sans-serif;
+    font-family: "Raleway", sans-serif;
     color: var(--tekst);
 }
 
@@ -71,7 +71,7 @@ h3 {
 }
 
 h4 {
-    font-family: open sans bold, sans-serif;
+    font-family: monument extended, sans-serif;
 }
 
 h5 {
