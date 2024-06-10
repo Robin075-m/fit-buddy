@@ -1,6 +1,7 @@
 .containerTrainers {
     background-color: rgb(32, 32, 32);
-    padding: 5em;
+    padding: 0 5em 0 5em;
+  
 }
 
 .cardTrainers {
@@ -13,5 +14,5 @@
 }
 
 .cardTrainer {
-    background-color: rgb(44, 44, 44);
+
 }

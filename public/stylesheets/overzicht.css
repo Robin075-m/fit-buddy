@@ -1,7 +1,15 @@
 :root {
     --curve: 10;
 }
+ 
+.naam {
+    font-family:  open sans bold, sans-serif;
+}
 
+
+.kaart_header_tekst {
+    font-size: 3vw;
+}
 
 /* filtering */
 .search {
@@ -21,6 +29,7 @@
     border: none;
     outline: none;
     background-color: white;
+    color: black;
 }
 .pill:not(.pill--selected):hover {
     background-color: #cccccccc;
@@ -180,6 +189,11 @@
 
 @media only screen and (min-width: 700px) {
 
+
+
+.kaart_header_tekst {
+    font-size: 2vw;
+}
     .kaarten {
         display: grid;
         gap: 2em;
@@ -206,6 +220,10 @@
 
 
 @media only screen and (min-width: 900px) {
+
+    .kaart_header_tekst {
+        font-size: 1.2vw;
+    }
 
     .kaarten {
         display: grid;
