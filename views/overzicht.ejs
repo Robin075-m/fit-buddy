@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,293 +11,63 @@
     <link rel="stylesheet" href="/stylesheets/navbar.css">
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/2.3.1/list.min.js"></script>
-
 </head>
-
 <body>
 
-
-
-<!-- include maakt het overzichtelijker om alles toe te voegen -->
-<%-include ('nav.ejs')%> 
-
-    <main>
-
-        <!-- kaarten die opkomen -->
-
-        <div id="mainSection">
-
-            <h2 class="countUsers">Personal Trainers</h2>
-           
-           
-            <div class="filter">
-
-                <input type="search" class="search" placeholder="Filter op naam...">
-
-                <div class="pills">
-                    <button class="pill" type="button">24 hours</button>
-                    <button class="pill" type="button">Top Trainers</button>
-                    <button class="pill" type="button">Skills</button>
-                    <button class="pill" type="button">Beschikbaarheid</button>
+    <%- include('nav.ejs') %>
+    
+        <main>
+            <div id="mainSection">
+                <h2 class="countUsers">Personal Trainers</h2>
+                <div class="filter">
+                    <input type="search" class="search" placeholder="Filter op naam...">
+                    <div class="pills">
+                        <button class="pill" type="button">24 hours</button>
+                        <button class="pill" type="button">Top Trainers</button>
+                        <button class="pill" type="button">Skills</button>
+                        <button class="pill" type="button">Beschikbaarheid</button>
+                    </div>
                 </div>
+                <p class="beschikbareBuddies"><%= trainers ? trainers.length : 0 %> Buddies Beschikbaar</p>
+                <ul class="kaarten list">
+                    <% if (trainers) { %>
+                        <% trainers.forEach(trainer => { %>
+                            <li>
+                                <a href="#" class="kaart">
+                                    <img class="banner" src="<%= trainer.bannerImage || '/stylesheets/images/shoulder.jpeg' %>" alt="">
+                                    <div class="kaart_overlay">
+                                        <div class="kaart_header">
+                                            <img class="profielfoto" src="<%= trainer.profielfoto || '/stylesheets/images/trainer2.png' %>" alt="">
+                                            <div class="kaart_header_tekst">
+                                                <h3><span class="naam"><%= trainer.naam %></span></h3>
+                                                <p>Geslacht: <%= trainer.gender %></p>
+                                                <p>Beschikbaar op: <%= trainer.beschikbaarheid.join(', ') %></p>
+                                            </div>
+                                        </div>
+                                        <div class="skills-container">
+                                            <h4>Skills</h4>
+                                            <ul class="skills">
+                                                <% Array.isArray(trainer.expertise) && trainer.expertise.forEach(skill => { %>
+                                                    <li><%= skill %></li>
+                                                <% }) %>
+                                                <% if (!Array.isArray(trainer.expertise)) { %>
+                                                    <li><%= trainer.expertise %></li>
+                                                <% } %>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        <% }) %>
+                    <% } else { %>
+                        <li>Geen trainers beschikbaar</li>
+                    <% } %>
+                </ul>
             </div>
-
-            <p class="beschikbareBuddies">8 Buddies Beschikbaar</p>
-
-            <ul class="kaarten list">
-                <li>
-                    <a href="#" class="kaart">
-                        <img class="banner" src="/stylesheets/images/shoulder.jpeg" alt="">
-                        <div class="kaart_overlay">
-                            <div class="kaart_header">
-                                <!-- <svg class="arc">   </svg> -->
-                                <img class="profielfoto" src="/stylesheets/images/trainer2.png" alt="">
-                                <div class="kaart_header_tekst">
-                                    <h3><span class="naam">Fransisca</span></h3>
-                                    <p>Beschikbaar op: ma, di , do</p>
-                                </div>
-                            </div>
-                            <div class="skills-container">
-                                <h4>Skills</h4>
-                                <ul class="skills">
-                                    <li>Calisthenics</li>
-                                    <li>Weights</li>
-                                    <li>Yoga</li>
-                                    <li>Hardlopen</li>
-                                    <li>Calisthenics</li>
-
-                                </ul>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-
-
-                <li>
-                    <a href="#" class="kaart">
-                        <img class="banner" src="/stylesheets/images/shoulder.jpeg" alt="">
-                        <div class="kaart_overlay">
-                            <div class="kaart_header">
-                                <!-- <svg class="arc">   </svg> -->
-                                <img class="profielfoto" src="/stylesheets/images/trainer2.png" alt="">
-
-                                <div class="kaart_header_tekst">
-                                    <h3><span class="naam">Jan</span></h3>
-                                    <p>Beschikbaar op: ma, do</p>
-                                </div>
-                            </div>
-
-                            <div class="skills-container">
-                                <h4>Skills</h4>
-                                <ul class="skills">
-                                    <li>Calisthenics</li>
-                                    <li>Weights</li>
-                                    <li>Yoga</li>
-                                    <li>Hardlopen</li>
-                                    <li>Calisthenics</li>
-                                    <li>Weights</li>
-                                    <li>Yoga</li>
-                                    <li>Hardlopen</li>
-                                    <li>Calisthenics</li>
-                                    <li>Weights</li>
-                                    <li>Yoga</li>
-                                    <li>Hardlopen</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#" class="kaart">
-                        <img class="banner" src="/stylesheets/images/shoulder.jpeg" alt="">
-                        <div class="kaart_overlay">
-                            <div class="kaart_header">
-                                <!-- <svg class="arc">   </svg> -->
-                                <img class="profielfoto" src="/stylesheets/images/subhaan-saleem-Jf7hr7ZQzg8-unsplash.jpg" alt="">
-                                <div class="kaart_header_tekst">
-                                    <h3><span class="naam">Subhaan</span></h3>
-                                    <p>Beschikbaar op: do</p>
-                                </div>
-                            </div>
-                            <div class="skills-container">
-                                <h4>Skills</h4>
-                                <ul class="skills">
-                                    <li>Calisthenics</li>
-                                    <li>Weights</li>
-                                    <li>Yoga</li>
-                                    <li>Hardlopen</li>
-                                    <li>Calisthenics</li>
-
-                                </ul>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-
-
-                <li>
-                    <a href="#" class="kaart">
-                        <img class="banner" src="/stylesheets/images/shoulder.jpeg" alt="">
-                        <div class="kaart_overlay">
-                            <div class="kaart_header">
-                                <!-- <svg class="arc">   </svg> -->
-                                <img class="profielfoto" src="/stylesheets/images/trainer2.png" alt="">
-
-                                <div class="kaart_header_tekst">
-                                    <h3><span class="naam">Ryan</span></h3>
-                                    <p>Beschikbaar op: ma, di , do</p>
-                                </div>
-                            </div>
-
-                            <div class="skills-container">
-                                <h4>Skills</h4>
-                                <ul class="skills">
-                                    <li>Calisthenics</li>
-                                    <li>Weights</li>
-                                    <li>Yoga</li>
-                                    <li>Hardlopen</li>
-                                    <li>Calisthenics</li>
-                                    <li>Weights</li>
-                                    <li>Yoga</li>
-                                    <li>Hardlopen</li>
-                                    <li>Calisthenics</li>
-                                    <li>Weights</li>
-                                    <li>Yoga</li>
-                                    <li>Hardlopen</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#" class="kaart">
-                        <img class="banner" src="/stylesheets/images/shoulder.jpeg" alt="">
-                        <div class="kaart_overlay">
-                            <div class="kaart_header">
-                                <!-- <svg class="arc">   </svg> -->
-                                <img class="profielfoto" src="/stylesheets/images/trainer2.png" alt="">
-                                <div class="kaart_header_tekst">
-                                    <h3><span class="naam">Clara</span></h3>
-                                    <p>Beschikbaar op:  di , do</p>
-                                </div>
-                            </div>
-                            <div class="skills-container">
-                                <h4>Skills</h4>
-                                <ul class="skills">
-                                    <li>Calisthenics</li>
-                                    <li>Weights</li>
-                                    <li>Yoga</li>
-                                    <li>Hardlopen</li>
-                                    <li>Calisthenics</li>
-
-                                </ul>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-
-
-                <li>
-                    <a href="#" class="kaart">
-                        <img class="banner" src="/stylesheets/images/shoulder.jpeg" alt="">
-                        <div class="kaart_overlay">
-                            <div class="kaart_header">
-                                <!-- <svg class="arc">   </svg> -->
-                                <img class="profielfoto" src="/stylesheets/images/trainer2.png" alt="">
-
-                                <div class="kaart_header_tekst">
-                                    <h3><span class="naam">Angela</span></h3>
-                                    <p>Beschikbaar op: ma, di, do, vr</p>
-                                </div>
-                            </div>
-
-                            <div class="skills-container">
-                                <h4>Skills</h4>
-                                <ul class="skills">
-                                    <li>Calisthenics</li>
-                                    <li>Weights</li>
-                                    <li>Yoga</li>
-                                    <li>Hardlopen</li>
-                                    <li>Calisthenics</li>
-                                    <li>Weights</li>
-                                    <li>Yoga</li>
-                                    <li>Hardlopen</li>
-                                    <li>Calisthenics</li>
-                                    <li>Weights</li>
-                                    <li>Yoga</li>
-                                    <li>Hardlopen</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#" class="kaart">
-                        <img class="banner" src="/stylesheets/images/shoulder.jpeg" alt="">
-                        <div class="kaart_overlay">
-                            <div class="kaart_header">
-                                <!-- <svg class="arc">   </svg> -->
-                                <img class="profielfoto" src="/stylesheets/images/trainer2.png" alt="">
-                                <div class="kaart_header_tekst">
-                                    <h3><span class="naam">Jasmijn</span></h3>
-                                    <p>Beschikbaar op: ma, di , do</p>
-                                </div>
-                            </div>
-                            <div class="skills-container">
-                                <h4>Skills</h4>
-                                <ul class="skills">
-                                    <li>Calisthenics</li>
-                                    <li>Weights</li>
-                                    <li>Yoga</li>
-                                    <li>Hardlopen</li>
-                                    <li>Calisthenics</li>
-
-                                </ul>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#" class="kaart">
-                        <img class="banner" src="/stylesheets/images/shoulder.jpeg" alt="">
-                        <div class="kaart_overlay">
-                            <div class="kaart_header">
-                                <!-- <svg class="arc">   </svg> -->
-                                <img class="profielfoto" src="/stylesheets/images/trainer2.png" alt="">
-                                <div class="kaart_header_tekst">
-                                    <h3><span class="naam">Laurent</span></h3>
-                                    <p>Beschikbaar op: ma, di , do</p>
-                                </div>
-                            </div>
-                            <div class="skills-container">
-                                <h4>Skills</h4>
-                                <ul class="skills">
-                                    <li>Calisthenics</li>
-                                    <li>Weights</li>
-                                    <li>Yoga</li>
-                                    <li>Hardlopen</li>
-                                    <li>Calisthenics</li>
-
-                                </ul>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-
-            </ul>
-
-        </div>
-
-
-        <script src="/stylesheets/scripts/overzicht.js"></script>
-    </main>
-   
-        <%-include ('footer.ejs')%> 
-
+            <script src="/stylesheets/scripts/overzicht.js"></script>
+        </main>
+    
+    <%- include('footer.ejs') %>
+    
 </body>
-
 </html>

@@ -47,8 +47,15 @@ function ensureAuthenticated(req, res, next) {
 
 // Routes
 
-app.get('/overzicht', (req, res) => {
-  res.render('overzicht');
+app.get('/overzicht', ensureAuthenticated, async (req, res) => {
+  try {
+    const db = getDB();
+    const trainers = await db.collection('trainers').find().toArray();
+    res.render('overzicht', { trainers });
+  } catch (err) {
+    console.error('Error occurred while fetching trainers:', err);
+    res.redirect('/');
+  }
 });
 
 // Signup Route
