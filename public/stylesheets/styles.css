@@ -3,6 +3,9 @@
 :root {
     --tekst: white;
     --accent-kleur: #f2bf33;
+    --main-tint: #282828;
+    --accent-kleur2: #4D4D4D;
+    --accent-kleur3: #666666;
     color-scheme: dark; /*  Donkere scroll bar*/
 }
 
