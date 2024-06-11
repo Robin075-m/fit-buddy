@@ -1,0 +1,269 @@
+@font-face{font-family:monument extended;
+	font-style:normal;
+	font-weight:400;
+	src:local('Monument Extended'),url(https://fonts.cdnfonts.com/s/19595/MonumentExtended-Regular.woff) format('woff')}
+
+
+@font-face{font-family:monument extended;
+	font-style:normal;
+	font-weight:800;src:local('Monument Extended');
+	src: url(https://fonts.cdnfonts.com/s/19595/MonumentExtended-Ultrabold.woff),
+	format('woff')}
+
+
+:root {
+
+	--main-font: var('Monument Extended'font-weight:400);
+	--content-font: ('Monument Extended'font-weight:400;);
+	--h3-font: ('Monument Extended', );
+	--main-color: #fff;
+	--icon-color: #95e1d3;
+
+  }
+
+/* General Styles */
+
+
+
+
+body{
+	background-color: #000000;
+}
+
+/* Main Header Styles */
+
+
+/* Section-1 Styles */
+#section-1 {
+	height: 90vh;
+	color: var(--main-color);
+	background-color: #000000;
+	.content-slider {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		input {display: none;}
+		.slider {
+			position: relative;
+			width: inherit;
+			height: inherit;
+			overflow: hidden;
+			.banner {
+				position: absolute;
+				top: 0%;
+				left: 0%;
+				opacity: 0;
+				z-index: 0;
+				width: inherit;
+				height: inherit;
+				background-repeat: no-repeat;
+				background-position: 50% 50%;
+				transition: all .5s ease;
+				.banner-inner-wrapper {
+					height: 100%;
+				
+					box-sizing: border-box;
+					h1 {
+						padding-bottom: 0.3em;
+						font-family: var(--h3-font);			
+			position: relative;
+						text-transform: none;
+						
+					
+				
+					h2 {
+				
+						line-height: 85%;
+				position: relative;}
+			
+					
+					}
+					.line {
+
+						
+						
+						height: 0.1875em;
+			
+						background: var(--main-color);
+			
+							height: 0.1875em;
+			
+				
+							
+							background: var(--main-color);
+					}
+					.learn-more-button {
+						padding-bottom: 5em;
+					
+						z-index: 15 !important;
+						position: relative;
+						a {
+							padding: 0.8em 0.9em;
+							text-align: center;
+							font-family: var(--main-font);
+							font-size: 0.875em;
+							color: var(--main-color);
+							text-transform: uppercase;
+							border: 0.1875em solid var(--main-color);
+							color: #b5d815;
+								border-radius: 20% 20%;
+								text-decoration: none;
+								border-color: #b5d815;
+								transition: .3s;	background-color: rgb(7, 1, 1);
+							}
+						}
+					}
+				}
+			}
+
+			#top-banner-2 {background: url('/stylesheets/images/herofinal.png') no-repeat center  center; background-size:cover ;background-color: #000000;}
+			#top-banner-3 {background: url('/stylesheets/images/goforit.png') no-repeat center center; background-size: cover;}
+		#top-banner-4 {background: url('/stylesheets/images/goforit.png') no-repeat center center; background-size: cover; background-color: #000000;
+			}
+			
+		}
+
+	
+	
+#idk {
+	position: absolute;
+	bottom: 8%;
+
+	width: 100%;
+	z-index: 10;
+	text-align: center;
+	.controls {
+		display: block;
+		width: 60%;
+		margin: 0 auto;
+		font-family:var(--content-font);
+		color:var(--main-color);
+		label {
+			position: relative;
+			display: inline-block;
+			width: 15%;
+			overflow: hidden;
+			margin: 1em;
+	
+			text-align: left;
+			text-transform: uppercase;
+			font-family: var(--content-font);
+			font-size: 0.9em;
+			color:  #ffffff;
+			font-weight: 400;
+			cursor: pointer;
+			
+	
+			
+			.progressbar {
+				position: absolute;
+
+				left: 0;
+				height: 1px;
+				width: 100%;
+				background:  #ffffff;
+				z-index: 100;
+				
+			}
+			
+			&:hover {color: #b5d815;}
+		}
+	}
+}
+#banner1:checked ~ .slider #top-banner-1,
+#banner2:checked ~ .slider #top-banner-2,
+#banner3:checked ~ .slider #top-banner-3,
+#banner4:checked ~ .slider #top-banner-4 {
+	opacity: 1;
+	z-index: 1;
+}
+#banner1:checked ~ nav label:nth-of-type(1),
+#banner2:checked ~ nav label:nth-of-type(2),
+#banner3:checked ~ nav label:nth-of-type(3),
+#banner4:checked ~ nav label:nth-of-type(4) {
+	cursor: default;
+	color: var(--main-color);
+	transition: all .5s;
+}
+#banner1:checked ~ nav label:nth-of-type(1) .progressbar,
+#banner2:checked ~ nav label:nth-of-type(2) .progressbar,
+#banner3:checked ~ nav label:nth-of-type(3) .progressbar,
+#banner4:checked ~ nav label:nth-of-type(4) .progressbar {
+	background: var(--main-color);
+}
+#banner1:checked ~ nav label:nth-of-type(1) .progressbar-fill,
+#banner2:checked ~ nav label:nth-of-type(2) .progressbar-fill,
+#banner3:checked ~ nav label:nth-of-type(3) .progressbar-fill,
+#banner4:checked ~ nav label:nth-of-type(4) .progressbar-fill {
+	animation: progressBarFill 5s linear;
+}
+}
+
+
+/* Animations */
+@keyframes progressBarFill {
+from {margin-left: -100%;}
+to {margin-left: 0;}
+}
+#background-video{
+
+
+		object-fit:cover;
+		
+
+	}
+
+
+	.learn-more-button button {
+		margin-top: 5px;
+		font-family: var(--main-font);
+		padding: 10px 90px;
+	
+		cursor: pointer;
+		font-weight: 500;
+		font-size: 1em;
+	
+		
+		
+	}
+	
+	/* PIERWSZY SPOSOB WYKORZYSTANIE CIENIA */
+	.first{
+		color: #404040;
+		border-radius: 50px 0px 0px 50px;
+	
+		
+		border: none;
+		
+		background:		 #b5d815;
+		box-shadow: inset 0px 0px 0px 0px rgb(18, 6, 6);
+		transition: all 0.5s ease-in-out;		
+	
+	}
+	.first:hover{
+		box-shadow: inset 0px -200px 0px 0px rgb(255, 255, 255);
+	}
+	
+	/* DRUGI SPOSOB DLUZSZY ALE BARDZIEJ UNIWERSALNY*/
+	.sec{
+		
+		border: none;
+		
+		background:		 #b5d815;
+		box-shadow: inset 0px 0px 0px 0px rgb(18, 6, 6);
+		transition: all 0.5s ease-in-out;		
+		color: #404040;
+	
+	
+border: none;
+		border-radius: 5px 50px 50px 0px;
+	
+
+		
+
+
+	}
+	.sec:hover{
+		box-shadow: inset 0px -200px 0px 0px rgb(255, 255, 255);
+	}
+	

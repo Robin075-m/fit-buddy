@@ -202,3 +202,7 @@ app.get('/index', (req, res) => {
 app.listen(process.env.PORT || 3000, () => {
   console.log('Server is running on port', process.env.PORT || 3000);
 });
+
+app.get('/test', (req, res) => {
+  res.render('newhomepage');
+});

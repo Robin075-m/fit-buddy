@@ -1,0 +1,100 @@
+
+.aboutus {
+ 
+    background: #000000;
+
+margin-top: 5em;
+}
+
+.aboutus .outer {
+
+	background-color: #171616;
+	height: 70vh;
+width: 80vw;
+
+position: relative;
+left: 9%;
+
+}
+
+.aboutus img {
+position: relative;
+left: 55%;
+top:-150%;
+
+}
+
+
+
+.aboutus h1 {
+	color: #ffffff;
+	position: relative;
+	top: 15%;
+	font-family: var(--content-font);
+	font-size: 4em;
+	left: 10%;
+}
+
+.aboutus h1 span{
+	color:#b5d815;
+
+margin-top: 0;
+
+	font-size: 1em;
+	
+}
+
+.aboutus  p {
+	width: 550px;
+	font-size: 0.5em;
+	line-height: 1.4;
+	color: #aaa;
+bottom:-8%;
+	position: relative;
+font-size: 15px;
+	text-align: left;
+	left: 10.3%;
+	font-family: var(--main-font);
+}
+
+
+.aboutus  .button {
+	width: 100%;
+	height: 100%;
+bottom: -10%;
+	left: 10.2%;
+	position: relative;
+	
+}
+
+.aboutus  .button a {
+	display: inline-block;
+	overflow: hidden;
+	position: relative;
+	font-size: 11px;
+	color: #b5d815;
+	text-decoration: none;
+	padding: 10px 20px;
+	border: 1px solid #aaa;
+	font-weight: bold;
+
+	
+}
+
+
+
+
+
+.aboutus .button a:hover {
+	color: rgb(0, 0, 0);
+	background-color:#b5d815;
+	border: #b5d815 solid 1px;
+	transition: all 0.5s ease;
+}
+
+
+.aboutus .button a {
+	border-radius: 5px 50px 50px 0px;
+padding-right: 48px;
+
+}
