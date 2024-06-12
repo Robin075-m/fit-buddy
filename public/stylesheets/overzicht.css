@@ -2,16 +2,33 @@
     --curve: 10;
 }
  
-.naam {
-    font-family:  open sans bold, sans-serif;
-}
+
 
 
 .kaart_header_tekst {
     font-size: 3vw;
+    border-left: 5px solid var(--accent-kleur3);
+    padding-left: 1em;
 }
 
+.naam {
+    font-family:  monument extended, sans-serif;
+   
+}
+
+.beschikbaarheid {
+    margin-top: 0.6em;
+}
+
+
+
 /* filtering */
+
+
+.filter {
+    padding-bottom: 1.5em;
+    border-bottom: 2px solid var(--accent-kleur);
+}
 .search {
     border-radius: 1em;
     padding: 0.5em;
@@ -67,10 +84,11 @@
     }
     
     .kaarten {
-        background-color: rgb(31, 31, 31);
-        padding: 1.5em 3em 7em 3em;
-        margin: 1em 0.2em 1em 0.2em;
+
+        /* padding: 1.5em 3em 7em 3em; */
+         margin: 0em 0em 0em 0em; 
         border-radius: 0.4em;
+        
     }
 
 
@@ -89,9 +107,10 @@
         min-height: 100%;
         border-radius: calc(var(--curve) * 1px);
         overflow: hidden;
-        margin-top: 2em;
+        margin-top: 1em;
         filter: drop-shadow(rgb(25, 25, 25) 0rem 1rem 20px);
         animation: fade-inout 1.5s;
+        
     }
 
     .banner {
@@ -115,7 +134,7 @@
         border-radius: calc(var(--curve) * 1px);
         transform: translateY(100%);
         transition: .2s ease-in-out;
-        background-color: hsl(0, 0%, 30%);
+        background-color: var(--main-tint);
     }
 
     /* zorgt ervoor dat de descriptie naar boven komt */
@@ -131,8 +150,9 @@
         padding: 2em;
         transform: translateY(-100%);
         transition: .2s ease-in-out;
-        background-color: hsl(0, 0%, 40%);
+        background-color: var(--main-tint);
         filter: drop-shadow(rgb(25, 25, 25) 0 0.5px 20px);
+
     }
 
     .kaart:hover .kaart_header {
@@ -156,12 +176,14 @@
         text-align: left;
         height: 140px;
         overflow: auto;
+        background-color: var(--main-tint2);
+        border-top: 3px solid var(--accent-kleur);
     }
 
     .skills-container h4 {
         font-size: 1.1em;
-        /* text-transform: uppercase; */
-        margin-top: 1em;
+        text-transform: uppercase;
+        margin-top: 1.3em;
     }
 
     .skills {
@@ -175,10 +197,11 @@
 
     .skills li {
         border: 1px solid hsl(100%, 100%, 100%);
-        border-radius: 0.3em;
-        padding: 0.5em;
-        background-color: rgb(41, 40, 40);
+        border-radius: 2em;
+        padding: 10px 20px;
+        background-color: var(--accent-kleur);
         color: hsl(0, 0%, 100%);
+        box-shadow: 3px 4px 7px rgba(0, 0, 0, 0.2);
 
     }
 
@@ -230,7 +253,4 @@
         gap: 2em;
         grid-template-columns: repeat(3, 1fr);
     }
-
-    
-
 }
