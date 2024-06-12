@@ -13,126 +13,98 @@
 </head>
 
 <body>
-    <%-include ('nav.ejs')%> 
+    <%- include('nav.ejs') %>
 
     <main>
+        <h2>Trainer profile</h2>
 
-        <!-- <button class="terug"> <img src="" alt="#"> </button> -->
-
-            <h2>Trainer profile</h2>
-
-        <div class="profielContainer">
-            <div class="profielBox">
-                <img src="/stylesheets/images/subhaan-saleem-Jf7hr7ZQzg8-unsplash.jpg" alt="#">
-                <h3>Angela</h3>
-            </div>
-    
-
-      
-            <div class="skillList">
-                <h3>Skills</h3>
-                <ul class="skills">
-                    <li>Calisthenics</li>
-                </ul>
-            </div>
-     
-
-            <div class="overMij">
-                <h3>About Me</h3>
-                <p>Hallo! Mijn naam is Angela, en ik ben een gecertificeerde personal trainer met meer dan 10 jaar
-                    ervaring in de fitnessindustrie. Mijn passie is om mensen te helpen hun gezondheids- en
-                    fitnessdoelen te bereiken door middel van op maat gemaakte trainingsprogramma's en deskundige
-                    begeleiding.</p>
+        <div class="algemeneInformatie">
+            <div class="containerProfiel">
+                <div class="profileFotoContainer">
+                    <img src="/stylesheets/images/trainer3 copy.png" alt="">
                 </div>
 
-                <div class="contactGegevens">
-                    <h3>Contact</h3>
-                    <a href="">Email</a>
-                    <a href="">Phone</a>
-                    <a href="">Whatsapp</a>
-                   
+                <div class="rechts">
+                    <div class="naamLocatie">
+                        <ul>
+                            <li>
+                                <h3 class="naam">Naam Persoon</h3>
+                            </li>
+                            <li>
+                                <p class="locatie"><img src="/stylesheets/images/location-pin.png" alt=""> Amsterdam</p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="contact">
+                        <div class="contactLinks">
+                            <ul class="contactInfo">
+                                <li class="leeftijd">Leeftijd:</li>
+                                <li class="geslacht">Geslacht:</li>
+                            </ul>
+                        </div>
+        
+                        <div class="contactrechts">
+                            <ul class="contactInfo">
+                                <li class="leeftijdNummer">24</li>
+                                <li class="geslachtMV">Man</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="expertiseContainer">
+                        <h3>Expertise</h3>
+                        <ul class="pills">
+                            <li>Sport</li>
+                            <li>Sport</li>
+                            <li>Sport</li>
+                            <li>Sport</li>
+                        </ul>
+                    </div>
+
+                    <div class="expertiseContainer">
+                        <h3>Beschikbaar op:</h3>
+                        <ul class="pills">
+                            <li>Ma</li>
+                            <li>Di</li>
+                            <li>Wo</li>
+                        </ul>
+                    </div>
+
+
+            
                 </div>
-    
-
-
-        <!-- <div class="containerForm">
-            <div class="left">
-                <h3 class="heading">Get in touch</h3>
-                <p class="text">We are here for you! How can we help?</p>
-                <form action="#">
-                    <div class="inputBox">
-                        <input type="text" name="name" class="name" placeholder="Enter your name">
-                    </div>
-
-                    <div class="inputBox">
-                        <input type="text" name="email" class="email" placeholder="Enter your email adress">
-                    </div>
-
-                    <div class="inputBox">
-                        <textarea name="message" class="message" placeholder="Enter your message..."></textarea>
-                    </div>
-
-                    <button class="btn">Submit</button>
-
-                </form>
-            </div> -->
-
-            <!-- <div class="right">
-                <div class="illustration">
-                    <img src="/stylesheets/images/workoutbackground3.jpeg" alt="#">
+        
                 </div>
-                <div class="contact-info">
-                    <div class="info-box">
-                        <div class="icon">
-                            <ion-icon name="location"></ion-icon>
-                        </div>
-                        <div class="text">
-                            <p>123 Street, New York, USA</p>
-                        </div>
-
-                        <div class="info-box">
-                            <div class="icon">
-                                <ion-icon name="call"></ion-icon>
-                            </div>
-                            <div class="text">
-                                <a href="+123-456-789">+123-456-789</a>
-                            </div>
-
-                            <div class="info-box">
-                                <div class="icon">
-                                    <ion-icon name="mail"></ion-icon>
-                                </div>
-                                <div class="text">
-                                    <a href="mailto:Voorbeeld@mail.com">Voorbeeld@mail.com</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
-            <!-- </div> -->
-
-
-                <!-- <div class="social-icons">
-                    <a href="#">
-                        <ion-icon name="logo-facebook"></ion-icon>
-                    </a>
-
-                    <a href="#">
-                        <ion-icon name="logo-linkedin"></ion-icon>
-                    </a>
-
-                    <a href="#">
-                        <ion-icon name="instagram"></ion-icon>
-                    </a>
-                </div> -->
-
             </div>
 
+            <div class="contactInfoContainer">
+                <h3>Contact Informatie</h3>
 
+                <div class="contact">
+                    <div class="contactLinks">
+                        <ul class="contactInfo">
+                            <li class="Tel"><a href="">Telefoonnummer:</a></li>
+                            <li class="mail"><a href="">Email: </a></li>
+                        </ul>
+                    </div>
+
+                    <div class="contactrechts">
+                        <ul class="contactInfo">
+                            <li class="nummer"><a href="">+3123456789</a></li>
+                            <li class="email"><a href="">voorbeeld@email.com </a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            
+
+          
+        </div>
     </main>
 
-    <%-include ('footer.ejs')%> 
-
+    <%- include('footer.ejs') %>
 
     <script src="/stylesheets/scripts/detailpagina.js"></script>
 </body>
