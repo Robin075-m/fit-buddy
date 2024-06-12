@@ -10,19 +10,22 @@
     <link rel="stylesheet" href="/stylesheets/loginsignup.css">
 </head>
 <body>
+    <header>
+        <%-include ('nav.ejs')%> 
+    </header>
     <h1>Mijn Profiel</h1>
     <form action="/mijnprofiel" method="post" enctype="multipart/form-data">
         <div>
             <label for="name">Naam</label>
-            <input type="text" id="name" name="name" value="<%= user.name %>" disabled>
+            <input type="text" id="name" name="name" value="<%= user.name %>">
         </div>
         <div>
             <label for="username">Gebruikersnaam</label>
-            <input type="text" id="username" name="username" value="<%= user.username %>" disabled>
+            <input type="text" id="username" name="username" value="<%= user.username %>">
         </div>
         <div>
             <label for="email">Email</label>
-            <input type="email" id="email" name="email" value="<%= user.email %>" disabled>
+            <input type="email" id="email" name="email" value="<%= user.email %>">
         </div>
         <div>
             <label for="password">Wachtwoord</label>
@@ -31,9 +34,7 @@
         </div>
         <div>
             <label for="profileImage">Profielfoto</label>  
-            <% if (user.profileImage) { %>
-                <img src="<%= user.profileImage %>" alt="Profielfoto" width="250">
-            <% } %>
+                <img class="profielFoto" src="<%= user.profileImage %>" alt="Profielfoto" width="250">
             <input type="hidden" name="existingProfileImage" value="<%= user.profileImage %>">
         </div>
         <button type="submit">Opslaan</button>
