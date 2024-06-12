@@ -2,8 +2,6 @@ main {
     margin: 2em 2em 5em 2em;
 }
 
-
-
 .back {
     margin-bottom: 1em;
 }
@@ -17,12 +15,14 @@ main {
 .breadCrumbs li {
     font-size: 0.8em;
     color: var(--accent-kleur);
+
 }
 
 
 
 .breadCrumbs a:hover{
    color: var(--accent-kleur);
+   transition: 0.5s;
 }
 
 
@@ -38,16 +38,17 @@ main h2 {
     text-transform: uppercase;
     border-bottom: 4px solid var(--tekst);
     text-shadow: 3px 4px 7px rgba(0, 0, 0, 0.6);
+    margin-top: 0.3em;
 }
 
-.rechts {
+/* .rechts {
     display: grid;
     margin-top: 1em;
     background-color: var(--main-tint2);
     border-radius: 0.3em;
     padding: 1em;
     box-shadow: 3px 4px 7px rgba(0, 0, 0, 0.2);
-}
+} */
 
 /* Leeftijd en geslacht */
 .leeftijd,
@@ -60,21 +61,24 @@ main h2 {
 .leeftijdNummer,
 .geslachtMV {
     font-size: 3vw;
-    margin-left: 8vw;
+    
+    display: flex;
+    justify-content: flex-end;
+    color: var(--accent-kleur);
 }
 
 
 /* profiel foto */
 .profileFotoContainer {
-    margin-top: 2em;
-    height: 5em;
-    width: 5em;
+    height: 45vh;
+    width:  100%;
     background-color: rgb(36, 35, 35);
     margin-bottom: 1em;
     padding: 1em;
     display: flex;
     align-items: center;
-    border-radius: 50%;
+    justify-content: center;
+    /* border-radius: 50%; */
 }
 
 .profileFotoContainer img {
@@ -83,21 +87,28 @@ main h2 {
 }
 
 .containerProfiel {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1em;
-    display: flex;
-    justify-content: center;
-    padding-bottom: 0.5em;
+    /* display: grid;
+    grid-template-columns: 1fr 1fr; */
+    /* gap: 1em; */
+    /* display: flex;
+    justify-content: center; */
 }
 
 
 /* Naam en locatie */
 
+.algemeneInformatie {
+    padding-bottom: 0.5em;
+    background-color: rgb(25, 25, 25);
+    border-radius: 1em;
+    padding: 2em;
+    margin-top: 2em;
+}
+
 .algemeneInformatie .naam {
     margin-top: 0.5em;
     text-transform: uppercase;
-    font-size: 4vw;
+    font-size: 5vw;
 }
 
 
@@ -120,13 +131,14 @@ main h2 {
 /* Expertise */
 
 .expertiseContainer {
-    margin-top: 1em;
-    padding-bottom: 1em;
+    margin-top: 2.5em;
 }
 
 .expertiseContainer h3 {
-    font-size: 3vw;
+    font-size: 4vw;
     text-transform: uppercase;
+    border-left: 4px solid var(--tekst);
+    padding-left: 0.3em;
     
 }
 
@@ -138,12 +150,12 @@ main h2 {
 .expertiseContainer .pills li {
     font-size: 2.5vw;
     padding: 0.5em 1em;
-    margin: 0 1em 0 0;
-    border-radius: 1em;
+    margin: 0.2em 0 0 1em;
+    border-radius: 2em;
     border: none;
     outline: none;
     background-color: var(--accent-kleur);
-    color: var(--tekst);
+    color: var(--main-tint);
     box-shadow: 3px 4px 7px rgba(0, 0, 0, 0.2);
 }
 
@@ -156,7 +168,7 @@ main h2 {
 /* Contact info */
 
 .contactInfoContainer {
-    margin-top: 1em;
+    margin-top: 2em;
 }
 
 .contactInfoContainer h3 {
@@ -186,7 +198,9 @@ main h2 {
 .contactRechts .contactInfo a{
     font-size: 3vw;
     margin-top: 0.5em;
-    color: var(--accent-kleur)
+    color: var(--accent-kleur);
+    /* display: flex;
+    justify-content: end; */
 }
 
 
