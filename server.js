@@ -129,11 +129,6 @@ app.get('/trainers', ensureAuthenticated, async (req, res) => {
   }
 });
 
-// Detailpagina
-app.get('/detailpagina', (req, res) => {
-  res.render('detailpagina');
-});
-
 // Trendingworkouts
 app.get('/trendingworkouts', (req, res) => {
   res.render('trendingworkouts');
@@ -187,6 +182,21 @@ app.get('/index', (req, res) => {
 
 app.get('/test', (req, res) => {
   res.render('newhomepage');
+});
+
+// Detailpagina voor een specifieke trainer
+app.get('/trainer/:id', ensureAuthenticated, async (req, res) => {
+  try {
+    const db = getDB();
+    const trainer = await db.collection('trainers').findOne({ _id: new ObjectId(req.params.id) });
+    if (!trainer) {
+      return res.status(404).send('Trainer not found');
+    }
+    res.render('detailpagina', { trainer });
+  } catch (err) {
+    console.error('Error occurred while fetching the trainer details:', err);
+    res.redirect('/overzicht');
+  }
 });
 
 const PORT = process.env.PORT || 3000;
