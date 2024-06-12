@@ -9,11 +9,11 @@
     <link rel="stylesheet" href="/stylesheets/loginsignup.css">
     <title>Sign Up</title>
 </head>
-<body>
+<body><div id="formcontainer">
     <header>
         <%-include ('nav.ejs')%> 
     </header>
-    <div id="containerregister">
+    
     <form action="/register" method="POST" enctype="multipart/form-data">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required><br>

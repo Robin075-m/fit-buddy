@@ -13,7 +13,8 @@
     <header>
         <%-include ('nav.ejs')%> 
     </header>
-    <h1>Mijn Profiel</h1>
+    <div id="formcontainer">
+        <h1>Mijn Profiel</h1>
     <form action="/mijnprofiel" method="post" enctype="multipart/form-data">
         <div>
             <label for="name">Naam</label>
@@ -40,5 +41,7 @@
         <button type="submit">Opslaan</button>
         <a class="logout" href="/logout">Sign out</a>
     </form>
+    </div>
+    
 </body>
 </html>
