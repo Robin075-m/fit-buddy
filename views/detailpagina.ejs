@@ -21,17 +21,17 @@
         <div class="algemeneInformatie">
             <div class="containerProfiel">
                 <div class="profileFotoContainer">
-                    <img src="/stylesheets/images/trainer3 copy.png" alt="">
+                    <img src="<%= trainer.profielfoto || '/stylesheets/images/default-profile.png' %>" alt="Profielfoto van <%= trainer.naam %>">
                 </div>
 
                 <div class="rechts">
                     <div class="naamLocatie">
                         <ul>
                             <li>
-                                <h3 class="naam">Naam Persoon</h3>
+                                <h3 class="naam"><%= trainer.naam %></h3>
                             </li>
                             <li>
-                                <p class="locatie"><img src="/stylesheets/images/location-pin.png" alt=""> Amsterdam</p>
+                                <p class="locatie"><img src="/stylesheets/images/location-pin.png" alt=""> <%= trainer.locatie %></p>
                             </li>
                         </ul>
                     </div>
@@ -46,8 +46,8 @@
         
                         <div class="contactrechts">
                             <ul class="contactInfo">
-                                <li class="leeftijdNummer">24</li>
-                                <li class="geslachtMV">Man</li>
+                                <li class="leeftijdNummer"><%= trainer.leeftijd %></li>
+                                <li class="geslachtMV"><%= trainer.gender %></li>
                             </ul>
                         </div>
                     </div>
@@ -55,26 +55,18 @@
                     <div class="expertiseContainer">
                         <h3>Expertise</h3>
                         <ul class="pills">
-                            <li>Sport</li>
-                            <li>Sport</li>
-                            <li>Sport</li>
-                            <li>Sport</li>
+                            <li><%= trainer.expertise %></li>
                         </ul>
                     </div>
 
                     <div class="expertiseContainer">
                         <h3>Beschikbaar op:</h3>
                         <ul class="pills">
-                            <li>Ma</li>
-                            <li>Di</li>
-                            <li>Wo</li>
+                            <% trainer.beschikbaarheid.forEach(day => { %>
+                                <li><%= day %></li>
+                            <% }) %>
                         </ul>
                     </div>
-
-
-            
-                </div>
-        
                 </div>
             </div>
 
@@ -84,23 +76,19 @@
                 <div class="contact">
                     <div class="contactLinks">
                         <ul class="contactInfo">
-                            <li class="Tel"><a href="">Telefoonnummer:</a></li>
-                            <li class="mail"><a href="">Email: </a></li>
+                            <li class="Tel"><a href="tel:<%= trainer.telefoon %>">Telefoonnummer:</a></li>
+                            <li class="mail"><a href="mailto:<%= trainer.email %>">Email: </a></li>
                         </ul>
                     </div>
 
                     <div class="contactrechts">
                         <ul class="contactInfo">
-                            <li class="nummer"><a href="">+3123456789</a></li>
-                            <li class="email"><a href="">voorbeeld@email.com </a></li>
+                            <li class="nummer"><a href="tel:<%= trainer.telefoon %>"><%= trainer.telefoon %></a></li>
+                            <li class="email"><a href="mailto:<%= trainer.email %>"><%= trainer.email %></a></li>
                         </ul>
                     </div>
                 </div>
             </div>
-
-            
-
-          
         </div>
     </main>
 
