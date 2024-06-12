@@ -1,6 +1,7 @@
 footer {
     background-color: rgb(17, 16, 16);
     color: var(--tekst);
+    border-top: 3px solid var(--accent-kleur) ;
 }
 
 

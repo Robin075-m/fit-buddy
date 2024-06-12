@@ -7,9 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detailpagina</title>
 
+
+    <link rel="stylesheet" href="/stylesheets/detailpagina.css">
     <link rel="stylesheet" href="/stylesheets/styles.css">
     <link rel="stylesheet" href="/stylesheets/navbar.css">
-    <link rel="stylesheet" href="/stylesheets/detailpagina.css">
 </head>
 
 <body>
@@ -39,8 +40,8 @@
                     <div class="contact">
                         <div class="contactLinks">
                             <ul class="contactInfo">
-                                <li class="leeftijd">Leeftijd:</li>
-                                <li class="geslacht">Geslacht:</li>
+                                <li class="leeftijd">Leeftijd</li>
+                                <li class="geslacht">Geslacht</li>
                             </ul>
                         </div>
         
@@ -60,7 +61,7 @@
                     </div>
 
                     <div class="expertiseContainer">
-                        <h3>Beschikbaar op:</h3>
+                        <h3>Beschikbaar op</h3>
                         <ul class="pills">
                             <% trainer.beschikbaarheid.forEach(day => { %>
                                 <li><%= day %></li>
@@ -76,12 +77,12 @@
                 <div class="contact">
                     <div class="contactLinks">
                         <ul class="contactInfo">
-                            <li class="Tel"><a href="tel:<%= trainer.telefoon %>">Telefoonnummer:</a></li>
-                            <li class="mail"><a href="mailto:<%= trainer.email %>">Email: </a></li>
+                            <li class="tel"><a href="tel:<%= trainer.telefoon %>">Telefoonnummer</a></li>
+                            <li class="mail"><a href="mailto:<%= trainer.email %>">Email  </a></li>
                         </ul>
                     </div>
 
-                    <div class="contactrechts">
+                    <div class="contactRechts">
                         <ul class="contactInfo">
                             <li class="nummer"><a href="tel:<%= trainer.telefoon %>"><%= trainer.telefoon %></a></li>
                             <li class="email"><a href="mailto:<%= trainer.email %>"><%= trainer.email %></a></li>
