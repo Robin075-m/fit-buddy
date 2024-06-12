@@ -17,6 +17,13 @@
     <%- include('nav.ejs') %>
 
     <main>
+
+        <button class="back"> <a href="overzicht.ejs"> < </a></button>
+       <ul class="breadCrumbs">
+            <li><a href="/">Home</a> /&nbsp;</li>
+            <li><a href="overzicht.ejs">Zoek een personal trainer</a> /&nbsp;</li>
+            <li>  <%= trainer.naam %></li>
+       </ul>
         <h2>Trainer profile</h2>
 
         <div class="algemeneInformatie">

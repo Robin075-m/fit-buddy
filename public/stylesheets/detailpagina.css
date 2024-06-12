@@ -1,7 +1,33 @@
 main {
-    margin: 5em 2em 5em 2em;
+    margin: 2em 2em 5em 2em;
 }
 
+
+
+.back {
+    margin-bottom: 1em;
+}
+
+/* Breadcrumbs */
+.breadCrumbs {
+    display: flex;
+    margin-bottom: 2px;
+}
+
+.breadCrumbs li {
+    font-size: 0.8em;
+    color: var(--accent-kleur);
+}
+
+
+
+.breadCrumbs a:hover{
+   color: var(--accent-kleur);
+}
+
+
+
+/* Main styling */
 h3 {
     text-transform: uppercase;
 }
@@ -11,11 +37,16 @@ main h2 {
     color: var(--tekst);
     text-transform: uppercase;
     border-bottom: 4px solid var(--tekst);
+    text-shadow: 3px 4px 7px rgba(0, 0, 0, 0.6);
 }
 
 .rechts {
     display: grid;
-    margin-top: 1.5em;
+    margin-top: 1em;
+    background-color: var(--main-tint2);
+    border-radius: 0.3em;
+    padding: 1em;
+    box-shadow: 3px 4px 7px rgba(0, 0, 0, 0.2);
 }
 
 /* Leeftijd en geslacht */
@@ -23,21 +54,19 @@ main h2 {
 .geslacht {
     font-family: monument extended, sans-serif;
     text-transform: uppercase;
-    font-size: 2vw;
+    font-size: 3vw;
 }
 
 .leeftijdNummer,
 .geslachtMV {
-    font-size: 2vw;
+    font-size: 3vw;
     margin-left: 8vw;
 }
 
 
-
-
-
+/* profiel foto */
 .profileFotoContainer {
-    margin-top: 1em;
+    margin-top: 2em;
     height: 5em;
     width: 5em;
     background-color: rgb(36, 35, 35);
@@ -51,7 +80,6 @@ main h2 {
 .profileFotoContainer img {
     max-width: 100%;
     max-height: 100%;
-
 }
 
 .containerProfiel {
@@ -61,15 +89,13 @@ main h2 {
     display: flex;
     justify-content: center;
     padding-bottom: 0.5em;
-
-
 }
 
 
 /* Naam en locatie */
 
 .algemeneInformatie .naam {
-    margin-top: 1em;
+    margin-top: 0.5em;
     text-transform: uppercase;
     font-size: 4vw;
 }
@@ -104,17 +130,13 @@ main h2 {
     
 }
 
-.contactInfoContainer h3 {
-    border-bottom: 4px solid var(--tekst);
-}
-
 .expertiseContainer .pills {
     margin-top: 0.4em;
     display: flex;
 }
 
 .expertiseContainer .pills li {
-    font-size: 2vw;
+    font-size: 2.5vw;
     padding: 0.5em 1em;
     margin: 0 1em 0 0;
     border-radius: 1em;
@@ -137,6 +159,11 @@ main h2 {
     margin-top: 1em;
 }
 
+.contactInfoContainer h3 {
+    border-bottom: 4px solid var(--tekst);
+}
+
+
 .contact {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -149,9 +176,6 @@ main h2 {
     margin-top: 0.3em;
 }
 
-
-
-
  .contactLinks a{
     font-family: monument extended, sans-serif;
     text-transform: uppercase;
@@ -163,5 +187,16 @@ main h2 {
     font-size: 3vw;
     margin-top: 0.5em;
     color: var(--accent-kleur)
+}
+
+
+
+
+@media only screen and (min-width: 550px) {
+
+    .contactInfoContainer h3 {
+         font-size: 4vw;
+    }
+    
 }
 
