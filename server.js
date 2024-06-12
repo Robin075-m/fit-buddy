@@ -1,4 +1,3 @@
-// server.js
 const express = require('express');
 const session = require('express-session');
 const bodyParser = require('body-parser');
@@ -16,7 +15,7 @@ connectDB();
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
-app.use('/uploads', express.static('public/uploads')); // Serve the 'uploads' folder statically
+app.use('/uploads', express.static(path.join(__dirname, 'public/uploads'))); // Serve the 'uploads' folder statically
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -29,14 +28,13 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage: storage });
 
-// Session management
 app.use(session({
-  secret: 'jouw-geheim', // Replace 'jouw-geheim' with a random long string
+  secret: process.env.SESSION_SECRET || 'default-secret', // Use an environment variable for the session secret
   resave: false,
   saveUninitialized: true,
+  cookie: { secure: process.env.NODE_ENV === 'production' } // Use secure cookies in production
 }));
 
-// Middleware to ensure authentication
 function ensureAuthenticated(req, res, next) {
   if (req.session.userId) {
     return next();
@@ -44,8 +42,6 @@ function ensureAuthenticated(req, res, next) {
     res.redirect('/login');
   }
 }
-
-// Routes
 
 app.get('/overzicht', ensureAuthenticated, async (req, res) => {
   try {
@@ -58,22 +54,20 @@ app.get('/overzicht', ensureAuthenticated, async (req, res) => {
   }
 });
 
-// Signup Route
 app.get('/register', (req, res) => {
   res.render('register');
 });
 
 app.post('/register', upload.single('profileImage'), async (req, res) => {
   const { name, username, email, password, birthdate, gender } = req.body;
-  const profileImage = req.file ? req.file.path : '';
+  const profileImage = req.file ? `/uploads/${req.file.filename}` : ''; // Corrected path for the profile image
   try {
     const hashedPassword = await bcrypt.hash(password, 10);
     const newUser = { name, username, email, password: hashedPassword, birthdate, gender, profileImage };
     const db = getDB();
-    await db.collection('users').insertOne(newUser);
-    req.session.userId = newUser._id;
+    const result = await db.collection('users').insertOne(newUser);
+    req.session.userId = result.insertedId;
     req.session.username = newUser.username;
-    req.session.role = newUser.role;
     res.redirect('/');
   } catch (err) {
     console.error('Error occurred while creating the user:', err);
@@ -81,7 +75,6 @@ app.post('/register', upload.single('profileImage'), async (req, res) => {
   }
 });
 
-// Login Route
 app.get('/login', (req, res) => {
   const loginError = req.session.loginError;
   req.session.loginError = null;  // Clear the login error
@@ -110,7 +103,6 @@ app.post('/login', async (req, res) => {
   }
 });
 
-// Logout Route
 app.get('/logout', (req, res) => {
   req.session.destroy(err => {
     if (err) {
@@ -122,15 +114,10 @@ app.get('/logout', (req, res) => {
   });
 });
 
-// Home Route
-app.get('/', ensureAuthenticated, (req, res) => {
-  res.render('index', { 
-    username: req.session.username,
-    role: req.session.role,
-  });
+app.get('/', (req, res) => {
+  res.render('index');
 });
 
-// Trainers Route
 app.get('/trainers', ensureAuthenticated, async (req, res) => {
   try {
     const db = getDB();
@@ -140,11 +127,6 @@ app.get('/trainers', ensureAuthenticated, async (req, res) => {
     console.error('Error occurred while fetching personal trainers:', err);
     res.redirect('/');
   }
-});
-
-// Detailpagina
-app.get('/detailpagina', (req, res) => {
-  res.render('detailpagina');
 });
 
 // Trendingworkouts
@@ -170,12 +152,11 @@ app.get('/mijnprofiel', ensureAuthenticated, async (req, res) => {
 
 app.post('/mijnprofiel', ensureAuthenticated, upload.single('profileImage'), async (req, res) => {
   const { name, username, email, password } = req.body;
-  const profileImage = req.file ? 'uploads/' + req.file.filename : req.body.existingProfileImage;
+  const profileImage = req.file ? `/uploads/${req.file.filename}` : req.body.existingProfileImage;
   try {
     const db = getDB();
     const updateFields = { name, username, email, profileImage };
 
-    // Update password only if a new password is provided
     if (password) {
       const hashedPassword = await bcrypt.hash(password, 10);
       updateFields.password = hashedPassword;
@@ -199,10 +180,26 @@ app.get('/index', (req, res) => {
   res.render('index');
 });
 
-app.listen(process.env.PORT || 3000, () => {
-  console.log('Server is running on port', process.env.PORT || 3000);
-});
-
 app.get('/test', (req, res) => {
   res.render('newhomepage');
+});
+
+// Detailpagina voor een specifieke trainer
+app.get('/trainer/:id', ensureAuthenticated, async (req, res) => {
+  try {
+    const db = getDB();
+    const trainer = await db.collection('trainers').findOne({ _id: new ObjectId(req.params.id) });
+    if (!trainer) {
+      return res.status(404).send('Trainer not found');
+    }
+    res.render('detailpagina', { trainer });
+  } catch (err) {
+    console.error('Error occurred while fetching the trainer details:', err);
+    res.redirect('/overzicht');
+  }
+});
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });

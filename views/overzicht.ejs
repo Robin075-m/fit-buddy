@@ -28,20 +28,24 @@
                         <button class="pill" type="button">Beschikbaarheid</button>
                     </div>
                 </div>
+                
                 <p class="beschikbareBuddies"><%= trainers ? trainers.length : 0 %> Buddies Beschikbaar</p>
+
                 <ul class="kaarten list">
                     <% if (trainers) { %>
                         <% trainers.forEach(trainer => { %>
                             <li>
-                                <a href="#" class="kaart">
+                                <a href="/trainer/<%= trainer._id %>" class="kaart">
                                     <img class="banner" src="<%= trainer.bannerImage || '/stylesheets/images/shoulder.jpeg' %>" alt="">
                                     <div class="kaart_overlay">
                                         <div class="kaart_header">
                                             <img class="profielfoto" src="<%= trainer.profielfoto || '/stylesheets/images/trainer2.png' %>" alt="">
                                             <div class="kaart_header_tekst">
                                                 <h3><span class="naam"><%= trainer.naam %></span></h3>
-                                                <p>Geslacht: <%= trainer.gender %></p>
-                                                <p>Beschikbaar op: <%= trainer.beschikbaarheid.join(', ') %></p>
+                                                <!-- <p>Geslacht: <%= trainer.gender %></p> -->
+                                                <div class="beschikbaarheid">
+                                                <p class="beschikbaarheid">Beschikbaar op: <%= trainer.beschikbaarheid.join(', ') %></p>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="skills-container">
