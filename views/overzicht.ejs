@@ -14,6 +14,7 @@
 </head>
 <body>
 
+
     <%- include('nav.ejs') %>
     
         <main>
@@ -48,17 +49,21 @@
                                                 </div>
                                             </div>
                                         </div>
+                                  
                                         <div class="skills-container">
                                             <h4>Skills</h4>
                                             <ul class="skills">
                                                 <% Array.isArray(trainer.expertise) && trainer.expertise.forEach(skill => { %>
                                                     <li><%= skill %></li>
+                                                
                                                 <% }) %>
                                                 <% if (!Array.isArray(trainer.expertise)) { %>
                                                     <li><%= trainer.expertise %></li>
                                                 <% } %>
+                                             
                                             </ul>
                                         </div>
+                                           
                                     </div>
                                 </a>
                             </li>

@@ -1,23 +1,18 @@
 
 
     <link rel="stylesheet" href="/stylesheets/filters.css" />
- 
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <body>
 
-    <input
-      type="checkbox"
-      name="dialog_state"
-      id="dialog_state"
-      class="dialog_state"
-    />
-    <div id="dialog">
-      <label id="dlg-back" for="dialog_state"></label>
-      <div id="dlg-wrap">
-        <label id="dlg-close" for="dialog_state"
-          ><i class="icon ion-ios-close-empty"></i
-        ></label>
+      <div class="w3-container">
+   
+        <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">Open Modal</button>
+      
+        <div id="id01" class="w3-modal">
+          <div class="w3-modal-content">
+            <div class="w3-container">
+              <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
 
-        <h2 id="dlg-header">Looking for a personal trainer by their </h2>
-        <div id="dlg-content">
           <div id="filterscontainer">
             <fieldset class="checkbox-group">
               <legend class="checkbox-group-legend">Availability</legend>
@@ -339,23 +334,10 @@
           </div>
         </div>
 
-        <div id="dlg-prompt">
-          <div class="button positive">
-            <i class="icon ion-ios-checkmark-empty"></i> Lets find a match
-          </div>
-  
-        </div>
       </div>
     </div>
-
-    <!-- <main id="main" class="main_area"> -->
-      <!-- <div class="center"> -->
-        <label class="button" for="dialog_state"
-          >Filters</label
-        >
-      <!-- </div> -->
-      <!-- <div id="console"></div> -->
-    <!-- </main> -->
-
-
+  </div>
+</div>
+            
+</body>
   <script src="/stylesheets/scripts/filters.js"></script>

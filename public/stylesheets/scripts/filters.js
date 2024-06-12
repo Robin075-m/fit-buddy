@@ -47,23 +47,6 @@ rangeInput.forEach((input) => {
 
 
 
-  document.addEventListener('DOMContentLoaded', function() {
-    document.addEventListener('keypress', function(e) {
-      cwrite(e.which, 'Keypress event');
-      if (e.which === 120) { // ASCII code for 'x'
-        custom_dialog_toggle('Keypress x', 'You opened this window by pressing x');
-      }
-    });
-  });
-
-  function custom_dialog_toggle(title, text) {
-    if (title !== undefined) document.getElementById('dlg-header').innerHTML = title;
-    if (text !== undefined) document.getElementById('dlg-content').innerHTML = text;
-    var dialogStateCheckbox = document.getElementById('dialog_state');
-    cwrite('Current state: ' + dialogStateCheckbox.checked, 'custom_dialog_toggle');
-    dialogStateCheckbox.checked = !dialogStateCheckbox.checked;
-    document.getElementById('dialog').style.display = dialogStateCheckbox.checked ? 'block' : 'none';
-  }
 
   // Console logging function for debugging
   // cwrite(str, title)
