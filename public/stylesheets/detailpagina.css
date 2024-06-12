@@ -1,9 +1,8 @@
-
-main{
-  margin: 5em 2em 5em 2em; 
+main {
+    margin: 5em 2em 5em 2em;
 }
 
-h3{
+h3 {
     text-transform: uppercase;
 }
 
@@ -14,22 +13,40 @@ main h2 {
     border-bottom: 4px solid var(--tekst);
 }
 
-.leeftijd, .geslacht {
-font-family:  monument extended, sans-serif;
-text-transform: uppercase;
+.rechts {
+    display: grid;
+    margin-top: 1.5em;
 }
+
+/* Leeftijd en geslacht */
+.leeftijd,
+.geslacht {
+    font-family: monument extended, sans-serif;
+    text-transform: uppercase;
+    font-size: 2vw;
+}
+
+.leeftijdNummer,
+.geslachtMV {
+    font-size: 2vw;
+    margin-left: 8vw;
+}
+
+
+
+
 
 .profileFotoContainer {
     margin-top: 1em;
-    width: 100%;
-    background-color: var(--tekst);
+    height: 5em;
+    width: 5em;
+    background-color: rgb(36, 35, 35);
     margin-bottom: 1em;
     padding: 1em;
+    display: flex;
     align-items: center;
-    border-radius: 0.3em;
+    border-radius: 50%;
 }
-
-
 
 .profileFotoContainer img {
     max-width: 100%;
@@ -41,13 +58,17 @@ text-transform: uppercase;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1em;
-    border-bottom: 4px solid var(--tekst) ;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 0.5em;
+
+
 }
 
 
 /* Naam en locatie */
 
-.algemeneInformatie .naam{
+.algemeneInformatie .naam {
     margin-top: 1em;
     text-transform: uppercase;
     font-size: 4vw;
@@ -60,61 +81,87 @@ text-transform: uppercase;
     margin-top: 0.2em;
 }
 
-.algemeneInformatie .naamLocatie .locatie img{
-  width: 3%;
-  height: 10%;
-  filter: invert(50%);
+.algemeneInformatie .naamLocatie .locatie img {
+    width: 3%;
+    height: 10%;
+    filter: invert(50%);
 }
 
+
+
+
+
 /* Expertise */
+
 .expertiseContainer {
     margin-top: 1em;
     padding-bottom: 1em;
 }
 
-.expertiseContainer h3{
+.expertiseContainer h3 {
     font-size: 3vw;
     text-transform: uppercase;
+    
 }
 
-.expertiseContainer  .pills{
+.contactInfoContainer h3 {
+    border-bottom: 4px solid var(--tekst);
+}
+
+.expertiseContainer .pills {
     margin-top: 0.4em;
     display: flex;
 }
 
-.expertiseContainer  .pills li{
+.expertiseContainer .pills li {
     font-size: 2vw;
     padding: 0.5em 1em;
     margin: 0 1em 0 0;
     border-radius: 1em;
     border: none;
     outline: none;
-    background-color: white;
-    color: black;
+    background-color: var(--accent-kleur);
+    color: var(--tekst);
+    box-shadow: 3px 4px 7px rgba(0, 0, 0, 0.2);
 }
 
+
+
+
+
+
+
 /* Contact info */
-
-
 
 .contactInfoContainer {
     margin-top: 1em;
 }
+
 .contact {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    gap: 1em;
 
-    margin-bottom: 1em;
+   margin: 1em 0 1em 0;
 }
-
-
-
-
 
 .contactInfo {
     margin-top: 0.3em;
 }
 
-.rechts {
-    display: grid;
+
+
+
+ .contactLinks a{
+    font-family: monument extended, sans-serif;
+    text-transform: uppercase;
+    font-size: 3vw;
+    margin-top: 0.5em;
 }
+
+.contactRechts .contactInfo a{
+    font-size: 3vw;
+    margin-top: 0.5em;
+    color: var(--accent-kleur)
+}
+

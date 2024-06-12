@@ -30,6 +30,13 @@ body {
 
 
 @font-face {
+    font-family: 'Raleway' ;
+    src: url(public/stylesheets/fonts/Raleway);
+    font-style: normal;
+    font-weight: 100;
+}
+
+@font-face {
     font-family: 'open sans bold';
     src: url(public/stylesheets/fonts/23165521968.ttf);
     font-style: bold;
@@ -38,7 +45,7 @@ body {
 
 @font-face {
     font-family: 'open sans italics';
-    src: url(public/stylesheets/fonts/20007011713.ttf);
+    src: url(/stylesheets/fonts/20007011713.ttf);
     font-style: bold;
     font-weight: 100;
 }
@@ -57,7 +64,7 @@ body {
 }
 
 p {
-    font-family: "Raleway", sans-serif;
+    font-family: Raleway, sans-serif;
     color: var(--tekst);
 }
 
@@ -88,7 +95,8 @@ h6 {
 
 li {
     list-style-type: none;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Raleway, sans-serif;
+    font-style: bold;
     color: var(--tekst);
 }
 
