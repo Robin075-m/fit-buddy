@@ -35,7 +35,7 @@
                     <% if (trainers) { %>
                         <% trainers.forEach(trainer => { %>
                             <li>
-                                <a href="#" class="kaart">
+                                <a href="/trainer/<%= trainer._id %>" class="kaart">
                                     <img class="banner" src="<%= trainer.bannerImage || '/stylesheets/images/shoulder.jpeg' %>" alt="">
                                     <div class="kaart_overlay">
                                         <div class="kaart_header">
