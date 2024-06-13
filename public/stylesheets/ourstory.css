@@ -12,7 +12,6 @@
 }
 
 .aboutus img {
-	
 	width: 100%;
 
 }
@@ -36,7 +35,7 @@ span {
 .aboutus p {
 	font-size: 0.5vw;
 	line-height: 1.4;
-	font-size: 2.5vw;
+	font-size: 3vw;
 }
 
 .aboutus p:nth-of-type(2) {
