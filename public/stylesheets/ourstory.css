@@ -105,7 +105,7 @@ span {
 .aboutus .button a:hover {
 	color: rgb(0, 0, 0);
 	background-color: var(--accent-kleur);
-	border: #b5d815 solid 1px;
+	border: none;
 	transition: all 0.5s ease;
 }
 

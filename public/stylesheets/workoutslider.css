@@ -1,11 +1,12 @@
 .textsliders {
 	padding: 2em;
+	border-top: 3px solid var(--accent-kleur) ;
 }
 
 .textsliders h3 {
 	color: var(--accent-kleur);
 	position: relative;
-	margin: 2em 0 0 0;
+	margin: 0 0 0 0;
 	font-size: 5vw;
 	left: 2%;
 	text-transform: uppercase;
@@ -13,17 +14,18 @@
 
 .textsliders p {
 	width: 100%;
-	font-size: 0.5em;
+	font-size: 0.3em;
 
 	position: relative;
 	font-size: 18px;
 	text-align: left;
 	left: 2%;
+	margin-top: 0.5em;
 }
 
 .accordion {
 
-	width: 95%;
+	width: 100%;
 	height: 80%;
 
 	overflow: hidden;
