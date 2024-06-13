@@ -1,7 +1,33 @@
 main {
-    margin: 5em 2em 5em 2em;
+    margin: 2em 2em 5em 2em;
 }
 
+.back {
+    margin-bottom: 1em;
+}
+
+/* Breadcrumbs */
+.breadCrumbs {
+    display: flex;
+    margin-bottom: 2px;
+}
+
+.breadCrumbs li {
+    font-size: 0.8em;
+    color: var(--accent-kleur);
+
+}
+
+
+
+.breadCrumbs a:hover{
+   color: var(--accent-kleur);
+   transition: 0.5s;
+}
+
+
+
+/* Main styling */
 h3 {
     text-transform: uppercase;
 }
@@ -11,67 +37,78 @@ main h2 {
     color: var(--tekst);
     text-transform: uppercase;
     border-bottom: 4px solid var(--tekst);
+    text-shadow: 3px 4px 7px rgba(0, 0, 0, 0.6);
+    margin-top: 0.3em;
 }
 
-.rechts {
+/* .rechts {
     display: grid;
-    margin-top: 1.5em;
-}
+    margin-top: 1em;
+    background-color: var(--main-tint2);
+    border-radius: 0.3em;
+    padding: 1em;
+    box-shadow: 3px 4px 7px rgba(0, 0, 0, 0.2);
+} */
 
 /* Leeftijd en geslacht */
 .leeftijd,
 .geslacht {
     font-family: monument extended, sans-serif;
     text-transform: uppercase;
-    font-size: 2vw;
+    font-size: 3vw;
 }
 
 .leeftijdNummer,
 .geslachtMV {
-    font-size: 2vw;
-    margin-left: 8vw;
+    font-size: 3vw;
+    
+    display: flex;
+    justify-content: flex-end;
+    color: var(--accent-kleur);
 }
 
 
-
-
-
+/* profiel foto */
 .profileFotoContainer {
-    margin-top: 1em;
-    height: 5em;
-    width: 5em;
+    height: 45vh;
+    width:  100%;
     background-color: rgb(36, 35, 35);
     margin-bottom: 1em;
     padding: 1em;
     display: flex;
     align-items: center;
-    border-radius: 50%;
+    justify-content: center;
+    /* border-radius: 50%; */
 }
 
 .profileFotoContainer img {
     max-width: 100%;
     max-height: 100%;
-
 }
 
 .containerProfiel {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1em;
-    display: flex;
-    justify-content: center;
-    padding-bottom: 0.5em;
-
-
+    /* display: grid;
+    grid-template-columns: 1fr 1fr; */
+    /* gap: 1em; */
+    /* display: flex;
+    justify-content: center; */
 }
 
 
 /* Naam en locatie */
 
+.algemeneInformatie {
+    padding-bottom: 0.5em;
+    background-color: rgb(25, 25, 25);
+    border-radius: 1em;
+    padding: 2em;
+    margin-top: 2em;
+}
+
 .algemeneInformatie .naam {
-    margin-top: 1em;
+    margin-top: 0.5em;
     text-transform: uppercase;
-    font-size: 4vw;
+    font-size: 5vw;
 }
 
 
@@ -94,18 +131,15 @@ main h2 {
 /* Expertise */
 
 .expertiseContainer {
-    margin-top: 1em;
-    padding-bottom: 1em;
+    margin-top: 2.5em;
 }
 
 .expertiseContainer h3 {
-    font-size: 3vw;
+    font-size: 4vw;
     text-transform: uppercase;
+    border-left: 4px solid var(--tekst);
+    padding-left: 0.3em;
     
-}
-
-.contactInfoContainer h3 {
-    border-bottom: 4px solid var(--tekst);
 }
 
 .expertiseContainer .pills {
@@ -114,14 +148,14 @@ main h2 {
 }
 
 .expertiseContainer .pills li {
-    font-size: 2vw;
+    font-size: 2.5vw;
     padding: 0.5em 1em;
-    margin: 0 1em 0 0;
-    border-radius: 1em;
+    margin: 0.2em 0 0 1em;
+    border-radius: 2em;
     border: none;
     outline: none;
     background-color: var(--accent-kleur);
-    color: var(--tekst);
+    color: var(--main-tint);
     box-shadow: 3px 4px 7px rgba(0, 0, 0, 0.2);
 }
 
@@ -134,8 +168,13 @@ main h2 {
 /* Contact info */
 
 .contactInfoContainer {
-    margin-top: 1em;
+    margin-top: 2em;
 }
+
+.contactInfoContainer h3 {
+    border-bottom: 4px solid var(--tekst);
+}
+
 
 .contact {
     display: grid;
@@ -149,9 +188,6 @@ main h2 {
     margin-top: 0.3em;
 }
 
-
-
-
  .contactLinks a{
     font-family: monument extended, sans-serif;
     text-transform: uppercase;
@@ -162,6 +198,78 @@ main h2 {
 .contactRechts .contactInfo a{
     font-size: 3vw;
     margin-top: 0.5em;
-    color: var(--accent-kleur)
+    color: var(--accent-kleur);
+    /* display: flex;
+    justify-content: end; */
 }
 
+@media only screen and (min-width: 550px) {
+
+
+    .profileFotoContainer {
+        width: 35vw;
+        height: 35vh;
+    }
+
+    .containerProfiel{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3em;
+    }
+
+    .rechts .naam, h3{
+      font-size: 3vw;
+    }
+
+
+    .contact .leeftijd, .geslacht {
+    font-size: 1.5vw;
+    }
+
+
+    .contact .leeftijdNummer, .geslachtMV {
+        font-size: 1.5vw;
+        margin-right: 5em;
+        }
+
+        .expertiseContainer h3 {
+            font-size: 3vw;
+        }
+    
+    .contactInfoContainer h3 {
+         font-size: 2.5vw;
+    }
+
+    .contactLinks a{
+        font-size: 2vw;
+    }
+    
+    .contactRechts .contactInfo a{
+        font-size: 1vw;
+    }
+    
+
+
+    /* pills */
+
+    .expertiseContainer .pills li {
+        font-size: 1.5vw;
+    }
+}
+
+
+@media only screen and (min-width: 900px) {
+    .profileFotoContainer {
+        width: 100%;
+        height: 50vh;
+        margin-right: 2em;
+    }
+
+    .rechts {
+        margin-right: 5vw;
+    }
+
+    .containerProfiel{
+        gap: 7em;
+    }
+}

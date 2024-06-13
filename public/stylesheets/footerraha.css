@@ -1,6 +1,7 @@
 
 
 .container{
+	margin-left: 1.5em;
 	max-width: 1170px;
 	margin:auto;
 }
@@ -12,8 +13,9 @@ ul{
 	list-style: none;
 }
 .footer{
-	background-color: #24262b;
+	 background-color: rgb(20, 20, 20);
     padding: 70px 0;
+	border-top: 1px solid var(--accent-kleur);
 }
 .footer-col{
    width: 25%;
@@ -22,7 +24,7 @@ ul{
 .footer-col h4{
 	font-size: 18px;
     text-align: left;
-	color: #ffffff;
+	color: var(--tekst);
 	text-transform: capitalize;
 	margin-bottom: 35px;
 	font-weight: 500;
@@ -33,7 +35,7 @@ ul{
 	position: absolute;
 	left:0;
 	bottom: -10px;
-	background-color: #e91e63;
+	background-color: var(--accent-kleur);
 	height: 2px;
 	box-sizing: border-box;
 	width: 50px;
