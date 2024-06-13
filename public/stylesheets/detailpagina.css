@@ -72,7 +72,7 @@ main h2 {
 .profileFotoContainer {
     height: 45vh;
     width:  100%;
-    background-color: rgb(36, 35, 35);
+    /* background-color: rgb(36, 35, 35); */
     margin-bottom: 1em;
     padding: 1em;
     display: flex;
@@ -82,6 +82,11 @@ main h2 {
 }
 
 .profileFotoContainer img {
+
+    aspect-ratio: 1;
+    object-fit: cover;
+
+
     max-width: 100%;
     max-height: 100%;
 }
@@ -203,6 +208,23 @@ main h2 {
     justify-content: end; */
 }
 
+.whatsapp{
+    display: flex;
+    justify-content: end;
+    margin-right: 1em;
+    margin-top: 1em;
+}
+
+
+.whatsapp i{
+    font-size: 2em;
+    color: var(--accent-kleur);
+    background-color: var(--main-tint2);
+    padding: 0.25em;
+    border-radius: 50%;
+    margin-top: 0.2em;;
+}
+
 @media only screen and (min-width: 550px) {
 
 
@@ -241,12 +263,18 @@ main h2 {
     }
 
     .contactLinks a{
-        font-size: 2vw;
+        font-size: 1.5vw;
     }
     
     .contactRechts .contactInfo a{
         font-size: 1vw;
     }
+
+    /* .whatsapp i{
+     
+        right: 2em;
+        font-size: 2em;
+    } */
     
 
 

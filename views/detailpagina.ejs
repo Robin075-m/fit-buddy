@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="/stylesheets/detailpagina.css">
     <link rel="stylesheet" href="/stylesheets/styles.css">
     <link rel="stylesheet" href="/stylesheets/navbar.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -38,9 +40,13 @@
 
                     <div class="containerProfiel">
                         <div class="profileFotoContainer">
+            
                             <img src="<%= trainer.profielfoto || '/stylesheets/images/default-profile.png' %>"
                                 alt="Profielfoto van <%= trainer.naam %>">
+
                         </div>
+
+                        
 
 
                         <div class="rechts">
@@ -118,8 +124,10 @@
                                             <li class="email"><a href="mailto:<%= trainer.email %>">
                                                     <%= trainer.email %>
                                                 </a></li>
-                                        </ul>
+                                        </ul>                
+                                        <a class="whatsapp" href="#"> <i class="fab fa-whatsapp"></i></a>                  
                                     </div>
+
                                 </div>
                             </div>
         
