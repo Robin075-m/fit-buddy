@@ -18,7 +18,7 @@
 
 
 
-.aboutus h1,
+.aboutus h3,
 span {
 	color: #ffffff;
 	font-family: monument extended, sans-serif;
@@ -27,7 +27,7 @@ span {
 	text-transform: uppercase;
 }
 
-.aboutus h1 span {
+.aboutus h3 span {
 	color: var(--accent-kleur);
 	margin-left: 0.3em;
 }

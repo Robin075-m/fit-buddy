@@ -35,6 +35,12 @@
 	background-color: rgba(0, 0, 0, 0.75);
 }
 
+.img-responsive:hover {
+	opacity: 60%;
+}
+
+
+
 @media (min-width: 768px) {
 	.accordion {
 		height: 500px;
@@ -49,6 +55,9 @@
 	padding: 0;
 	list-style: none;
 }
+
+
+
 
 @media (min-width: 768px) {
 	.accordion ul {
@@ -144,6 +153,7 @@
 	margin: auto;
 }
 
+
 &:hover:not(.opened).accordion .background-image {
 	opacity: 0.65;
 }
@@ -174,12 +184,15 @@
 	width: 100%;
 }
 
+
+
 .accordion a {
 	display: block;
 	height: 600px;
 	width: 100%;
 	position: relative;
 	z-index: 3;
+
 	/* vertical-align: bottom; */
 	padding: 30px 30px;
 	box-sizing: border-box;
@@ -188,6 +201,7 @@
 	font-family: Open Sans, sans-serif;
 	transition: opacity 200ms ease;
 }
+
 
 @media (min-width: 768px) {
 	.accordion a {
