@@ -9,13 +9,10 @@
     <link rel="stylesheet" href="/stylesheets/overzicht.css">
     <link rel="stylesheet" href="/stylesheets/styles.css">
     <link rel="stylesheet" href="/stylesheets/navbar.css">
-    <link rel="stylesheet" href="/stylesheets/filters.css" />
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/2.3.1/list.min.js"></script>
 </head>
 <body>
-
 
     <%- include('nav.ejs') %>
     
@@ -28,15 +25,10 @@
                         <button class="pill" type="button">24 hours</button>
                         <button class="pill" type="button">Top Trainers</button>
                         <button class="pill" type="button">Skills</button>
-                        <button class="pill" type="button" id="filterButton" class="w3-button w3-black"><i class="fa fa-filter" style="font-size:24px;color:rgb(238, 198, 0)"></i>Filters </button>
-                   </div>
-          
-        
-        
-    <%- include('filters.ejs') %>
-        
-        
-        
+                        <button class="pill" type="button">Beschikbaarheid</button>
+                    </div>
+                </div>
+                
                 <p class="beschikbareBuddies"><%= trainers ? trainers.length : 0 %> Buddies Beschikbaar</p>
 
                 <ul class="kaarten list">
@@ -52,25 +44,21 @@
                                                 <h3><span class="naam"><%= trainer.naam %></span></h3>
                                                 <!-- <p>Geslacht: <%= trainer.gender %></p> -->
                                                 <div class="beschikbaarheid">
-                                                <p class="beschikbaarheid">Beschikbaar op: <%= trainer.beschikbaarheid.join(', ') %></p>
+                                                <p class="beschikbaarheid dag">Beschikbaar op: <%= trainer.beschikbaarheid.join(', ') %></p>
                                                 </div>
                                             </div>
                                         </div>
-                                  
                                         <div class="skills-container">
                                             <h4>Skills</h4>
                                             <ul class="skills">
                                                 <% Array.isArray(trainer.expertise) && trainer.expertise.forEach(skill => { %>
                                                     <li><%= skill %></li>
-                                                
                                                 <% }) %>
                                                 <% if (!Array.isArray(trainer.expertise)) { %>
                                                     <li><%= trainer.expertise %></li>
                                                 <% } %>
-                                             
                                             </ul>
                                         </div>
-                                           
                                     </div>
                                 </a>
                             </li>
