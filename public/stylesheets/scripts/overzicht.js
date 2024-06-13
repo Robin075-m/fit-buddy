@@ -29,3 +29,7 @@ window.addEventListener('resize', function () {
    kaarten.style.transform = 'scale(1)'; // De kaarten resetten naar hun originele vorm
   }, 500);
 });
+
+
+
+

@@ -181,7 +181,7 @@ app.get('/index', (req, res) => {
 });
 
 app.get('/test', (req, res) => {
-  res.render('newhomepage');
+  res.render('filters');
 });
 
 // Detailpagina voor een specifieke trainer
