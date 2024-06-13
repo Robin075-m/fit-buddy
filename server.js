@@ -118,17 +118,6 @@ app.get('/', (req, res) => {
   res.render('index');
 });
 
-app.get('/trainers', ensureAuthenticated, async (req, res) => {
-  try {
-    const db = getDB();
-    const trainers = await db.collection('users').find({ role: 'trainer' }).toArray();
-    res.render('trainers', { trainers });
-  } catch (err) {
-    console.error('Error occurred while fetching personal trainers:', err);
-    res.redirect('/');
-  }
-});
-
 // Trendingworkouts
 app.get('/trendingworkouts', (req, res) => {
   res.render('trendingworkouts');
