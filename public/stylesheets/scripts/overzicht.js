@@ -6,7 +6,7 @@ console.log('Hallo')
 //filter
 
 let options = {
-  valueNames: ['naam'],
+  valueNames: ['naam', 'dag'],
 };
 
 let userList = new List('mainSection', options);
