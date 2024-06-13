@@ -34,13 +34,14 @@
     padding: 0.5em;
     font-size: 1em;
     border: none;
+
 }
 
 
 
 .pill {
     font-size: 12px;
-    padding: 0.5em 1em;
+    padding: 0.2em 1.5em;
     margin: 2em 1em 0 0;
     border-radius: 1em;
     border: none;
@@ -235,14 +236,20 @@
 
   .pills {
     display: flex;
+    position: absolute;
+    right: 5%;
     padding-left: 3em;
+    justify-content: right;
+
   }
 
   .pill{
     margin: 0 1em 0 0;
+
   }
 
 }
+
 
 
 @media only screen and (min-width: 900px) {

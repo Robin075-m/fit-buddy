@@ -9,7 +9,9 @@
     <link rel="stylesheet" href="/stylesheets/overzicht.css">
     <link rel="stylesheet" href="/stylesheets/styles.css">
     <link rel="stylesheet" href="/stylesheets/navbar.css">
+    <link rel="stylesheet" href="/stylesheets/filters.css" />
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/2.3.1/list.min.js"></script>
 </head>
 <body>
@@ -26,10 +28,15 @@
                         <button class="pill" type="button">24 hours</button>
                         <button class="pill" type="button">Top Trainers</button>
                         <button class="pill" type="button">Skills</button>
-                        <button class="pill" type="button">Beschikbaarheid</button>
-                    </div>
-                </div>
-                
+                        <button class="pill" type="button" id="filterButton" class="w3-button w3-black"><i class="fa fa-filter" style="font-size:24px;color:rgb(238, 198, 0)"></i>Filters </button>
+                   </div>
+          
+        
+        
+    <%- include('filters.ejs') %>
+        
+        
+        
                 <p class="beschikbareBuddies"><%= trainers ? trainers.length : 0 %> Buddies Beschikbaar</p>
 
                 <ul class="kaarten list">
