@@ -15,100 +15,126 @@
 
 <body>
     <%- include('nav.ejs') %>
-    <%- include('profielbutton.ejs') %>
+        <%- include('profielbutton.ejs') %>
 
-    <main>
+            <main>
 
-        <button class="back"> <a href="overzicht.ejs"> < </a></button>
-       <ul class="breadCrumbs">
-            <li><a href="/">Home</a> /&nbsp;</li>
-            <li><a href="overzicht.ejs">Zoek een personal trainer</a> /&nbsp;</li>
-            <li>  <%= trainer.naam %></li>
-       </ul>
-       
+                <button class="back"> <a href="overzicht.ejs">
+                        < </a></button>
+                <ul class="breadCrumbs">
+                    <li><a href="/">Home</a> /&nbsp;</li>
+                    <li><a href="overzicht.ejs">Zoek een personal trainer</a> /&nbsp;</li>
+                    <li>
+                        <%= trainer.naam %>
+                    </li>
+                </ul>
 
 
 
-        <h2>Trainer profile</h2>
 
-        <div class="algemeneInformatie">
-            
-            <div class="containerProfiel">
-                <div class="profileFotoContainer">
-                    <img src="<%= trainer.profielfoto || '/stylesheets/images/default-profile.png' %>" alt="Profielfoto van <%= trainer.naam %>">
-                </div>
+                <h2>Trainer profile</h2>
 
-                <div class="rechts">
-                    <div class="naamLocatie">
-                        <ul>
-                            <li>
-                                <h3 class="naam"><%= trainer.naam %></h3>
-                            </li>
-                            <li>
-                                <p class="locatie"><img src="/stylesheets/images/location-pin.png" alt=""> <%= trainer.locatie %></p>
-                            </li>
-                        </ul>
-                    </div>
+                <div class="algemeneInformatie">
 
-                    <div class="contact">
-                        <div class="contactLinks">
-                            <ul class="contactInfo">
-                                <li class="leeftijd">Leeftijd</li>
-                                <li class="geslacht">Geslacht</li>
-                            </ul>
+                    <div class="containerProfiel">
+                        <div class="profileFotoContainer">
+                            <img src="<%= trainer.profielfoto || '/stylesheets/images/default-profile.png' %>"
+                                alt="Profielfoto van <%= trainer.naam %>">
                         </div>
+
+
+                        <div class="rechts">
+                            <div class="naamLocatie">
+                                <ul>
+                                    <li>
+                                        <h3 class="naam">
+                                            <%= trainer.naam %>
+                                        </h3>
+                                    </li>
+                                    <!-- <li>
+                                        <p class="locatie"><img src="/stylesheets/images/location-pin.png" alt="">
+                                            <%= trainer.locatie %>
+                                        </p>
+                                    </li> -->
+                                </ul>
+                            </div>
+
+                            <div class="contact">
+                                <div class="contactLinks">
+                                    <ul class="contactInfo">
+                                        <li class="leeftijd">Leeftijd</li>
+                                        <li class="geslacht">Geslacht</li>
+                                    </ul>
+                                </div>
+
+                                <div class="contactrechts">
+                                    <ul class="contactInfo">
+                                        <li class="leeftijdNummer">
+                                            <%= trainer.leeftijd %>
+                                        </li>
+                                        <li class="geslachtMV">
+                                            <%= trainer.gender %>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="expertiseContainer">
+                                <h3>Expertise</h3>
+                                <ul class="pills">
+                                    <li>
+                                        <%= trainer.expertise %>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="expertiseContainer">
+                                <h3>Beschikbaar op</h3>
+                                <ul class="pills">
+                                    <% trainer.beschikbaarheid.forEach(day=> { %>
+                                        <li>
+                                            <%= day %>
+                                        </li>
+                                        <% }) %>
+                                </ul>
+                            </div>
+
+                            <div class="contactInfoContainer">
+                                <h3>Contact Informatie</h3>
         
-                        <div class="contactrechts">
-                            <ul class="contactInfo">
-                                <li class="leeftijdNummer"><%= trainer.leeftijd %></li>
-                                <li class="geslachtMV"><%= trainer.gender %></li>
-                            </ul>
+                                <div class="contact">
+                                    <div class="contactLinks">
+                                        <ul class="contactInfo">
+                                            <li class="tel"><a href="tel:<%= trainer.telefoon %>">Telefoonnummer</a></li>
+                                            <li class="mail"><a href="mailto:<%= trainer.email %>">Email </a></li>
+                                        </ul>
+                                    </div>
+        
+                                    <div class="contactRechts">
+                                        <ul class="contactInfo">
+                                            <li class="nummer"><a href="tel:<%= trainer.telefoon %>">
+                                                    <%= trainer.telefoon %>
+                                                </a></li>
+                                            <li class="email"><a href="mailto:<%= trainer.email %>">
+                                                    <%= trainer.email %>
+                                                </a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+        
                         </div>
+
+                        
                     </div>
 
-                    <div class="expertiseContainer">
-                        <h3>Expertise</h3>
-                        <ul class="pills">
-                            <li><%= trainer.expertise %></li>
-                        </ul>
-                    </div>
-
-                    <div class="expertiseContainer">
-                        <h3>Beschikbaar op</h3>
-                        <ul class="pills">
-                            <% trainer.beschikbaarheid.forEach(day => { %>
-                                <li><%= day %></li>
-                            <% }) %>
-                        </ul>
-                    </div>
+         
                 </div>
-            </div>
+            </main>
 
-            <div class="contactInfoContainer">
-                <h3>Contact Informatie</h3>
+            <%- include('footer.ejs') %>
 
-                <div class="contact">
-                    <div class="contactLinks">
-                        <ul class="contactInfo">
-                            <li class="tel"><a href="tel:<%= trainer.telefoon %>">Telefoonnummer</a></li>
-                            <li class="mail"><a href="mailto:<%= trainer.email %>">Email  </a></li>
-                        </ul>
-                    </div>
-
-                    <div class="contactRechts">
-                        <ul class="contactInfo">
-                            <li class="nummer"><a href="tel:<%= trainer.telefoon %>"><%= trainer.telefoon %></a></li>
-                            <li class="email"><a href="mailto:<%= trainer.email %>"><%= trainer.email %></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <%- include('footer.ejs') %>
-
-    <script src="/stylesheets/scripts/detailpagina.js"></script>
+                <script src="/stylesheets/scripts/detailpagina.js"></script>
 </body>
 
 </html>
