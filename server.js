@@ -103,6 +103,7 @@ app.post('/login', async (req, res) => {
   }
 });
 
+// Delete session
 app.get('/logout', (req, res) => {
   req.session.destroy(err => {
     if (err) {
@@ -114,6 +115,7 @@ app.get('/logout', (req, res) => {
   });
 });
 
+// Home
 app.get('/', (req, res) => {
   res.render('index');
 });
@@ -139,6 +141,7 @@ app.get('/mijnprofiel', ensureAuthenticated, async (req, res) => {
   }
 });
 
+// Mijn profiel route
 app.post('/mijnprofiel', ensureAuthenticated, upload.single('profileImage'), async (req, res) => {
   const { name, username, email, password } = req.body;
   const profileImage = req.file ? `/uploads/${req.file.filename}` : req.body.existingProfileImage;
@@ -164,18 +167,14 @@ app.get('/overons', (req, res) => {
   res.render('overons');
 });
 
+// Error route
 app.get('/error', (req, res) => {
   res.render('error');
 });
 
-
 // Over ons
 app.get('/index', (req, res) => {
   res.render('index');
-});
-
-app.get('/test', (req, res) => {
-  res.render('filters');
 });
 
 // Detailpagina voor een specifieke trainer
