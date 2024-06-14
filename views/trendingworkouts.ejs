@@ -6,11 +6,13 @@
     <title>Trending Workouts</title>
 
     <link rel="stylesheet" href="/stylesheets/navbar.css" />
-    <link rel="stylesheet" href="/stylesheets/footer.css">
+
     <link rel="stylesheet" href="/stylesheets/styles.css">
-    <link rel="stylesheet" href="/stylesheets/animationbar.css" />
-    <link rel="stylesheet" href="stylesheets/heroslider.css" />
-    <link rel="stylesheet" href="stylesheets/newhomepage.css" />
+    <link rel="stylesheet" href="/stylesheets/animationbar.css" /> 
+<link rel="stylesheet" href="stylesheets/heroslider.css" />
+    <link rel="stylesheet" href="stylesheets/newhomepage.css" /> 
+
+    <link rel="stylesheet" href="stylesheets/scripts/footerraha.css">
   </head>
 
   <body>
@@ -18,24 +20,26 @@
    <!-- include maakt het overzichtelijker om alles toe te voegen-->
     <%-include ('nav.ejs')%> 
     <%- include('heroslider.ejs') %>
-    <%- include('animationbar.ejs') %>
+
 </header>
+<%- include('animationbar.ejs') %>
     <main>
       <%- include('waaromons.ejs') %>
       <%- include('newhomepage.ejs') %>
 
 
      </main>
-    <footer>
+  
 
       <%- include('footerraha.ejs') %>
-    </footer>
+    
   </body>
+  <script src="/stylesheets/scripts/animationbar.js"></script>
   
   <script src="/stylesheets/scripts/trendingworkouts.js"></script>
 
   <script src="/stylesheets/scripts/heroslider.js"></script>
 
-  <script src="/stylesheets/scripts/animationbar.js"></script>
+  <script src="/stylesheets/scripts/footerraha.js"></script>
 
 </html>

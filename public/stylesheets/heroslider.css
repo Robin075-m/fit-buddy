@@ -116,9 +116,9 @@ body{
 				}
 			}
 
-			#top-banner-2 {background: url('/stylesheets/images/herofinal.png') no-repeat center  center; background-size:cover ;background-color: #000000;}
-			#top-banner-3 {background: url('/stylesheets/images/goforit.png') no-repeat center center; background-size: cover;}
-		#top-banner-4 {background: url('/stylesheets/images/goforit.png') no-repeat center center; background-size: cover; background-color: #000000;
+			#top-banner-2 {background: url('/stylesheets/images/BACKGROUND.pnG') no-repeat center  center; background-size:cover ;background-color: #000000;}
+			#top-banner-3 {background: url('/stylesheets/images/luis-reyes-mTorQ9gFfOg-unsplash.jpg') no-repeat center center; background-size: cover;}
+		#top-banner-4 {background: url('/stylesheets/images/workoutsroutine.png') no-repeat center center; background-size: cover; background-color: #000000;
 			}
 			
 		}
@@ -267,3 +267,49 @@ border: none;
 		box-shadow: inset 0px -200px 0px 0px rgb(255, 255, 255);
 	}
 	
+
+	#top-banner-1 .banner-inner-wrapper {
+		text-align: center;
+	
+		position: relative;
+		top: 20%;
+	}
+	
+	#top-banner-1  h1 {
+		padding-bottom: 0.3em;
+		font-family: var(--h3-font);
+		position: relative;
+		font-size: 2.5em;
+	
+
+		
+		text-transform: none;
+		
+	}
+	#top-banner-1   p{
+	
+	position: relative;
+	left: 28%;
+	text-align: center;
+	width: 40%;
+	
+	
+	}
+	#top-banner-1 h2 {
+		font-size: 8em;
+		line-height: 85%;
+	position: relative;
+
+	color: #f2bf33;
+	
+	
+	}
+	
+	#top-banner-1  div .line{
+		position: relative;
+
+	max-width: 20%;
+	left: 40%;
+	
+	
+	}

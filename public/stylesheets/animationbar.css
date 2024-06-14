@@ -35,6 +35,7 @@ margin-top: 20px;
   .marquee-content {
     list-style: none;
     height:100%;
+    padding-top: 25px;
     display: flex;
     animation: scrolling var(--marquee-animation-duration) linear infinite;
   }
@@ -57,7 +58,7 @@ margin-top: 20px;
   
   
   
-  /* @media (max-width: 900px) {
+  @media (max-width: 900px) {
     html { font-size: 12px; }
     :root {
       --marquee-width: 100%;
@@ -65,7 +66,7 @@ margin-top: 20px;
       --marquee-elements-displayed: 3;
     }
     .marquee:before, .marquee:after { width: 5rem; }
-  } */
+  }
  
 
 
