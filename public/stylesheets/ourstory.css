@@ -90,7 +90,6 @@ span {
 
 .learn-more-button button {
 	margin-top: 5px;
-	font-family: var(--main-font);
 	padding: 10px 90px;
 
 	cursor: pointer;
@@ -98,8 +97,16 @@ span {
 	font-size: 1em;
 
 	margin-top: 50px;
-	
+
+	display: flex;
+	justify-content: end;
 }
+
+.learn-more-button {
+	display: flex;
+	justify-content: end;
+}
+
 
 /* PIERWSZY SPOSOB WYKORZYSTANIE CIENIA */
 .first{
@@ -133,11 +140,10 @@ span {
 border: none;
 	border-radius: 5px 50px 50px 0px;
 
-
-	
-
-
 }
+
+
 .sec:hover{
 	box-shadow: inset 0px -200px 0px 0px rgb(255, 255, 255);
+	color: var(--main-tint);
 }
