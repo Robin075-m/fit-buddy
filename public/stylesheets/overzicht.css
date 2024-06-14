@@ -350,7 +350,7 @@
   justify-content: space-between;
   width: 100%;
   font-size: 1.2rem;
-  color: #506EEC;
+  color: #ffffff;
 }
   }
 
@@ -362,3 +362,11 @@
 	line-height: 1.125;
 	margin-bottom: 1.25rem;
 }
+
+
+.slider-value #slider-min-value span { color:#dddddd;
+    font-size: large;
+
+
+}
+
