@@ -1,0 +1,215 @@
+
+
+:root {
+    --tekst: white;
+    --accent-kleur: #f2bf33;
+    --main-tint: #282828;
+    --main-tint2: #3a3a3a;
+    --accent-kleur2: #4D4D4D;
+    --accent-kleur3: #666666;
+    color-scheme: dark; /*  Donkere scroll bar*/
+}
+
+
+body {
+      overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+@font-face {
+    font-family: 'monument extended';
+    src: url(public/stylesheets/fonts/MonumentExtended-Regular.otf);
+    font-style: normal;
+    font-weight: 100;
+}
+
+@font-face {
+    font-family: 'open sans';
+    src: url(public/stylesheets/fonts/21798841561.ttf);
+    font-style: normal;
+    font-weight: 100;
+}
+
+
+@font-face {
+    font-family: 'Raleway' ;
+    src: url(public/stylesheets/fonts/Raleway);
+    font-style: normal;
+    font-weight: 100;
+}
+
+@font-face {
+    font-family: 'open sans bold';
+    src: url(public/stylesheets/fonts/23165521968.ttf);
+    font-style: bold;
+    font-weight: 100;
+}
+
+@font-face {
+    font-family: 'open sans italics';
+    src: url(/stylesheets/fonts/20007011713.ttf);
+    font-style: bold;
+    font-weight: 100;
+}
+
+/* ////////////////////////////////////////////////////////////////////// */
+.aboutus {
+    /* background: #000000; */
+    margin: 3em 3em 3em 3em;
+    /* padding: 3em; */
+  }
+  
+  .aboutus .outer {
+  
+    width: 80vw;
+    /* display: grid;
+    grid-template-columns: 1fr 1fr; */
+  }
+  
+  .aboutus img {
+    
+    width: 100%;
+  
+  }
+  
+  
+  
+  .aboutus h1,
+  span {
+    color: #ffffff;
+    font-family: monument extended, sans-serif;
+    font-size: 5vw;
+    display: flex;
+    text-transform: uppercase;
+  }
+  
+  .aboutus h1 span {
+    color: var(--accent-kleur);
+    margin-left: 0.3em;
+  }
+  
+  .aboutus p {
+    font-size: 0.5vw;
+    line-height: 1.4;
+    font-size: 2.5vw;
+  }
+  
+
+  .learn-more-button button {
+		margin-top: 5px;
+		font-family: var(--main-font);
+		padding: 10px 90px;
+	
+		cursor: pointer;
+		font-weight: 500;
+		font-size: 1em;
+	
+		
+		
+	}
+	
+	/* PIERWSZY SPOSOB WYKORZYSTANIE CIENIA */
+	.first{
+		color:var(--accent-kleur);
+		border-radius: 50px 0px 0px 50px;
+	
+		
+		border: none;
+		
+		background:		 var(--accent-kleur);
+		box-shadow: inset 0px 0px 0px 0px --accent-kleur2(18, 6, 6);
+		transition: all 0.5s ease-in-out;		
+	
+	}
+	.first:hover{
+		box-shadow: inset 0px -200px 0px 0px rgb(255, 255, 255);
+	}
+	
+	/* DRUGI SPOSOB DLUZSZY ALE BARDZIEJ UNIWERSALNY*/
+	.sec{
+		
+		border: none;
+		
+		background:		 var(--accent-kleur);
+		box-shadow: inset 0px 0px 0px 0px rgb(18, 6, 6);
+		transition: all 0.5s ease-in-out;		
+		color: #404040;
+	
+	
+border: none;
+		border-radius: 5px 50px 50px 0px;
+	
+
+		
+
+
+	}
+	.sec:hover{
+		box-shadow: inset 0px -200px 0px 0px rgb(255, 255, 255);
+	}
+	
+  
+  @media screen and (min-width:610px) {
+    .aboutus .outer {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3em;
+    }
+  
+  
+    .aboutus img {
+      display: flex;
+      justify-content: flex-end;
+      width: 100%;
+      margin-left: 8vw;
+    }
+  
+  
+    .aboutus p {
+      display: inline-block;
+      width: 100%;
+      margin-right: 20em;
+  
+      font-size: 1.5vw;
+    }
+  
+    .aboutus .button {
+      display: flex;
+      justify-content: flex-end;
+    }
+    
+  }
+  
+  
+  
+  
+  
+  /* buttons */
+  
+  .aboutus .button a {
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+    font-size: 11px;
+    color: var(--accent-kleur);
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 1px solid #aaa;
+    font-weight: bold;
+  
+  
+  } 
+  
+  .aboutus .button a:hover {
+    color: rgb(0, 0, 0);
+    background-color: var(--accent-kleur);
+    border: none;
+    transition: all 0.5s ease;
+  }
+  
+  
+  .aboutus .button a {
+  
+    font-family: Raleway, sans-serif;
+    /* border-radius: 5px 50px 50px 0px; */
+    border-radius: 2em;
+    /* padding-right: 48px; */
+  }

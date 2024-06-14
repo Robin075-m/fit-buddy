@@ -4,17 +4,16 @@
 <div class="aboutus">
     <div class="outer">
           <div class="mainStory">
-            <h3>Over<br/> <span>Ons</span></h3>
+            <h1>Over<br/> <span>Ons</span></h1>
             <p>
               FitBuddy is jouw ultieme trainingspartner voor het bereiken van fitnessdoelen. Met een breed scala aan trending workouts zoals HIIT, yoga, pilates en krachttraining biedt FitBuddy voor ieder wat wils. Of je nu thuis, in de sportschool of buiten wilt trainen, FitBuddy past zich aan jouw behoeften aan.
                </p>
 
                <p>De gebruiksvriendelijke app begeleidt je stap voor stap, met video-instructies en gepersonaliseerde schema's. Begin vandaag nog en ervaar hoe FitBuddy je helpt fit, sterk en gezond te worden, waar en wanneer je maar wilt!</p>
             
-            <div class="button">
-              
-              <a class="cart-btn" href="/overzicht">Zoek Buddies</a>
-            </div>
+               <div class="learn-more-button">
+                <button class="sec">First way</button>
+              </div>
           </div>
         
 
@@ -23,3 +22,124 @@
     </div>
     
     </div>
+
+
+    <style>.aboutus {
+      /* background: #000000; */
+      margin: 3em 3em 3em 3em;
+      /* padding: 3em; */
+    }
+    
+    .aboutus .outer {
+    
+      width: 80vw;
+      /* display: grid;
+      grid-template-columns: 1fr 1fr; */
+    }
+    
+    .aboutus img {
+      
+      width: 100%;
+    
+    }
+    
+    
+    
+    .aboutus h1,
+    span {
+      color: #ffffff;
+      font-family: monument extended, sans-serif;
+      font-size: 5vw;
+      display: flex;
+      text-transform: uppercase;
+    }
+    
+    .aboutus h1 span {
+      color: var(--accent-kleur);
+      margin-left: 0.3em;
+    }
+    
+    .aboutus p {
+      font-size: 0.5vw;
+      line-height: 1.4;
+      font-size: 2.5vw;
+    }
+    
+    .aboutus p:nth-of-type(2) {
+      margin-top:1em;
+    }
+    
+    
+    .aboutus .button {
+      display: flex;
+      margin-top: 2em;
+      justify-content: center;
+    }
+    
+    
+    @media screen and (min-width:610px) {
+      .aboutus .outer {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3em;
+      }
+    
+    
+      .aboutus img {
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+        margin-left: 8vw;
+      }
+    
+    
+      .aboutus p {
+        display: inline-block;
+        width: 100%;
+        margin-right: 20em;
+    
+        font-size: 1.5vw;
+      }
+    
+      .aboutus .button {
+        display: flex;
+        justify-content: flex-end;
+      }
+      
+    }
+    
+    
+    
+    
+    
+    /* buttons */
+    
+    .aboutus .button a {
+      display: inline-block;
+      overflow: hidden;
+      position: relative;
+      font-size: 11px;
+      color: var(--accent-kleur);
+      text-decoration: none;
+      padding: 10px 20px;
+      border: 1px solid #aaa;
+      font-weight: bold;
+    
+    
+    } 
+    
+    .aboutus .button a:hover {
+      color: rgb(0, 0, 0);
+      background-color: var(--accent-kleur);
+      border: none;
+      transition: all 0.5s ease;
+    }
+    
+    
+    .aboutus .button a {
+    
+      font-family: Raleway, sans-serif;
+      /* border-radius: 5px 50px 50px 0px; */
+      border-radius: 2em;
+      /* padding-right: 48px; */
+    }</style>

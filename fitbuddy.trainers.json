@@ -1,0 +1,131 @@
+[{
+  "_id": {
+    "$oid": "66679e39d90a397b187631ce"
+  },
+  "naam": "Jamal Ouaddou",
+  "leeftijd": 34,
+  "gender": "man",
+  "expertise": "cardio",
+  "beschikbaarheid": [
+    "maandag",
+    "woensdag",
+    "zaterdag"
+  ],
+  "profielfoto": "/uploads/trainer7.png",
+  "email": "jamalouaddou@fitbuddy.nl",
+  "telefoon": "0629384783"
+},
+{
+  "_id": {
+    "$oid": "66679e39d90a397b187631c8"
+  },
+  "naam": "Lucas van der Berg",
+  "leeftijd": 30,
+  "gender": "man",
+  "expertise": "cardio",
+  "beschikbaarheid": [
+    "maandag",
+    "woensdag",
+    "vrijdag"
+  ],
+  "profielfoto": "/uploads/trainer1.png",
+  "email": "lucasvdberg@fitbuddy.nl",
+  "telefoon": "0612920394"
+},
+{
+  "_id": {
+    "$oid": "66679e39d90a397b187631ca"
+  },
+  "naam": "Sven Bakker",
+  "leeftijd": 35,
+  "gender": "man",
+  "expertise": "calisthenics",
+  "beschikbaarheid": [
+    "maandag",
+    "dinsdag",
+    "vrijdag"
+  ],
+  "profielfoto": "/uploads/trainer3.png",
+  "email": "svenbakker@fitbuddy.nl",
+  "telefoon": "0638298372"
+},
+{
+  "_id": {
+    "$oid": "66679e39d90a397b187631c9"
+  },
+  "naam": "Emma de Vries",
+  "leeftijd": 28,
+  "gender": "vrouw",
+  "expertise": "fitness",
+  "beschikbaarheid": [
+    "dinsdag",
+    "donderdag"
+  ],
+  "profielfoto": "/uploads/trainer2.png",
+  "email": "emmavdvries@fitbuddy.nl",
+  "telefoon": "0639483940"
+},
+{
+  "_id": {
+    "$oid": "66679e39d90a397b187631cf"
+  },
+  "naam": "Yara Haddad",
+  "leeftijd": 31,
+  "gender": "vrouw",
+  "expertise": "fitness",
+  "beschikbaarheid": [
+    "donderdag",
+    "vrijdag"
+  ],
+  "profielfoto": "/uploads/trainer8.png",
+  "email": "yarahaddad@fitbuddy.nl",
+  "telefoon": "0639209382"
+},
+{
+  "_id": {
+    "$oid": "66679e39d90a397b187631cc"
+  },
+  "naam": "Ravi Kumar",
+  "leeftijd": 29,
+  "gender": "man",
+  "expertise": "pilates",
+  "beschikbaarheid": [
+    "maandag",
+    "donderdag"
+  ],
+  "profielfoto": "/uploads/trainer5.png",
+  "email": "ravikumar@fitbuddy.nl",
+  "telefoon": "0619203948"
+},
+{
+  "_id": {
+    "$oid": "66679e39d90a397b187631cb"
+  },
+  "naam": "Aisha El Haddad",
+  "leeftijd": 32,
+  "gender": "vrouw",
+  "expertise": "yoga",
+  "beschikbaarheid": [
+    "woensdag",
+    "vrijdag"
+  ],
+  "profielfoto": "/uploads/trainer4.png",
+  "email": "aishaelhaddad@fitbuddy.nl",
+  "telefoon": "0684938261"
+},
+{
+  "_id": {
+    "$oid": "66679e39d90a397b187631cd"
+  },
+  "naam": "Sara Ahmadi",
+  "leeftijd": 27,
+  "gender": "vrouw",
+  "expertise": "zumba",
+  "beschikbaarheid": [
+    "dinsdag",
+    "vrijdag"
+  ],
+  "profielfoto": "/uploads/trainer6.png",
+  "email": "saraahmadi@fitbuddy.nl",
+  "telefoon": "0699382736"
+}]

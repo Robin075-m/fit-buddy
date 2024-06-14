@@ -11,7 +11,7 @@
 margin-top: 20px;
     width: var(--marquee-width);
     height: var(--marquee-height);
-    background-color: #b5d815;
+    background-color:  #f2bf33;
     color:black;
     overflow: hidden;
     position: relative;
