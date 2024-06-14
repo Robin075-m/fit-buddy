@@ -1,7 +1,7 @@
+
+
+
 /* carousel */
-
-
-
 .carousel {
     width: 100vw;
     height: 100vh;
@@ -93,7 +93,6 @@
     line-height: 1;
     text-shadow: 3px 4px 7px rgba(0, 0, 0, 0.4);
 
-
     opacity: 0;
     animation: animate 1s ease-in-out 0.6s 1 forwards;
 }
@@ -104,8 +103,6 @@
   margin-bottom: 20px;
   font-size: 2vw;
   margin-left: 5px;
-
-
 
   opacity: 0;
   animation: animate 1s ease-in-out 0.9s 1 forwards;
@@ -136,8 +133,8 @@
 
   .content .btn button:nth-child(1):hover{
     margin-right: 15px;
-     background-color: var(--tekst);
-     color: black;
+    background-color: var(--tekst);
+    color: black;
     border-radius: 2em;
     border: none;
     transition: 0.3s;
@@ -204,8 +201,7 @@
    }
 
    marquee {
-  color: var(--accent-kleur
-  );
+  color: var(--accent-kleur);
   padding: 1em;
   border-top: 5px solid var(--accent-kleur);
   /* margin-top: 1em; */

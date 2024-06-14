@@ -7,8 +7,8 @@ const list = document.querySelector('.list');
 const item = document.querySelectorAll('.item')
 const runningTime = document.querySelector('.timeRunning')
 
-let timeRunning = 3000
-let timeAutoNext = 10000
+let timeRunning = 3000 //
+let timeAutoNext = 10000 // Hoelang het duurt voordat de bar eindigt
 
 nextBtn.onclick = function() {
     showslider('next')

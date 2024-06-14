@@ -164,6 +164,16 @@ app.get('/overons', (req, res) => {
   res.render('overons');
 });
 
+app.get('/error', (req, res) => {
+  res.render('error');
+});
+
+
+// Over ons
+app.get('/index', (req, res) => {
+  res.render('index');
+});
+
 app.get('/test', (req, res) => {
   res.render('filters');
 });
