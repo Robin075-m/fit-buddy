@@ -15,7 +15,7 @@ connectDB();
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
-app.use('/uploads', express.static(path.join(__dirname, 'public/uploads'))); // Serve the 'uploads' folder statically
+app.use('/uploads', express.static(path.join(__dirname, 'public/uploads')));
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -29,10 +29,10 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 app.use(session({
-  secret: process.env.SESSION_SECRET || 'default-secret', // Use an environment variable for the session secret
+  secret: process.env.SESSION_SECRET || 'default-secret', 
   resave: false,
   saveUninitialized: true,
-  cookie: { secure: process.env.NODE_ENV === 'production' } // Use secure cookies in production
+  cookie: { secure: process.env.NODE_ENV === 'production' } 
 }));
 
 function ensureAuthenticated(req, res, next) {
@@ -60,7 +60,7 @@ app.get('/register', (req, res) => {
 
 app.post('/register', upload.single('profileImage'), async (req, res) => {
   const { name, username, email, password, birthdate, gender } = req.body;
-  const profileImage = req.file ? `/uploads/${req.file.filename}` : ''; // Corrected path for the profile image
+  const profileImage = req.file ? `/uploads/${req.file.filename}` : ''; 
   try {
     const hashedPassword = await bcrypt.hash(password, 10);
     const newUser = { name, username, email, password: hashedPassword, birthdate, gender, profileImage };
@@ -77,7 +77,7 @@ app.post('/register', upload.single('profileImage'), async (req, res) => {
 
 app.get('/login', (req, res) => {
   const loginError = req.session.loginError;
-  req.session.loginError = null;  // Clear the login error
+  req.session.loginError = null;
   res.render('login', { loginError });
 });
 
@@ -90,7 +90,7 @@ app.post('/login', async (req, res) => {
       req.session.userId = user._id;
       req.session.username = user.username;
       req.session.role = user.role;
-      req.session.loginError = null;  // Clear any previous login errors
+      req.session.loginError = null;
       res.redirect('/');
     } else {
       req.session.loginError = 'Login failed, please try again.';
@@ -162,11 +162,6 @@ app.post('/mijnprofiel', ensureAuthenticated, upload.single('profileImage'), asy
 // Over ons
 app.get('/overons', (req, res) => {
   res.render('overons');
-});
-
-// Over ons
-app.get('/index', (req, res) => {
-  res.render('index');
 });
 
 app.get('/test', (req, res) => {
