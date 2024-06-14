@@ -6,7 +6,26 @@
 
 
         
-            
+<fieldset class="checkbox-group">
+  <legend class="checkbox-group-legend">Availability</legend>
+  <div class="weekDays-selector">
+            <input type="checkbox" id="weekday-mon" class="weekday" value="maandag" />
+            <label for="weekday-mon">M</label>
+            <input type="checkbox" id="weekday-tue" class="weekday" value="dinsdag" />
+            <label for="weekday-tue">T</label>
+            <input type="checkbox" id="weekday-wed" class="weekday" value="woensdag" />
+            <label for="weekday-wed">W</label>
+            <input type="checkbox" id="weekday-thu" class="weekday" value="donderdag" />
+            <label for="weekday-thu">T</label>
+            <input type="checkbox" id="weekday-fri" class="weekday" value="vrijdag" />
+            <label for="weekday-fri">F</label>
+            <input type="checkbox" id="weekday-sat" class="weekday" value="zaterdag" />
+            <label for="weekday-sat">S</label>
+            <input type="checkbox" id="weekday-sun" class="weekday" value="zondag" />
+            <label for="weekday-sun">S</label>
+        </div>
+    </fieldset>
+
 
 <div class="w3-container">
   <div id="id01" class="w3-modal">
@@ -15,26 +34,25 @@
         <span id="closeModal" class="w3-button w3-display-topright">&times;</span>
 
     
-              <div id="filterscontainer">
-                <fieldset class="checkbox-group">
-                  <legend class="checkbox-group-legend">Availability</legend>
-                  <div class="weekDays-selector">
-                    <input type="checkbox" id="weekday-mon" class="weekday" />
+        <!-- <fieldset class="checkbox-group">
+          <legend class="checkbox-group-legend">Availability</legend>
+          <div class="weekDays-selector">
+                    <input type="checkbox" id="weekday-mon" class="weekday" value="maandag" />
                     <label for="weekday-mon">M</label>
-                    <input type="checkbox" id="weekday-tue" class="weekday" />
+                    <input type="checkbox" id="weekday-tue" class="weekday" value="dinsdag" />
                     <label for="weekday-tue">T</label>
-                    <input type="checkbox" id="weekday-wed" class="weekday" />
+                    <input type="checkbox" id="weekday-wed" class="weekday" value="woensdag" />
                     <label for="weekday-wed">W</label>
-                    <input type="checkbox" id="weekday-thu" class="weekday" />
+                    <input type="checkbox" id="weekday-thu" class="weekday" value="donderdag" />
                     <label for="weekday-thu">T</label>
-                    <input type="checkbox" id="weekday-fri" class="weekday" />
+                    <input type="checkbox" id="weekday-fri" class="weekday" value="vrijdag" />
                     <label for="weekday-fri">F</label>
-                    <input type="checkbox" id="weekday-sat" class="weekday" />
+                    <input type="checkbox" id="weekday-sat" class="weekday" value="zaterdag" />
                     <label for="weekday-sat">S</label>
-                    <input type="checkbox" id="weekday-sun" class="weekday" />
+                    <input type="checkbox" id="weekday-sun" class="weekday" value="zondag" />
                     <label for="weekday-sun">S</label>
-                  </div>
-                </fieldset>
+                </div>
+            </fieldset> -->
 
                 <fieldset class="checkbox-group">
                   <legend class="checkbox-group-legend">Age Range</legend>
@@ -53,7 +71,7 @@
               
     
                 <fieldset class="checkbox-group">
-                  <legend class="checkbox-group-legend">Skills</legend>
+                  <legend class="checkbox-group-legend">expertise</legend>
                   <div class="checkbox">
                     <label class="checkbox-wrapper">
                       <input type="checkbox" class="checkbox-input" />
@@ -327,7 +345,7 @@
                             <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
                           </svg>
                         </span>
-                        <span>Checkbox 1</span>
+                        <span>female</span>
                       </label>
                     </div>
                   
@@ -339,7 +357,7 @@
                             <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
                           </svg>
                         </span>
-                        <span>Checkbox 2</span>
+                        <span>male</span>
                       </label>
                     </div>
                   
@@ -351,7 +369,7 @@
                             <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
                           </svg>
                         </span>
-                        <span>Checkbox 3</span>
+                        <span>other</span>
                       </label>
                     </div>
                   </fieldset>

@@ -10,64 +10,90 @@
     <link rel="stylesheet" href="/stylesheets/styles.css">
     <link rel="stylesheet" href="/stylesheets/navbar.css">
 
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/2.3.1/list.min.js"></script>
 </head>
 <body>
+
 
     <%- include('nav.ejs') %>
     
         <main>
             <div id="mainSection">
-                <h2 class="countUsers">Personal Trainers</h2>
-                <div class="filter">
-                    <input type="search" class="search" placeholder="Filter op naam...">
-                    <div class="pills">
-                        <button class="pill" type="button">24 hours</button>
-                        <button class="pill" type="button">Top Trainers</button>
-                        <button class="pill" type="button">Skills</button>
-                        <button class="pill" type="button">Beschikbaarheid</button>
+                <fieldset class="checkbox-group">
+                  <legend class="checkbox-group-legend">Availability</legend>
+                  <div class="weekDays-selector">
+                    <input type="checkbox" id="weekday-mon" class="weekday" value="maandag" />
+                    <label for="weekday-mon">M</label>
+                    <input type="checkbox" id="weekday-tue" class="weekday" value="dinsdag" />
+                    <label for="weekday-tue">T</label>
+                    <input type="checkbox" id="weekday-wed" class="weekday" value="woensdag" />
+                    <label for="weekday-wed">W</label>
+                    <input type="checkbox" id="weekday-thu" class="weekday" value="donderdag" />
+                    <label for="weekday-thu">T</label>
+                    <input type="checkbox" id="weekday-fri" class="weekday" value="vrijdag" />
+                    <label for="weekday-fri">F</label>
+                    <input type="checkbox" id="weekday-sat" class="weekday" value="zaterdag" />
+                    <label for="weekday-sat">S</label>
+                    <input type="checkbox" id="weekday-sun" class="weekday" value="zondag" />
+                    <label for="weekday-sun">S</label>
+                  </div>
+                </fieldset>
+            
+                <fieldset class="checkbox-group">
+                  <legend class="checkbox-group-legend">Age Range</legend>
+                  <div class="slider-container">
+                    <div class="range-slider">
+                      <input type="range" id="slider-min" class="slider" min="18" max="50" value="18">
+                      <input type="range" id="slider-max" class="slider" min="18" max="50" value="50">
+                      <div class="range-fill"></div>
                     </div>
-                </div>
-                
+                    <div class="slider-values">
+                      <span id="slider-min-value">18</span> - <span id="slider-max-value">50+</span>
+                    </div>
+                  </div>
+                </fieldset>
+            
                 <p class="beschikbareBuddies"><%= trainers ? trainers.length : 0 %> Buddies Beschikbaar</p>
-
+            
                 <ul class="kaarten list">
-                    <% if (trainers) { %>
-                        <% trainers.forEach(trainer => { %>
-                            <li>
-                                <a href="/trainer/<%= trainer._id %>" class="kaart">
-                                    <img class="banner" src="<%= trainer.bannerImage || '/stylesheets/images/shoulder.jpeg' %>" alt="">
-                                    <div class="kaart_overlay">
-                                        <div class="kaart_header">
-                                            <img class="profielfoto" src="<%= trainer.profielfoto || '/stylesheets/images/trainer2.png' %>" alt="">
-                                            <div class="kaart_header_tekst">
-                                                <h3><span class="naam"><%= trainer.naam %></span></h3>
-                                                <!-- <p>Geslacht: <%= trainer.gender %></p> -->
-                                                <div class="beschikbaarheid">
-                                                <p class="beschikbaarheid dag">Beschikbaar op: <%= trainer.beschikbaarheid.join(', ') %></p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="skills-container">
-                                            <h4>Skills</h4>
-                                            <ul class="skills">
-                                                <% Array.isArray(trainer.expertise) && trainer.expertise.forEach(skill => { %>
-                                                    <li><%= skill %></li>
-                                                <% }) %>
-                                                <% if (!Array.isArray(trainer.expertise)) { %>
-                                                    <li><%= trainer.expertise %></li>
-                                                <% } %>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                        <% }) %>
-                    <% } else { %>
-                        <li>Geen trainers beschikbaar</li>
-                    <% } %>
+                  <% if (trainers) { %>
+                    <% trainers.forEach(trainer => { %>
+                      <li>
+                        <a href="/trainer/<%= trainer._id %>" class="kaart">
+                          <img class="banner" src="<%= trainer.bannerImage || '/stylesheets/images/shoulder.jpeg' %>" alt="">
+                          <div class="kaart_overlay">
+                            <div class="kaart_header">
+                              <img class="profielfoto" src="<%= trainer.profielfoto || '/stylesheets/images/trainer2.png' %>" alt="">
+                              <div class="kaart_header_tekst">
+                                <h3><span class="naam"><%= trainer.naam %></span></h3>
+                                <div class="beschikbaarheid">
+                                  <p class="beschikbaarheid dag">Beschikbaar op: <%= trainer.beschikbaarheid.join(', ') %></p>
+                                  <p class="leeftijd">Age: <%= trainer.leeftijd %></p>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="skills-container">
+                              <h4>Skills</h4>
+                              <ul class="skills">
+                                <% Array.isArray(trainer.expertise) && trainer.expertise.forEach(skill => { %>
+                                  <li><%= skill %></li>
+                                <% }) %>
+                                <% if (!Array.isArray(trainer.expertise)) { %>
+                                  <li><%= trainer.expertise %></li>
+                                <% } %>
+                              </ul>
+                            </div>
+                          </div>
+                        </a>
+                      </li>
+                    <% }); %>
+                  <% } else { %>
+                    <li>Geen trainers beschikbaar</li>
+                  <% } %>
                 </ul>
-            </div>
+              </div>
             <script src="/stylesheets/scripts/overzicht.js"></script>
         </main>
     
