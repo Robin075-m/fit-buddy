@@ -57,11 +57,13 @@
                     </div>
                   </div>
                 </fieldset>
-            
-                <p class="beschikbareBuddies"><%= trainers ? trainers.length : 0 %> Buddies Beschikbaar</p>
+                <!-- aantal records vinden -->
+                <p class="beschikbareBuddies"><%= trainers ? trainers.length : 0 %> Buddies Beschikbaar</p> 
             
                 <ul class="kaarten list">
+                  <!-- Validate of de tabel trainers bestaat en opgehaald kan worden -->
                   <% if (trainers) { %>
+                    <!-- Looped door elke array in de trainers array -->
                     <% trainers.forEach(trainer => { %>
                       <li>
                         <a href="/trainer/<%= trainer._id %>" class="kaart">
