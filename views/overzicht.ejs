@@ -47,13 +47,9 @@
                   <legend class="checkbox-group-legend">Age Range</legend>
                   <div class="slider-container">
                     <div class="range-slider">
-                      <input type="range" id="slider-min" class="slider" min="18" max="50" value="18">
-                      <input type="range" id="slider-max" class="slider" min="18" max="50" value="50">
+                      <input type="range" id="slider-min" class="slider" min="18" max="50" value="18" oninput="this.nextElementSibling.value = this.value"><output style="color:white">18</output>
+                      <input type="range" id="slider-max" class="slider" min="18" max="50" value="50" oninput="this.nextElementSibling.value = this.value"><output style="color:white">50</output>
                       <div class="range-fill"></div>
-                    </div>
-                    <div class="slider-values">
-                      <span id="slider-min-value">18</span> - <span id="slider-max-value">50+</span>
-                     </style>
                     </div>
                   </div>
                 </fieldset>
@@ -67,7 +63,7 @@
                     <% trainers.forEach(trainer => { %>
                       <li>
                         <a href="/trainer/<%= trainer._id %>" class="kaart">
-                          <img class="banner" src="<%= trainer.bannerImage || '/stylesheets/images/shoulder.jpeg' %>" alt="">
+                          <img class="banner" src="/stylesheets/images/banner.jpg" alt="">
                           <div class="kaart_overlay">
                             <div class="kaart_header">
                               <img class="profielfoto" src="<%= trainer.profielfoto || '/stylesheets/images/trainer2.png' %>" alt="">
@@ -80,7 +76,7 @@
                               </div>
                             </div>
                             <div class="skills-container">
-                              <h4>Skills</h4>
+                              <h4>Expertises</h4>
                               <ul class="skills">
                                 <% Array.isArray(trainer.expertise) && trainer.expertise.forEach(skill => { %>
                                   <li><%= skill %></li>
