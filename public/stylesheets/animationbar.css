@@ -1,43 +1,27 @@
 :root{
-    --marquee-width: 100%;
+    --marquee-width: 100vw;
     --marquee-height: 8vh;
     /* --marquee-elements: 15; */ /* defined with JavaScript */
     --marquee-elements-displayed: 15;
     --marquee-element-width: calc(var(--marquee-width) / var(--marquee-elements-displayed));
-    --marquee-animation-duration: calc(var(--marquee-elements) * 3s);
+    --marquee-animation-duration: calc(var(--marquee-elements) * 2s);
   }
 
   .marquee {
-margin-top: 20px;
+
     width: var(--marquee-width);
     height: var(--marquee-height);
     background-color:  #f2bf33;
-    color:black;
     overflow: hidden;
     position: relative;
   }
-  .marquee:before, .marquee:after {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    content: "";
-    z-index: 1;
-  }
-  .marquee:before {
-
-    background: linear-gradient(to right, #111111c4 0%, transparent 100%);
-  }
-  .marquee:after {
-
-    background: linear-gradient(to left,  #111111c4 0%, transparent 100%);
-  }
+  
   .marquee-content {
     list-style: none;
     height:100%;
-    padding-top: 25px;
     display: flex;
     animation: scrolling var(--marquee-animation-duration) linear infinite;
+    
   }
 
   @keyframes scrolling {
@@ -48,24 +32,22 @@ margin-top: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-
     flex-shrink: 0;
     width: var(--marquee-element-width);
-    max-height: 50%;
+    max-height: 100%;
     font-size: calc(var(--marquee-height)*3/4); 
     white-space: nowrap;
   }
   
   
-  
-  @media (max-width: 900px) {
+  @media (max-width: 600px) {
     html { font-size: 12px; }
     :root {
-      --marquee-width: 100%;
+      --marquee-width: 100vw;
       --marquee-height: 6vh;
-      --marquee-elements-displayed: 3;
+      --marquee-elements-displayed: 8;
     }
-    .marquee:before, .marquee:after { width: 5rem; }
+    .marquee:before, .marquee:after { width: 15rem; }
   }
  
 

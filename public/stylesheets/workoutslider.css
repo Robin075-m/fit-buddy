@@ -1,7 +1,7 @@
 .textsliders {
-	padding:  2em 3em 0 3em;
+	padding: 2em 3em 0 3em;
 	margin: 0 0 2em 0;
-	border-top: 3px solid var(--accent-kleur) ;
+	border-top: 3px solid var(--accent-kleur);
 }
 
 .textsliders h3 {
@@ -19,10 +19,11 @@
 	margin-top: 0.5em;
 }
 
-.textsliders h3, span {
-    text-transform: uppercase;
-    display: flex;
-    display: inline-block;
+.textsliders h3,
+span {
+	text-transform: uppercase;
+	display: flex;
+	display: inline-block;
 }
 
 .accordion {
@@ -39,8 +40,6 @@
 	opacity: 60%;
 }
 
-
-
 @media (min-width: 768px) {
 	.accordion {
 		height: 500px;
@@ -55,9 +54,6 @@
 	padding: 0;
 	list-style: none;
 }
-
-
-
 
 @media (min-width: 768px) {
 	.accordion ul {
@@ -81,7 +77,7 @@
 	left: 50%;
 	color: var(--accent-kleur);
 	font-weight: 500;
-	font-family:  monument extended, sans-serif;
+	font-family: monument extended, sans-serif;
 	text-transform: uppercase;
 
 	width: auto;
@@ -153,7 +149,6 @@
 	margin: auto;
 }
 
-
 &:hover:not(.opened).accordion .background-image {
 	opacity: 0.65;
 }
@@ -168,14 +163,14 @@
 	transform: translateY(-50%);
 	transition: opacity 300ms ease;
 	transition-delay: 100ms;
-	font-family: monument extended, sans-serif;;
+	font-family: monument extended, sans-serif;
 	text-overflow: clip;
 	font-size: 2vw;
 	font-weight: 400;
 	margin-bottom: 2px;
 	color: var(--accent-kleur);
 	text-transform: uppercase;
-	text-shadow: 3px 4px 7px rgba(0, 0, 0, 0.4);;
+	text-shadow: 3px 4px 7px rgba(0, 0, 0, 0.4);
 }
 
 .accordion div.full-content {
@@ -183,8 +178,6 @@
 	overflow: hidden;
 	width: 100%;
 }
-
-
 
 .accordion a {
 	display: block;
@@ -201,7 +194,6 @@
 	font-family: Open Sans, sans-serif;
 	transition: opacity 200ms ease;
 }
-
 
 @media (min-width: 768px) {
 	.accordion a {
@@ -239,7 +231,6 @@
 }
 
 .opened li.opened {
-	
 	.label {
 		opacity: 0;
 	}
@@ -285,7 +276,7 @@
 		color: var(--accent-kleur);
 	}
 
-	div.full-content p{
+	div.full-content p {
 		color: var(--tekst);
 		margin-bottom: 1em;
 		margin-top: 1em;
@@ -294,37 +285,32 @@
 
 .accordion .about {
 	text-align: center;
-	font-family: 'Open Sans', sans-serif;
+	font-family: "Open Sans", sans-serif;
 	font-size: 12px;
 	color: #666;
 }
 
-
-
-
-
 /* Background images */
 .accordion li:nth-child(6) .background-image {
-	background-image: url('/stylesheets/images/absman.jpeg');
+	background-image: url("/stylesheets/images/absman.jpeg");
 }
 
 .accordion li:nth-child(5) .background-image {
-	background-image: url('/stylesheets/images/cardiowomen.jpg');
+	background-image: url("/stylesheets/images/cardiowomen.jpg");
 }
 
 .accordion li:nth-child(4) .background-image {
-	background-image: url('/stylesheets/images/fullbody.jpg');
+	background-image: url("/stylesheets/images/fullbody.jpg");
 }
 
 .accordion li:nth-child(3) .background-image {
-	background-image: url('/stylesheets/images/flex.jpg');
+	background-image: url("/stylesheets/images/flex.jpg");
 }
 
 .accordion li:nth-child(2) .background-image {
-	background-image: url('/stylesheets/images/backma.jpg');
-
+	background-image: url("/stylesheets/images/backma.jpg");
 }
 
 .accordion li:nth-child(1) .background-image {
-	background-image: url('/stylesheets/images/abswomen.jpg');
+	background-image: url("/stylesheets/images/abswomen.jpg");
 }

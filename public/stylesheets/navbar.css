@@ -1,15 +1,20 @@
+/* General Styles */
 body {
-
-  min-width:auto;
+  min-width: auto;
   min-height: auto;
   height: 100%;
   color: #000000;
-  font-family: 'Montserrat';
- 
+  font-family: 'Montserrat', sans-serif;
 }
-  /*  nav bar code starts here */
-.bars {
 
+/* Navigation Bar */
+header {
+  position: relative;
+  width: 100%;
+}
+
+/* Hamburger Icon */
+.bars {
   position: absolute;
   width: 35px;
   height: 40px;
@@ -17,7 +22,7 @@ body {
   right: 50px;
   cursor: pointer;
   z-index: 101;
-  padding-top:10px;
+  padding-top: 10px;
 }
 
 .bar {
@@ -59,11 +64,9 @@ body {
   animation-fill-mode: forwards;
 }
 
-
-  /* Navbar Links CSS */
-
+/* Navigation Links */
 #nav {
-  position: absolute;
+  position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
@@ -72,48 +75,40 @@ body {
   z-index: -1;
   overflow: hidden;
   opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#nav.visible {
+  z-index: 100;
+  opacity: 1;
 }
 
 #nav a {
-
   color: rgb(0, 0, 0);
-  text-decoration:none;
-  line-height: 60vw;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-
-  left: 0;
-  right: 0;
-  text-indent: 50vw;
-  border-radius: 50%;
-  transition: all .5s;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
 }
 
-#nav a:hover {
-  background:rgb(255, 255, 255);
-}
-
-.navlist ul {
-  list-style: none;
-}
- /*  toggle in js */ 
-.visible {
-  z-index: 100 !important;
-  opacity: 1 !important;
-}
-
+/* Circle Shapes for Links */
 .shape-circle {
   border-radius: 50%;
   width: 20vw;
-
   height: 20vw;
   top: -10vw;
   right: -10vw;
   position: absolute;
   transition: all 1s ease-in-out;
-  background:rgba(195, 148, 0, 1);
+  background: rgba(195, 148, 0, 1);
   box-shadow: 0 0px 0px rgb(124, 95, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 nav.visible li:first-child {
@@ -133,91 +128,52 @@ nav.visible li:nth-child(2) {
   right: -75vw;
   z-index: 6;
   transition: all .6s ease-in-out;
-  box-shadow: 0 0px 80px  rgb(99, 73, 1);
+  box-shadow: 0 0px 80px rgb(99, 73, 1);
 }
 
-nav.visible li:nth-child(3){
+nav.visible li:nth-child(3) {
   width: 100vw;
   height: 100vw;
   top: -50vw;
   right: -50vw;
   z-index: 7;
   transition: all .7s ease-in-out;
-  box-shadow: 0 0px 80px  rgb(99, 73, 1);
+  box-shadow: 0 0px 80px rgb(99, 73, 1);
 }
 
-nav.visible li:last-child{
+nav.visible li:last-child {
   width: 50vw;
   height: 50vw;
   top: -25vw;
   right: -25vw;
   z-index: 8;
   transition: all .8s ease-in-out;
-  box-shadow: 0 0px 80px  rgb(99, 73, 1);
+  box-shadow: 0 0px 80px rgb(99, 73, 1);
 }
 
 nav.visible li:first-child a {
   line-height: 265vw !important;
-    text-indent: 10vw !important;
-
-   
-
+  text-indent: 10vw !important;
 }
 
 nav.visible li:nth-child(2) a {
   line-height: 200vw !important;
-  text-indent:10vw !important;
+  text-indent: 10vw !important;
 }
 
 nav.visible li:nth-child(3) a {
   line-height: 137vw !important;
-    text-indent: 17vw !important;
-  
+  text-indent: 17vw !important;
 }
 
 nav.visible li:last-child a {
   line-height: 70vw !important;
-  text-indent:12vw !important;
-}
-
-
-
-
-
-.container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-}
-
-
-
-
-
-
-@keyframes top-bar {
-  50% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: rotate(45deg) translateY(0);
-  }
-}
-
-@keyframes bottom-bar {
-  50% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: rotate(-45deg) translateY(0);
-  }
+  text-indent: 12vw !important;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
   .bars {
-   
     top: 20px;
     right: 20px;
     width: 25px;
@@ -228,10 +184,10 @@ nav.visible li:last-child a {
   #nav a {
     line-height: 30vw;
     text-indent: 25vw;
-        position: relative;
-top: 20px; left: -40px;
-   
-  padding: 30px;
+    position: relative;
+    top: 20px;
+    left: -40px;
+    padding: 30px;
   }
 
   .shape-circle {
@@ -290,5 +246,21 @@ top: 20px; left: -40px;
   }
 }
 
-/*nav bar ends hier */
+/* Keyframes for Hamburger Icon Animation */
+@keyframes top-bar {
+  50% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: rotate(45deg) translateY(0);
+  }
+}
 
+@keyframes bottom-bar {
+  50% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: rotate(-45deg) translateY(0);
+  }
+}

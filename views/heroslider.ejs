@@ -2,70 +2,61 @@
     <link rel="stylesheet" href="/stylesheets/heroslider.css">
 
 
-
-<section id="section-1">
-    <div class="content-slider">
-      <input type="radio" id="banner1" class="sec-1-input" name="banner" checked>
-      <input type="radio" id="banner2" class="sec-1-input" name="banner">
-      <input type="radio" id="banner3" class="sec-1-input" name="banner">
-      <input type="radio" id="banner4" class="sec-1-input" name="banner">
-      <div class="slider">
-     
-        <div id="top-banner-1" class="banner">
-         
-          <div class="banner-inner-wrapper">
-            
-            <h1>Hier vind je de best</h1>
-            <h2>Home<br> Workouts</h2>
- 
-            <div class="line"></div>
-     
-          </div>
+    <section id="section-1">
+      <div class="content-slider">
+          <!-- Radiobuttons voor banners, bepalen welke banner wordt getoond -->
+          <input type="radio" id="banner1" class="sec-1-input" name="banner" checked>
+          <input type="radio" id="banner2" class="sec-1-input" name="banner">
+          <input type="radio" id="banner3" class="sec-1-input" name="banner">
+          <input type="radio" id="banner4" class="sec-1-input" name="banner">
+  
+          <div class="slider">
+              <!-- Eerste banner met tekst -->
+              <div id="top-banner-1" class="banner">
+                  <div class="banner-inner-wrapper">
+                      <h1>Hier vind je de best</h1>
+                      <h2>Home<br> Workouts</h2>
+                      <div class="line"></div>
+                  </div>
+                      <!-- Video achtergrond voor tweede banner -->
+              <video id="background-video" autoplay loop muted poster="/stylesheets/videos/coach.mp4">
+                <source src="/stylesheets/videos/coach1.mp4" type="video/mp4">
+            </video> 
+              </div>
           
-        </div>
-        <div id="top-banner-2" class="banner">
-          <video id="background-video" autoplay loop muted poster="/stylesheets/videos/coach.mp4">
-            <source src="/stylesheets/videos/coach1.mp4" type="video/mp4">
-          </video> 
-          <div class="banner-inner-wrapper">
- 
-            <div class="line"></div>
-         
+              <!-- Tweede banner -->
+              <div id="top-banner-2" class="banner">
+                  <div class="banner-inner-wrapper">
+                      <div class="line"></div>
+                  </div>
+              </div>
+              <!-- Derde banner -->
+              <div id="top-banner-3" class="banner">
+                  <div class="banner-inner-wrapper">
+                      <div class="line"></div>
+                  </div>
+              </div>
+              <!-- Vierde banner -->
+              <div id="top-banner-4" class="banner">
+                  <div class="banner-inner-wrapper">
+                      <div class="line"></div>
+                  </div>
+              </div>
           </div>
-        </div>
-        <div id="top-banner-3" class="banner">
-          <div class="banner-inner-wrapper"> 
-     
-            <div class="line"></div>
-        
+      </div>
+  
+      <!-- Handmatige bediening labels -->
+      <article id="idk">
+          <div class="controls">
+              <label for="banner1"><span class="progressbar"></span>START</label>
+              <label for="banner2"><span class="progressbar"></span>SPORTING</label>
+              <label for="banner3"><span class="progressbar"></span>TODAY</label>
+              <label for="banner4"><span class="progressbar"></span>!<Contacts</label>
           </div>
-        </div>
-
-
-        <div id="top-banner-4" class="banner">
-          <div class="banner-inner-wrapper"> 
-        
-            <div class="line"></div>
-          
-          </div>
-        </div>
-       
-        </div>
-
-
-     
-    
-    </div>
-<article id="idk">
-<div class="controls">
-  <label for="banner1"><span class="progressbar"></span>START</label>
-  <label for="banner2"><span class="progressbar"></span>SPORTING</label>
-  <label for="banner3"><span class="progressbar"></span>TODAY</label>
-  <label for="banner4"><span class="progressbar"></span>!<Contacts</label>
-</div>
-</article>
-
+      </article>
   </section>
 
 
 <script type=text/javascript src="/stylesheets/scripts/heroslider.js"></script>
+
+

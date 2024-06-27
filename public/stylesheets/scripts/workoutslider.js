@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
     // Selecteer het accordion element
     var accordion = document.querySelector('.accordion ul');
-    
+
     // Selecteer alle sluitknoppen
     var closeButtons = document.querySelectorAll('.close');
-    
+
     // Selecteer alle lijstitems binnen het accordion
     var listItems = document.querySelectorAll('.accordion ul li');
 
@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
         closeButton.addEventListener('click', function () {
             // Verwijder de klasse 'opened' van het accordion
             accordion.classList.remove('opened');
-            
+
             // Vind het dichtstbijzijnde li element van de geklikte sluitknop en verwijder de klasse 'opened'
             var listItem = this.closest('li');
             listItem.classList.remove('opened');
