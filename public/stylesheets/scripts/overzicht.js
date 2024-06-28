@@ -4,7 +4,7 @@
 
 
 // //filter
-
+//items die gefilterd gaan worden
 // // let options = {
 // //   valueNames: ['naam', 'dag'],
 // // };
@@ -79,7 +79,8 @@
 
 
 //   // this work below works
-
+//Het haalt alle geselecteerde dagen op door alle aangevinkte checkboxes te vinden en hun waarden te verzamelen.
+// haalt de huidige waarden van de leeftijdsbereikschuifregelaars op.
   let options = {
     valueNames: ['dag', 'leeftijd', ]
   };
@@ -90,23 +91,25 @@
     // Get all checked checkboxes values
     let checkedDays = Array.from(document.querySelectorAll('.weekday:checked'))
       .map(checkbox => checkbox.value);
-
-    // Get age range values
+      //map om alleen de checked boxes van de checkbox te pakken 
+//map is een methode die beschikbaar is op arrays in JavaScript. Het wordt gebruikt om een nieuwe array te maken door elk element in een bestaande array te transformeren op basis van een opgegeven functie.
+   
+// Get age range values
     const minAge = parseInt(document.getElementById('slider-min').value);
     const maxAge = parseInt(document.getElementById('slider-max').value);
-
+//pakt de vakue van de min en  max slider 
     // Filter the list based on checked checkboxes and age range
-    let visibleCount = 0;
-    userList.filter(item => {
+    let visibleCount = 0; // Dit wordt gebruikt om bij te houden hoeveel items zichtbaar zijn na de filtering.
+    userList.filter(item => { //filter() is een array-methode die wordt gebruikt om een nieuwe array te maken met alle elementen die voldoen aan de voorwaarden gespecificeerd in de callback-functie. Hier wordt userList gefilterd op basis van bepaalde voorwaarden.
       let days = item.values().dag.replace('Beschikbaar op: ', '').split(', ');
       let age = parseInt(item.values().leeftijd.replace('Age: ', ''));
-
+   // Controleer of de dagen overeenkomen met de geselecteerde dagen
       let daysMatch = checkedDays.length === 0 || checkedDays.every(day => days.includes(day));
       let ageMatch = age >= minAge && age <= maxAge;
 
-      let visible = daysMatch && ageMatch;
-      if (visible) visibleCount++;
-      return visible;
+      let visible = daysMatch && ageMatch; //als deze twee waar zijn
+      if (visible) visibleCount++; //verhoogt de count
+      return visible; //laat vissible items zien
     });
 
     // Update the visible count of trainers
@@ -127,9 +130,10 @@
 
   // Function to handle label click
   function handleLabelClick(e) {
-    e.preventDefault(); // Prevent default label click behavior
+    e.preventDefault();//Voorkom standaard gedrag van het klikken op het label
 
-    let checkbox = document.querySelector(`#${e.target.htmlFor}`);
+    let checkbox = document.querySelector(`#${e.target.htmlFor}`); 
+    //Vind de bijbehorende checkbox en wissel de status ervan om
     checkbox.checked = !checkbox.checked; // Toggle the checkbox
     filterList(); // Apply the filter
   }
@@ -160,6 +164,7 @@
     sliderMinValue.textContent = min;
     sliderMaxValue.textContent = max + (max === 50 ? '+' : '');
 
+    // Zorg ervoor dat de sliders elkaar niet overlappen
     if (min >= max) {
       sliderMin.value = max - 1;
       sliderMinValue.textContent = max - 1;
