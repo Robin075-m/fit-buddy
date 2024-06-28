@@ -1,4 +1,4 @@
-/* General Styles */
+General Styles
 body {
   min-width: auto;
   min-height: auto;
@@ -87,12 +87,17 @@ header {
 
 #nav a {
   color: rgb(0, 0, 0);
-  text-decoration: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
+  text-decoration:none;
+  line-height: 60vw;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-indent: 50vw;
+  border-radius: 50%;
+  transition: all .5s;
+
 }
 
 /* Circle Shapes for Links */
@@ -106,9 +111,7 @@ header {
   transition: all 1s ease-in-out;
   background: rgba(195, 148, 0, 1);
   box-shadow: 0 0px 0px rgb(124, 95, 0);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
 }
 
 nav.visible li:first-child {
@@ -264,3 +267,8 @@ nav.visible li:last-child a {
     transform: rotate(-45deg) translateY(0);
   }
 }
+
+
+
+
+
